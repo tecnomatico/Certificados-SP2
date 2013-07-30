@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/07/2013 17:33:00 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="modelo.Persona" table="persona" catalog="parroquia">
+        <id name="idPersona" type="java.lang.Integer">
+            <column name="idPersona" />
+            <generator class="identity" />
+        </id>
+        <property name="dni" type="string">
+            <column name="dni" length="10" not-null="true" />
+        </property>
+        <property name="cura" type="string">
+            <column name="cura" length="5" not-null="true" />
+        </property>
+        <property name="apellido" type="string">
+            <column name="apellido" length="45" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="sexo" type="string">
+            <column name="sexo" length="12" not-null="true" />
+        </property>
+        <property name="fechaNaciemiento" type="date">
+            <column name="fechaNaciemiento" length="10" />
+        </property>
+        <property name="lugarNacimiento" type="string">
+            <column name="lugarNacimiento" length="45" />
+        </property>
+        <property name="provNacimiento" type="string">
+            <column name="provNacimiento" length="45" />
+        </property>
+        <property name="nacionalidad" type="string">
+            <column name="nacionalidad" length="20" />
+        </property>
+        <property name="hijoDe" type="string">
+            <column name="hijoDe" length="45" />
+        </property>
+        <property name="domicilio" type="string">
+            <column name="domicilio" length="45" />
+        </property>
+        <property name="barrio" type="string">
+            <column name="barrio" length="45" />
+        </property>
+        <property name="telefonoFijo" type="string">
+            <column name="telefonoFijo" length="45" />
+        </property>
+        <property name="telefonoCelular" type="string">
+            <column name="telefonoCelular" length="45" />
+        </property>
+        <property name="tipoDeHijo" type="string">
+            <column name="tipoDeHijo" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

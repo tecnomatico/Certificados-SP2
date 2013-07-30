@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22/07/2013 17:33:00 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="modelo.Certificado" table="certificado" catalog="parroquia">
+        <id name="numeroCertificado" type="java.lang.Integer">
+            <column name="numeroCertificado" />
+            <generator class="identity" />
+        </id>
+        <property name="idCura" type="int">
+            <column name="idCura" not-null="true" />
+        </property>
+        <property name="idAhijado" type="java.lang.Integer">
+            <column name="idAhijado" />
+        </property>
+        <property name="idTutora" type="java.lang.Integer">
+            <column name="idTutora" />
+        </property>
+        <property name="idTutor" type="java.lang.Integer">
+            <column name="idTutor" />
+        </property>
+        <property name="idMadrina" type="java.lang.Integer">
+            <column name="idMadrina" />
+        </property>
+        <property name="idPadrino" type="java.lang.Integer">
+            <column name="idPadrino" />
+        </property>
+        <property name="nombreParroquia" type="string">
+            <column name="nombreParroquia" length="45" />
+        </property>
+        <property name="domicilioParooquia" type="string">
+            <column name="domicilioParooquia" length="45" />
+        </property>
+        <property name="telefParroquia" type="string">
+            <column name="telefParroquia" length="45" />
+        </property>
+        <property name="barrioParroquia" type="string">
+            <column name="barrioParroquia" length="45" />
+        </property>
+        <property name="libro" type="string">
+            <column name="libro" length="10" />
+        </property>
+        <property name="folio" type="string">
+            <column name="folio" length="10" />
+        </property>
+        <property name="partida" type="string">
+            <column name="partida" length="45" />
+        </property>
+        <property name="fechaBautizmo" type="date">
+            <column name="fechaBautizmo" length="10" />
+        </property>
+        <property name="domicilioPadres" type="string">
+            <column name="domicilioPadres" length="45" />
+        </property>
+        <property name="notasMarginales" type="string">
+            <column name="notasMarginales" length="100" />
+        </property>
+        <property name="ciudad" type="string">
+            <column name="ciudad" length="45" />
+        </property>
+        <property name="provincia" type="string">
+            <column name="provincia" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
