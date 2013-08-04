@@ -71,8 +71,6 @@ public class AltaPersona extends javax.swing.JDialog {
         txtTelCel = new javax.swing.JTextField();
         cmbTipoHijo = new javax.swing.JComboBox();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        cmbEsCura = new javax.swing.JComboBox();
         txtApellido = new javax.swing.JTextField();
         cldFechNac = new com.toedter.calendar.JDateChooser();
         jLabel16 = new javax.swing.JLabel();
@@ -169,10 +167,6 @@ public class AltaPersona extends javax.swing.JDialog {
 
         jLabel13.setText("Tipo de Hijo:");
 
-        jLabel14.setText("Es Cura:");
-
-        cmbEsCura.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "NO", "SI" }));
-
         txtApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidoActionPerformed(evt);
@@ -226,7 +220,6 @@ public class AltaPersona extends javax.swing.JDialog {
                                     .addGap(236, 236, 236))))
                         .addGap(64, 64, 64)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
                             .addComponent(jLabel10)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11)
@@ -241,8 +234,7 @@ public class AltaPersona extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtTelFijo, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtBario, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtTelCel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(cmbEsCura, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtTelCel, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -253,10 +245,7 @@ public class AltaPersona extends javax.swing.JDialog {
                         .addGap(17, 17, 17)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel14)
-                                .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cmbEsCura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -293,8 +282,7 @@ public class AltaPersona extends javax.swing.JDialog {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtLugarNac, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jLabel5)))
+                                    .addComponent(jLabel5))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(cmbProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -340,18 +328,39 @@ public class AltaPersona extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombreActionPerformed
+    }//GEN-LAST:event_txtApellidoActionPerformed
+
+    private void cmbTipoHijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoHijoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbTipoHijoActionPerformed
+
+    private void txtTelFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelFijoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelFijoActionPerformed
+
+    private void txtBarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtBarioActionPerformed
+
+    private void txtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDniActionPerformed
+
+    private void btnCancelarAltaPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarAltaPersonaActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarAltaPersonaActionPerformed
+
+    private void cmbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbSexoActionPerformed
 
     private void btnAceptarAltaPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarAltaPersonaActionPerformed
         PersonaDAO personaDAO = new PersonaDAOImp();
         Persona persona = new Persona();
-        if (seraCura != "cura") {
-            persona.setCura("NO");
-        } else {
-            persona.setCura("SI");
-        }
+
+      
         persona.setApellido(txtApellido.getText());
         persona.setNombre(txtNombre.getText());
         persona.setDni(txtDni.getText());
@@ -366,15 +375,18 @@ public class AltaPersona extends javax.swing.JDialog {
         persona.setTelefonoFijo(txtTelFijo.getText());
         persona.setTelefonoCelular(txtTelCel.getText());
 
-        
         if (validacion()) {
-                JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");            
+            JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");
         } else {
-            personaDAO.insert(persona);            
+            personaDAO.insert(persona);
             this.dispose();
-        }                
-        
+        }
+
     }//GEN-LAST:event_btnAceptarAltaPersonaActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
 
         public boolean validacion(){
         boolean vacio = true;
@@ -398,40 +410,11 @@ public class AltaPersona extends javax.swing.JDialog {
     }
     
     
-    private void txtDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDniActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDniActionPerformed
-
-    private void txtTelFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelFijoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelFijoActionPerformed
-
-    private void btnCancelarAltaPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarAltaPersonaActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_btnCancelarAltaPersonaActionPerformed
-
-    private void txtBarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtBarioActionPerformed
-
-    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtApellidoActionPerformed
-
-    private void cmbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSexoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbSexoActionPerformed
-
-    private void cmbTipoHijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTipoHijoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbTipoHijoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAceptarAltaPersona;
     private javax.swing.JButton btnCancelarAltaPersona;
     private com.toedter.calendar.JDateChooser cldFechNac;
-    private javax.swing.JComboBox cmbEsCura;
     private javax.swing.JComboBox cmbProvincia;
     private javax.swing.JComboBox cmbSexo;
     private javax.swing.JComboBox cmbTipoHijo;
@@ -440,7 +423,6 @@ public class AltaPersona extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;

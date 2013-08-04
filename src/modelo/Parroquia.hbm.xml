@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 04/08/2013 12:46:08 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="modelo.Parroquia" table="parroquia" catalog="parroquia">
+        <id name="idParroquia" type="java.lang.Integer">
+            <column name="idParroquia" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreParroquia" type="string">
+            <column name="nombreParroquia" length="50" not-null="true" />
+        </property>
+        <property name="apellidoCura" type="string">
+            <column name="apellidoCura" length="45" />
+        </property>
+        <property name="nombreCura" type="string">
+            <column name="nombreCura" length="45" />
+        </property>
+        <property name="ciudadParroquia" type="string">
+            <column name="ciudadParroquia" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

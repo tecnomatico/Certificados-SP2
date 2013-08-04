@@ -82,8 +82,10 @@
 				<text><![CDATA[En]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="7ad9c02d-c806-4010-a70e-2a85af3a1745" x="77" y="56" width="100" height="20"/>
-				<textElement/>
+				<reportElement uuid="7ad9c02d-c806-4010-a70e-2a85af3a1745" x="77" y="56" width="160" height="20"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{ciudad}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -429,7 +431,7 @@
 			<textField>
 				<reportElement uuid="59fb9562-4487-4721-804a-f45acd43461b" x="156" y="31" width="290" height="18"/>
 				<textElement>
-					<font isUnderline="false"/>
+					<font size="10" isUnderline="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{parroquia}]]></textFieldExpression>
 			</textField>
@@ -444,16 +446,6 @@
 				<reportElement uuid="399aade9-5996-45c5-a524-4ec15b024f59" x="539" y="201" width="140" height="20"/>
 				<textElement/>
 				<textFieldExpression><![CDATA[$F{madreBaut}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement uuid="62631ea9-ccc0-4c2c-bdde-b2a0bdc59164" x="257" y="265" width="34" height="20"/>
-				<textElement/>
-				<text><![CDATA[Telef.]]></text>
-			</staticText>
-			<textField>
-				<reportElement uuid="13c7a3c7-b8be-4fa2-9bba-27e2c49619ab" x="291" y="265" width="193" height="20"/>
-				<textElement/>
-				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement uuid="438acf8e-8e88-4495-a479-06b35b19af4a" x="488" y="11" width="64" height="19"/>

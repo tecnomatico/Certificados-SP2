@@ -5,10 +5,12 @@
 package modelo;
 
 import dao.imp.CertificadoDAOImp;
+import dao.imp.ParroquiaDaoImp;
 import dao.imp.PersonaDAOImp;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.table.AbstractTableModel;
+import util.FechaUtil;
 
 /**
  *
@@ -16,15 +18,17 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ModeloCertificado extends AbstractTableModel{
     Certificado certificado = new Certificado();
-    DatosCertificado datosCertificado = new DatosCertificado();
+
     CertificadoDAOImp certificadoDAO = new CertificadoDAOImp();
     ArrayList<Certificado> listaCertificado = new ArrayList<Certificado>();
     ArrayList<Persona> listaCertificadosPersonas = new ArrayList<Persona>();
-    Persona cura = new Persona();
+//    Persona cura = new Persona();
     Persona ahijado = new Persona();
     Persona tutor = new Persona();
     Persona padrino = new Persona();
     PersonaDAOImp personaDAO = new PersonaDAOImp();
+    
+    Parroquia p = new ParroquiaDaoImp().listarParroquia().get(0);
     
     public ModeloCertificado() {            
         try {
@@ -53,21 +57,21 @@ public class ModeloCertificado extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         Object objeto = new Object();       
         certificado = (Certificado) listaCertificado.get(rowIndex);
-        cura = personaDAO.getPersona(certificado.getIdCura());
         ahijado = personaDAO.getPersona(certificado.getIdAhijado());
         tutor = personaDAO.getPersona(certificado.getIdTutor());
         switch (columnIndex) {
             case 0:objeto = certificado.getNumeroCertificado();break;
-            case 1:objeto = certificado.getNombreParroquia();break;
-            case 2:objeto = cura.getApellido()+", "+cura.getNombre();break;
-            case 3:objeto = ahijado.getApellido()+", "+ahijado.getNombre();break;
-            case 4:objeto = tutor.getApellido()+", "+tutor.getNombre();break;                                                         
+            case 1:objeto = FechaUtil.getDateDD_MM_AAAA(certificado.getFechaBautizmo());break;
+            // problemas para cargar varios curas
+            case 2:objeto = certificado.getNombreCura();break; 
+            case 3:objeto = ahijado.getApellido()+" "+ahijado.getNombre();
+            case 4:objeto = tutor.getApellido()+" "+tutor.getNombre();break;                                                         
         }      
         return objeto;
     }
     
     private String[] cabeceras = {
-        "Nº de Certificado", "Parroquia", "Cura", "Ahijado", "Tutor"       
+        "Nº de Certificado", "Fecha Bautismo", "Cura", "Ahijado", "Tutor"       
     };
     
     public Certificado Consulta(int col) {

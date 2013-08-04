@@ -15,7 +15,7 @@ import modelo.Certificado;
 import modelo.ModeloCertificado;
 import modelo.ModeloPersona;
 import modelo.Persona;
-import vista.ActualizacionCertificado;
+
 
 /**
  *
@@ -45,11 +45,9 @@ public class BusquedaCertificado extends javax.swing.JDialog {
     public BusquedaCertificado(Certificado certificado, AltaCertificado parent, boolean modal, JTextField tipoPersona, String quePersona) {
         super(parent, modal);
         initComponents();
-        //PersonaDAO personaDAO = new PersonaDAOImp();
+        
         sorter = new TableRowSorter(modeloCertificado);
         tblBusquedaCertificado.setModel(modeloCertificado);
-//////        certificado = p;
-        //p.setNombre("DArio");
         this.parent = parent;//Estoy creando una variable global, le asigno el parent 
         this.tipoPersona = tipoPersona;//Estoy creando una variable global, le asigno el parent 
         //q traigo del anterior

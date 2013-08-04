@@ -4,4 +4,5 @@
   <schema-selection match-catalog="parroquia"/>
   <table-filter match-name="persona"/>
   <table-filter match-name="certificado"/>
+  <table-filter match-name="parroquia"/>
 </hibernate-reverse-engineering>

@@ -3,6 +3,8 @@
  * and open the template in the editor.
  */
 package reporte;
+import dao.ParroquiaDao;
+import dao.imp.ParroquiaDaoImp;
 import dao.imp.PersonaDAOImp;
 import java.util.ArrayList;
 import net.sf.jasperreports.engine.JRDataSource;
@@ -10,8 +12,10 @@ import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRField;
 import java.util.List;
 import modelo.Certificado;
+import modelo.Parroquia;
 import modelo.Persona;
 import util.FechaUtil;
+import vista.Configuaracion;
 
 /**
  *
@@ -22,7 +26,7 @@ public class ReporteCertificadoJRDataSource implements JRDataSource{
     int index =-1;
     Certificado a;
     List<Certificado> listaCertificado = new ArrayList<Certificado>();
-    
+    Parroquia p = new ParroquiaDaoImp().listarParroquia().get(0);
    public boolean next() throws JRException {
         
         return ++index < listaCertificado.size();
@@ -30,8 +34,9 @@ public class ReporteCertificadoJRDataSource implements JRDataSource{
 
     public Object getFieldValue(JRField jrf) throws JRException {
         Object valor=null;
+        
        Persona padrino = new PersonaDAOImp().getPersona(listaCertificado.get(index).getIdPadrino());
-       Persona cura = new PersonaDAOImp().getPersona(listaCertificado.get(index).getIdCura());
+//       Persona cura = new PersonaDAOImp().getPersona(listaCertificado.get(index).getIdCura());
        Persona madrina = new PersonaDAOImp().getPersona(listaCertificado.get(index).getIdMadrina());
        Persona tutor = new PersonaDAOImp().getPersona(listaCertificado.get(index).getIdTutor());
        Persona tutora = new PersonaDAOImp().getPersona(listaCertificado.get(index).getIdTutora());
@@ -45,8 +50,8 @@ public class ReporteCertificadoJRDataSource implements JRDataSource{
         }else if("partida".equals(jrf.getName())){
             valor = listaCertificado.get(index).getPartida();
         }else if("ciudad".equals(jrf.getName())){
-            // falta la ciudad dela iglesia.!! de donde se va a bautizar
-            valor = "San Salvador de Jujuy";
+            // Dato constante para la configuarcion
+            valor = p.getCiudadParroquia();
         }else if("dia".equals(jrf.getName())){
             
             valor = FechaUtil.getDia(listaCertificado.get(index).getFechaBautizmo());
@@ -58,7 +63,9 @@ public class ReporteCertificadoJRDataSource implements JRDataSource{
             valor = FechaUtil.getAnio(listaCertificado.get(index).getFechaBautizmo());
         }
         else if("cura".equals(jrf.getName())){
-            valor = cura.getApellido()+" "+cura.getNombre();
+            // Dato constante para la configuarcion
+            
+            valor = p.getApellidoCura()+" "+p.getNombreCura();
         }
         else if("baut".equals(jrf.getName())){
             valor = bautizado.getApellido()+" "+bautizado.getNombre();
@@ -113,7 +120,8 @@ public class ReporteCertificadoJRDataSource implements JRDataSource{
             valor = madrina.getApellido()+" "+madrina.getNombre();
         }
         else if("parroquia".equals(jrf.getName())){
-            valor = listaCertificado.get(index).getNombreParroquia();
+            // si va a ver una configuracion de datos constantes
+            valor = p.getNombreParroquia();
         }
         else if("fechaNacimBaut".equals(jrf.getName())){
             valor = FechaUtil.getDateDD_MM_AAAA(bautizado.getFechaNaciemiento());

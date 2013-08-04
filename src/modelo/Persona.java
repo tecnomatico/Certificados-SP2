@@ -1,5 +1,5 @@
 package modelo;
-// Generated 22/07/2013 17:32:59 by Hibernate Tools 3.2.1.GA
+// Generated 04/08/2013 12:46:07 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -12,7 +12,6 @@ public class Persona  implements java.io.Serializable {
 
      private Integer idPersona;
      private String dni;
-     private String cura;
      private String apellido;
      private String nombre;
      private String sexo;
@@ -31,14 +30,12 @@ public class Persona  implements java.io.Serializable {
     }
 
 	
-    public Persona(String dni, String cura, String sexo) {
+    public Persona(String dni, String sexo) {
         this.dni = dni;
-        this.cura = cura;
         this.sexo = sexo;
     }
-    public Persona(String dni, String cura, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad, String hijoDe, String domicilio, String barrio, String telefonoFijo, String telefonoCelular, String tipoDeHijo) {
+    public Persona(String dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad, String hijoDe, String domicilio, String barrio, String telefonoFijo, String telefonoCelular, String tipoDeHijo) {
        this.dni = dni;
-       this.cura = cura;
        this.apellido = apellido;
        this.nombre = nombre;
        this.sexo = sexo;
@@ -67,13 +64,6 @@ public class Persona  implements java.io.Serializable {
     
     public void setDni(String dni) {
         this.dni = dni;
-    }
-    public String getCura() {
-        return this.cura;
-    }
-    
-    public void setCura(String cura) {
-        this.cura = cura;
     }
     public String getApellido() {
         return this.apellido;

@@ -1,5 +1,5 @@
 package modelo;
-// Generated 22/07/2013 17:32:59 by Hibernate Tools 3.2.1.GA
+// Generated 04/08/2013 12:46:07 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -11,16 +11,12 @@ public class Certificado  implements java.io.Serializable {
 
 
      private Integer numeroCertificado;
-     private int idCura;
      private Integer idAhijado;
      private Integer idTutora;
      private Integer idTutor;
      private Integer idMadrina;
      private Integer idPadrino;
-     private String nombreParroquia;
-     private String domicilioParooquia;
-     private String telefParroquia;
-     private String barrioParroquia;
+     private String nombreCura;
      private String libro;
      private String folio;
      private String partida;
@@ -33,21 +29,13 @@ public class Certificado  implements java.io.Serializable {
     public Certificado() {
     }
 
-	
-    public Certificado(int idCura) {
-        this.idCura = idCura;
-    }
-    public Certificado(int idCura, Integer idAhijado, Integer idTutora, Integer idTutor, Integer idMadrina, Integer idPadrino, String nombreParroquia, String domicilioParooquia, String telefParroquia, String barrioParroquia, String libro, String folio, String partida, Date fechaBautizmo, String domicilioPadres, String notasMarginales, String ciudad, String provincia) {
-       this.idCura = idCura;
+    public Certificado(Integer idAhijado, Integer idTutora, Integer idTutor, Integer idMadrina, Integer idPadrino, String nombreCura, String libro, String folio, String partida, Date fechaBautizmo, String domicilioPadres, String notasMarginales, String ciudad, String provincia) {
        this.idAhijado = idAhijado;
        this.idTutora = idTutora;
        this.idTutor = idTutor;
        this.idMadrina = idMadrina;
        this.idPadrino = idPadrino;
-       this.nombreParroquia = nombreParroquia;
-       this.domicilioParooquia = domicilioParooquia;
-       this.telefParroquia = telefParroquia;
-       this.barrioParroquia = barrioParroquia;
+       this.nombreCura = nombreCura;
        this.libro = libro;
        this.folio = folio;
        this.partida = partida;
@@ -64,13 +52,6 @@ public class Certificado  implements java.io.Serializable {
     
     public void setNumeroCertificado(Integer numeroCertificado) {
         this.numeroCertificado = numeroCertificado;
-    }
-    public int getIdCura() {
-        return this.idCura;
-    }
-    
-    public void setIdCura(int idCura) {
-        this.idCura = idCura;
     }
     public Integer getIdAhijado() {
         return this.idAhijado;
@@ -107,33 +88,12 @@ public class Certificado  implements java.io.Serializable {
     public void setIdPadrino(Integer idPadrino) {
         this.idPadrino = idPadrino;
     }
-    public String getNombreParroquia() {
-        return this.nombreParroquia;
+    public String getNombreCura() {
+        return this.nombreCura;
     }
     
-    public void setNombreParroquia(String nombreParroquia) {
-        this.nombreParroquia = nombreParroquia;
-    }
-    public String getDomicilioParooquia() {
-        return this.domicilioParooquia;
-    }
-    
-    public void setDomicilioParooquia(String domicilioParooquia) {
-        this.domicilioParooquia = domicilioParooquia;
-    }
-    public String getTelefParroquia() {
-        return this.telefParroquia;
-    }
-    
-    public void setTelefParroquia(String telefParroquia) {
-        this.telefParroquia = telefParroquia;
-    }
-    public String getBarrioParroquia() {
-        return this.barrioParroquia;
-    }
-    
-    public void setBarrioParroquia(String barrioParroquia) {
-        this.barrioParroquia = barrioParroquia;
+    public void setNombreCura(String nombreCura) {
+        this.nombreCura = nombreCura;
     }
     public String getLibro() {
         return this.libro;

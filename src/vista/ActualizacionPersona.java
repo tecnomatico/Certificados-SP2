@@ -48,7 +48,7 @@ public class ActualizacionPersona extends javax.swing.JDialog {
 //            cmbCura.setEnabled(false);
 //            cmbTipoHijo.setActionCommand(persona.getTipoDeHijo());
 //        } else {
-            cargaCura();
+//            cargaCura();
 //        }
         
         txtApellido.setText(persona.getApellido());
@@ -100,17 +100,17 @@ public class ActualizacionPersona extends javax.swing.JDialog {
         }  
     }
     
-    public void cargaCura (){
-        String [] esCura = {"SI","NO"};
-        cmbCura.addItem(persona.getCura());
-        for (int i = 0; i < 2; i++) {
-            if (esCura[i].equals(persona.getCura())) {
-            }else{
-                cmbCura.addItem(esCura[i]);                            
-            }
-            
-        }          
-    }
+//    public void cargaCura (){
+//        String [] esCura = {"SI","NO"};
+////        cmbCura.addItem(persona.getCura());
+//        for (int i = 0; i < 2; i++) {
+////            if (esCura[i].equals(persona.getCura())) {
+//            }else{
+//                cmbCura.addItem(esCura[i]);                            
+//            }
+//            
+//        }          
+//    }
         
     /**
      * This method is called from within the constructor to initialize the form.
@@ -434,7 +434,7 @@ public class ActualizacionPersona extends javax.swing.JDialog {
         persona.setDni(txtDni.getText());
         persona.setSexo(cmbSexo.getSelectedItem().toString());
         persona.setLugarNacimiento(txtLugarNac.getText());
-        persona.setCura(cmbCura.getSelectedItem().toString());
+//        persona.setCura(cmbCura.getSelectedItem().toString());
         persona.setTipoDeHijo(cmbCura.getSelectedItem().toString());
         persona.setFechaNaciemiento(cldFechNac.getDate());
         persona.setProvNacimiento(cmbProvincia.getSelectedItem().toString());
