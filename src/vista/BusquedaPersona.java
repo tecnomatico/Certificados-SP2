@@ -4,7 +4,7 @@
  */
 package vista;
 
-import java.awt.TextField;
+
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
@@ -20,7 +20,7 @@ public class BusquedaPersona extends javax.swing.JDialog {
 
     Persona persona;
     ModeloPersona modeloPersona = new ModeloPersona();
-    private final TableRowSorter sorter;
+    private  TableRowSorter sorter;
     int numeroSeleccion;
     AltaCertificado parent;
     private final JTextField tipoPersona;
@@ -42,6 +42,7 @@ public class BusquedaPersona extends javax.swing.JDialog {
         //q traigo del anterior
         this.qPersonas = quePersona;
         setLocationRelativeTo(parent);
+//        this.setVisible(true);
     }
 
     /**
@@ -211,14 +212,7 @@ public class BusquedaPersona extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void tblBusquedaPersonaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblBusquedaPersonaMouseClicked
-//            numeroSeleccion = sorter.convertRowIndexToModel(tblBusquedaPersona.getSelectedRow());
-//            persona = modeloPersona.getPersona(numeroSeleccion);
-//            
-////        this.parent.agregar(persona, tipoPersona,qPersonas);
-////        this.dispose();
-//        persona.setApellido(modeloPersona.getPersona(numeroSeleccion).getApellido());
-//        persona.setNombre(modeloPersona.getPersona(numeroSeleccion).getNombre());
-//        persona.setIdPersona(modeloPersona.getPersona(numeroSeleccion).getIdPersona());
+
     }//GEN-LAST:event_tblBusquedaPersonaMouseClicked
 
     private void txtBusquedaDNIKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaDNIKeyPressed
@@ -233,7 +227,11 @@ public class BusquedaPersona extends javax.swing.JDialog {
         //        ActualizacionPersona at = new ActualizacionPersona(this, true);
         at.setVisible(true);
         at.setLocationRelativeTo(this);
+        // reflejar los cambios en la tabla
         this.dispose();
+        BusquedaPersona bp = new BusquedaPersona(persona, parent, rootPaneCheckingEnabled, tipoPersona, qPersonas);
+        bp.setVisible(true);
+        
     }//GEN-LAST:event_btnAgregarPersonaActionPerformed
 
     private void btnAgrePersCeritifcadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgrePersCeritifcadoActionPerformed
@@ -257,11 +255,10 @@ public class BusquedaPersona extends javax.swing.JDialog {
             persona = modeloPersona.getPersona(numeroSeleccion);
             // abrir el formulario alta de persona para editar los datos de persona
             AltaPersona modificarPersona = new AltaPersona(parent, true, persona);
-            
-            
-            
-            
+            // actulizar la tabla con los datos modificados
             this.dispose();
+           BusquedaPersona bp =  new BusquedaPersona(persona, parent, rootPaneCheckingEnabled, tipoPersona, qPersonas);
+           bp.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Seleccione una fila");
         }

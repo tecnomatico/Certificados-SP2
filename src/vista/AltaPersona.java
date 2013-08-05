@@ -135,6 +135,7 @@ public class AltaPersona extends javax.swing.JDialog {
             }
         });
 
+        cmbProvincia.setEditable(true);
         cmbProvincia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jujuy", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tucumán", "Tierra del Fuego", "Buenos Aires" }));
 
         btnGuardarAltaPersona.setText("Guardar");
@@ -163,6 +164,11 @@ public class AltaPersona extends javax.swing.JDialog {
         txtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDniActionPerformed(evt);
+            }
+        });
+        txtDni.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtDniKeyTyped(evt);
             }
         });
 
@@ -207,12 +213,10 @@ public class AltaPersona extends javax.swing.JDialog {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -426,13 +430,17 @@ public class AltaPersona extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
+    private void txtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyTyped
+     consumirLetras(evt);
+    }//GEN-LAST:event_txtDniKeyTyped
+
         public boolean validacion(){
         boolean vacio = true;
         ArrayList<JTextField> listaTxt = new ArrayList();
         listaTxt.add(txtApellido);
         listaTxt.add(txtNombre); listaTxt.add(txtDni);
         listaTxt.add(txtDomicilio);listaTxt.add(txtBario);
-        listaTxt.add(txtTelFijo);listaTxt.add(txtTelCel);
+//        listaTxt.add(txtTelFijo);listaTxt.add(txtTelCel);
         listaTxt.add(txtLugarNac);listaTxt.add(txtNacionalidad);
         for (Iterator<JTextField> it = listaTxt.iterator(); it.hasNext();) {
             JTextField jTextField = it.next();
@@ -447,6 +455,16 @@ public class AltaPersona extends javax.swing.JDialog {
         return vacio;
     }
     
+         public void consumirLetras(java.awt.event.KeyEvent evt){
+          // conusmir los caracteres del legajo excepto los numeros
+        char caracter = evt.getKeyChar();
+        if(((caracter < '0') ||
+         (caracter > '9')) &&
+         (caracter != '\b' /*corresponde a BACK_SPACE*/))
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }
+  }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -32,6 +32,7 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.swing.JRViewer;
 import reporte.ReporteCertificadoJRDataSource;
 import util.FechaUtil;
+import util.mensajero;
 
 
 
@@ -65,22 +66,31 @@ public class AltaCertificado extends javax.swing.JFrame {
      */
     public AltaCertificado() {
         initComponents();
+       
         // La primera vez que use el sistema debe cargar los datos de confiugarcion obligatoriamente
-         List<Parroquia> lista = new ParroquiaDaoImp().listarParroquia();
-        if (lista.isEmpty()) {
+        try {
+         List<Parroquia>  lista = new ParroquiaDaoImp().listarParroquia();
+           if (lista.isEmpty()) {
             Configuaracion configur =  new Configuaracion(this, true);
             // si cargo todo bien entonces debe mostrarse el formulario del certificado
-            if (!configur.isOperacionOk()) {
-                System.exit(0);
-            }
-        }else{
+                 if (!configur.isOperacionOk()) {
+                    System.exit(0);
+                 }
+           }else{
             // ya se configuro los datos , entonces inicio con el formulario de certifacdo
             p = lista.get(0);
 //            new ParroquiaDaoImp().deleteParroquia(p);
+            }
+        
+             limpiarVentana();
+
+        } catch (org.hibernate.exception.JDBCConnectionException e) {
+            // no se pudo abrir la bd
+            mensajero.mensajeError(this, "No se puede Conectar a la BD, por favor active servidor y vuelva a ejecutar la aplicacion");
+            System.exit(0);
         }
         
-        limpiarVentana();
-
+       
     }
     
     
@@ -702,7 +712,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jPanel1.getAccessibleContext().setAccessibleParent(this);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(0, 70, 1060, 510);
+        jScrollPane2.setBounds(0, 60, 1060, 510);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/spsp2_1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -775,7 +785,7 @@ public class AltaCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
     private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
-        // TODO add your handling code here:
+         new AcercaApp(this, true);
         
     }//GEN-LAST:event_contentMenuItemActionPerformed
 
@@ -890,10 +900,8 @@ public class AltaCertificado extends javax.swing.JFrame {
             certificado.setIdMadrina(madrina.getIdPersona());
             certificado.setIdPadrino(padrino.getIdPersona());
             certificado.setNombreCura(p.getApellidoCura()+" "+p.getNombreCura());
-        } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");
-        }
-        certificado.setDomicilioPadres(txtDomPadres.getText());
+            
+              certificado.setDomicilioPadres(txtDomPadres.getText());
         certificado.setCiudad(cmbCiudad.getSelectedItem().toString());
         certificado.setProvincia(cmbProvincia.getSelectedItem().toString());
         certificado.setFechaBautizmo(dtchFechaBautismo.getDate());
@@ -902,9 +910,9 @@ public class AltaCertificado extends javax.swing.JFrame {
         certificado.setFolio(txtFolio.getText());
         certificado.setNotasMarginales(txtareaMarginal.getText());
 
-        if (validacion()) {
-            JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");
-        } else {
+//        if (validacion()) {
+//            JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");
+//        } else {
             // se creo un certificado nuevo
             if(modificar==false){
             certificadoDAO.insert(certificado);
@@ -914,8 +922,14 @@ public class AltaCertificado extends javax.swing.JFrame {
             }
             JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
             activarBotonNuevo(false);
-        }
+//        }
        
+        
+        
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(null, "Debes completar todos los campos");
+        }
+      
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -977,8 +991,8 @@ public class AltaCertificado extends javax.swing.JFrame {
       // abre la ventana de busqueda 
         BusquedaCertificado bc = new BusquedaCertificado(certificado,this,true,txtNombPadrino,"padrino");
         bc.setVisible(true);
-        bc.setLocationRelativeTo(this);
-       
+//        bc.setLocationRelativeTo(this);
+//       
         // listar 
         if (bc.getCertificado()!=null) {
              // indicador de qeu se esta por cargar un certificado existente 
