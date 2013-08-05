@@ -56,7 +56,7 @@ public class AltaCertificado extends javax.swing.JFrame {
     Persona ahijado;
     PersonaDAO personaDAO =new PersonaDAOImp();
     ArrayList<Persona> listDeCuras = new ArrayList<Persona>();
-    private Certificado certificado;
+    private Certificado certificado= null;
     
     private boolean modificar;
     Parroquia p = null;
@@ -284,7 +284,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(580, 600));
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabel3.setText("Nombre del niño:");
+        jLabel3.setText("Nombre del Bautizado:");
 
         txtNombNiño.setEditable(false);
         txtNombNiño.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -312,12 +312,14 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel7.setText("Provincia:");
 
+        cmbProvincia.setEditable(true);
         cmbProvincia.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         cmbProvincia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jujuy", "Salta", "Tucuman", "Mendoza", "La Rioja ", "Bs As", "Santa Fe", "Cordoba", "Corrientes", "Misiones", "Entre Rios", "Tierra del Fuego", " ", " " }));
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel8.setText("D.N.I.:");
 
+        txtDNINiño.setEditable(false);
         txtDNINiño.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
 
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -357,10 +359,25 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel16.setText("Partida:");
 
         txtlibro.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        txtlibro.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtlibroKeyTyped(evt);
+            }
+        });
 
         txtFolio.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        txtFolio.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtFolioKeyTyped(evt);
+            }
+        });
 
         txtPartida.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        txtPartida.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPartidaKeyTyped(evt);
+            }
+        });
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Notas Marginales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 1, 14))); // NOI18N
         jPanel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -389,7 +406,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         );
 
         btnAgregarNiñoCertficado.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        btnAgregarNiñoCertficado.setText("Agregar Niño");
+        btnAgregarNiñoCertficado.setText("Agregar Bautizado");
         btnAgregarNiñoCertficado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarNiñoCertficadoActionPerformed(evt);
@@ -412,6 +429,7 @@ public class AltaCertificado extends javax.swing.JFrame {
             }
         });
 
+        txtFechNacimNiño.setEditable(false);
         txtFechNacimNiño.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         txtFechNacimNiño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -447,6 +465,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel18.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel18.setText("Ciudad:");
 
+        cmbCiudad.setEditable(true);
         cmbCiudad.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         cmbCiudad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "San Salvador de Jujuy", "Abra Pampa", "Abralaite", "Aguas Calientes", "Alfarcito", "Arrayanal", "Arroyo Colorado", "Bárcena", "Barrancas", "Barrios", "Bermejito", "Caimancito", "Calilegua", "Cangrejillos", "Carahunco", "Casabindo", "Casira", "Caspalá", "Catúa", "Centro Forestal", "Chalicán", "Cieneguillas", "Cochinoca", "Coctaca", "Colonia San José", "El Cóndor", "Coranzulí", "Cusi Cusi", "Don Emilio", "El Acheral", "El Aguilar", "El Angosto", "El Bananal", "El Carmen", "El Ceibal", "El Fuerte", "El Moreno", "El Piquete", "El Puesto", "El Quemado", "El Talar", "El Toro", "Fraile Pintado", "Guerrero", "Hipólito Yrigoyen", "Iturbe", "Hornaditas", "Huacalera", "Huancar", "Humahuaca", "Juella", "La Almona", "La Ciénaga", "La Esperanza", "La Intermedia", "La Manga", "La Mendieta", "La Quiaca", "Lagunillas", "León", "Libertador General San Martín", "Libertad", "Liviara", "Llulluchayoc", "Los Lapachos", "Los Manatiales", "Loteo Navea", "Lozano", "Maimará", "Mina 9 de Octubre", "Mina Pirquitas", "Miraflores", "Misa Rumi", "Monterrico", "Ocloyas", "Olaroz Chico", "Oratorio", "Paicone", "Palma Sola", "Palo Blanco", "Palpalá", "Pampa Planca", "Pampichuela", "Parapeti", "Paulina", "Perico", "Piedritas", "Puente Lavayén", "Puesto del Marqués", "Puesto Sey", "Puesto Viejo", "Pumahuasi", "Purmamarca", "Rinconada", "Rinconadilla", "Rodeíto", "Rosario del Río Grande", "San Antonio", "San Pedro", "San Francisco", "San Juan de Oros", "San Lucas", "San Pedro de Jujuy", "Santa Ana", "Santa Catalina", "Santa Clara", "Sauzal", "Susques", "Tabladitas", "Tafna", "Termas de Reyes", "Tilcara", "Tiraxi", "Tres Cruces", "Tres Pozos", "Tumbaya", "Tusaquillas", "Uquía", "Valle Colorado", "Valle Grande", "Vinalito", "Volcán", "Yala", "Yavi", "Yavi Chico", "Yoscaba", "Yuto" }));
 
@@ -483,26 +502,6 @@ public class AltaCertificado extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jLabel10)
-                        .addGap(14, 14, 14)
-                        .addComponent(txtCura, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(220, 220, 220)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(txtPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jLabel3)
-                        .addGap(8, 8, 8)
-                        .addComponent(txtNombNiño, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
-                        .addComponent(btnAgregarNiñoCertficado, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100)
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(txtFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -582,7 +581,29 @@ public class AltaCertificado extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtNombPadrino, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(11, 11, 11)
-                                .addComponent(btnAgregarPadrinoCertficado)))))
+                                .addComponent(btnAgregarPadrinoCertficado))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel10))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(txtCura, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(220, 220, 220)
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNombNiño, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnAgregarNiñoCertficado, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(117, 117, 117)
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(txtFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -620,17 +641,19 @@ public class AltaCertificado extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(dtchFechaBautismo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5))))
-                .addGap(10, 10, 10)
+                .addGap(4, 4, 4)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(txtCura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16)
-                    .addComponent(txtPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel16)
+                        .addComponent(txtPartida, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(txtNombNiño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAgregarNiñoCertficado)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtNombNiño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3)
+                        .addComponent(btnAgregarNiñoCertficado))
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtFolio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
@@ -679,7 +702,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jPanel1.getAccessibleContext().setAccessibleParent(this);
 
         getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(10, 60, 1060, 510);
+        jScrollPane2.setBounds(0, 70, 1060, 510);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/spsp2_1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
@@ -957,7 +980,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         bc.setLocationRelativeTo(this);
        
         // listar 
-        if (bc.getCertificado().getIdAhijado()!=null) {
+        if (bc.getCertificado()!=null) {
              // indicador de qeu se esta por cargar un certificado existente 
              modificar = true;
              // para que se pueda imprimir 
@@ -1019,6 +1042,27 @@ public class AltaCertificado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCiudadParroquiaActionPerformed
 
+    private void txtlibroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtlibroKeyTyped
+      consumirLetras(evt);
+    }//GEN-LAST:event_txtlibroKeyTyped
+
+    private void txtPartidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPartidaKeyTyped
+      consumirLetras(evt);
+    }//GEN-LAST:event_txtPartidaKeyTyped
+
+    private void txtFolioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFolioKeyTyped
+        consumirLetras(evt);
+    }//GEN-LAST:event_txtFolioKeyTyped
+  public void consumirLetras(java.awt.event.KeyEvent evt){
+          // conusmir los caracteres del legajo excepto los numeros
+        char caracter = evt.getKeyChar();
+        if(((caracter < '0') ||
+         (caracter > '9')) &&
+         (caracter != '\b' /*corresponde a BACK_SPACE*/))
+      {
+         evt.consume();  // ignorar el evento de teclado
+      }
+  }
  
  public void activarBotonNuevo(boolean b){
      btnGuardar.setEnabled(b);

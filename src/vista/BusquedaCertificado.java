@@ -30,7 +30,7 @@ public class BusquedaCertificado extends javax.swing.JDialog {
     AltaCertificado parent;
     private final JTextField tipoPersona;
     private final String qPersonas;
-
+    
     public Certificado getCertificado() {
         return certificado;
     }

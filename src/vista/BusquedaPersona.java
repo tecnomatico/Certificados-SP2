@@ -55,13 +55,13 @@ public class BusquedaPersona extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         btnCancelarBusq = new javax.swing.JButton();
-        btnActulizarDatosPersona = new javax.swing.JToggleButton();
         btnAgrePersCeritifcado = new javax.swing.JToggleButton();
         txtBusquedaDNI = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblBusquedaPersona = new javax.swing.JTable();
         btnAgregarPersona = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnActualizarPersona = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -81,14 +81,6 @@ public class BusquedaPersona extends javax.swing.JDialog {
         btnCancelarBusq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarBusqActionPerformed(evt);
-            }
-        });
-
-        btnActulizarDatosPersona.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnActulizarDatosPersona.setText("Actualizar Persona");
-        btnActulizarDatosPersona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActulizarDatosPersonaActionPerformed(evt);
             }
         });
 
@@ -127,7 +119,7 @@ public class BusquedaPersona extends javax.swing.JDialog {
         jScrollPane1.setViewportView(tblBusquedaPersona);
 
         btnAgregarPersona.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnAgregarPersona.setText("Agregar Persona");
+        btnAgregarPersona.setText("Nueva Persona");
         btnAgregarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarPersonaActionPerformed(evt);
@@ -137,61 +129,67 @@ public class BusquedaPersona extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Busque Persona por Datos");
 
+        btnActualizarPersona.setText("Actualizar Persona");
+        btnActualizarPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarPersonaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(207, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnAgregarPersona)
-                        .addGap(62, 62, 62))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnActulizarDatosPersona)
-                        .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
                         .addComponent(btnCancelarBusq)
-                        .addGap(73, 73, 73))))
+                        .addGap(147, 147, 147)
+                        .addComponent(btnAgrePersCeritifcado)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAgregarPersona)
+                    .addComponent(btnActualizarPersona))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(60, 60, 60)
-                            .addComponent(jLabel1)
-                            .addGap(3, 3, 3)
-                            .addComponent(txtBusquedaDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 549, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addComponent(btnAgrePersCeritifcado)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
+                    .addGap(3, 3, 3)
+                    .addComponent(txtBusquedaDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 301, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(btnAgregarPersona)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                .addContainerGap(99, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnAgregarPersona)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnActualizarPersona)
+                        .addGap(25, 25, 25)))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCancelarBusq)
-                    .addComponent(btnActulizarDatosPersona))
-                .addGap(23, 23, 23))
+                    .addComponent(btnAgrePersCeritifcado))
+                .addGap(48, 48, 48))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(0, 43, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel1)
                         .addComponent(txtBusquedaDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(40, 40, 40)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(19, 19, 19)
-                    .addComponent(btnAgrePersCeritifcado)
-                    .addGap(0, 43, Short.MAX_VALUE)))
+                    .addGap(0, 256, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jPanel1);
-        jPanel1.setBounds(40, 80, 560, 350);
+        jPanel1.setBounds(40, 110, 590, 350);
         jPanel1.getAccessibleContext().setAccessibleName("Busqueda de Certificados  por Bautizado");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -249,30 +247,28 @@ public class BusquedaPersona extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnAgrePersCeritifcadoActionPerformed
 
-    private void btnActulizarDatosPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActulizarDatosPersonaActionPerformed
-
-        numeroSeleccion = sorter.convertRowIndexToModel(tblBusquedaPersona.getSelectedRow());
-        persona = modeloPersona.getPersona(numeroSeleccion);
-        ActualizacionPersona actualizacionPersona = new ActualizacionPersona(this, true, persona, "actualizar");
-        actualizacionPersona.setVisible(true);
-//        actualizacionPersona = persona;
-        //this.parent.agregar(persona, tipoPersona,qPersonas);
-        this.dispose();
-    }//GEN-LAST:event_btnActulizarDatosPersonaActionPerformed
-//ACA SE LLAMA A LA VENTANA ELIMINAR
-    //        numeroSeleccion = sorter.convertRowIndexToModel(tblBusquedaPersona.getSelectedRow());
-//        persona = modeloPersona.getPersona(numeroSeleccion);
-//        ActualizacionPersona actualizacionPersona = new ActualizacionPersona(this, true, persona, "borrar");
-//        actualizacionPersona.setVisible(true);
-////        actualizacionPersona = persona;
-//        //this.parent.agregar(persona, tipoPersona,qPersonas);
-//        this.dispose();        // TODO add your handling code here:
-
     private void btnCancelarBusqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarBusqActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelarBusqActionPerformed
+
+    private void btnActualizarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarPersonaActionPerformed
+           if (tblBusquedaPersona.getSelectedRow() != -1) {
+            numeroSeleccion = sorter.convertRowIndexToModel(tblBusquedaPersona.getSelectedRow());
+            persona = modeloPersona.getPersona(numeroSeleccion);
+            // abrir el formulario alta de persona para editar los datos de persona
+            AltaPersona modificarPersona = new AltaPersona(parent, true, persona);
+            
+            
+            
+            
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Seleccione una fila");
+        }
+    }//GEN-LAST:event_btnActualizarPersonaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btnActulizarDatosPersona;
+    private javax.swing.JButton btnActualizarPersona;
     private javax.swing.JToggleButton btnAgrePersCeritifcado;
     private javax.swing.JButton btnAgregarPersona;
     private javax.swing.JButton btnCancelarBusq;
