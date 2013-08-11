@@ -17,24 +17,45 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="openMenuItem">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+N"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="111"/>
-                <Property name="text" type="java.lang.String" value="Abrir"/>
+                <Property name="text" type="java.lang.String" value="Nuevo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="openMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="saveMenuItem">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+G"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="115"/>
                 <Property name="text" type="java.lang.String" value="Guardar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="saveAsMenuItem">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+P"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="97"/>
-                <Property name="text" type="java.lang.String" value="Guardar como"/>
+                <Property name="text" type="java.lang.String" value="Imprimir"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="saveAsMenuItemActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="exitMenuItem">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+Q"/>
+                </Property>
                 <Property name="mnemonic" type="int" value="120"/>
                 <Property name="text" type="java.lang.String" value="Salir"/>
               </Properties>
@@ -91,12 +112,16 @@
     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
       <Font name="Comic Sans MS" size="14" style="1"/>
     </Property>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1100, 720]"/>
+    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1100, 700]"/>
+      <Dimension value="[1100, 720]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1100, 700]"/>
+      <Dimension value="[1100, 720]"/>
     </Property>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="menuBar" type="java.lang.String" value="menuBar"/>
@@ -113,7 +138,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,79,0,0,4,48"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-79,0,0,4,68"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -128,7 +153,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="10" y="0" width="340" height="60"/>
+          <AbsoluteConstraints x="290" y="10" width="460" height="110"/>
         </Constraint>
       </Constraints>
 
@@ -136,6 +161,9 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnNuevo">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/IconoNuevo.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nuevo"/>
             <Property name="enabled" type="boolean" value="false"/>
             <Property name="focusable" type="boolean" value="false"/>
@@ -149,6 +177,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnGuardar">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/IconoGuardar.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Guardar"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -162,7 +193,7 @@
         <Component class="javax.swing.JButton" name="btnImprimir">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/2.jpg"/>
+              <Image iconType="3" name="/images/IconoImprimir.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Imprimir"/>
             <Property name="enabled" type="boolean" value="false"/>
@@ -177,6 +208,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnCancelar">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/IconoLimpiar.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Limpiar"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
@@ -189,6 +223,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnBuscarCertificado">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/IconoBuscar.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Buscar "/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="opaque" type="boolean" value="false"/>
@@ -200,885 +237,868 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+    <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
-        <Property name="horizontalScrollBarPolicy" type="int" value="32"/>
-        <Property name="verticalScrollBarPolicy" type="int" value="22"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Datos - Certificado de Bautismo">
+              <Font PropertyName="font" name="Calibri" size="24" style="1"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="autoscrolls" type="boolean" value="true"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Trebuchet MS" size="14" style="1"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[600, 550]"/>
+        </Property>
         <Property name="opaque" type="boolean" value="false"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[580, 600]"/>
+        </Property>
       </Properties>
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
+          <ComponentRef name="Form"/>
+        </Property>
+      </AccessibilityProperties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="60" width="1060" height="510"/>
+          <AbsoluteConstraints x="10" y="120" width="1060" height="540"/>
         </Constraint>
       </Constraints>
 
-      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel18" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                                  <Component id="cmbCiudad" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                  <Component id="txtNombPadre" min="-2" pref="223" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtMadre" min="-2" pref="223" max="-2" attributes="0"/>
+                                      <Component id="txtDomPadres" min="-2" pref="223" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnAgregarPadreCertficado" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="btnAgregarMadreCertficado" min="-2" pref="130" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtNombMadrina" pref="212" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel12" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="txtNombPadrino" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnAgregarPadrinoCertficado" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAgregarMadrinaCertficado" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel6" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="jLabel17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace pref="30" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="txtNombNiño" alignment="0" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="txtFechNacimNiño" min="-2" pref="110" max="-2" attributes="0"/>
+                                                  <EmptySpace pref="56" max="32767" attributes="0"/>
+                                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="txtDNINiño" min="-2" pref="139" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="txtLugarNacNiño" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="txtNombreParroquia" min="-2" pref="326" max="-2" attributes="0"/>
+                                              <Component id="txtCura" min="-2" pref="326" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="dtchFechaBautismo" min="-2" pref="232" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="txtCiudadParroquia" min="-2" pref="328" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel14" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          <Component id="txtlibro" min="-2" pref="48" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jLabel16" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="txtPartida" min="-2" pref="56" max="-2" attributes="0"/>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Component id="jLabel15" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                          <Component id="txtFolio" min="-2" pref="48" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  <Component id="btnAgregarNiñoCertficado" min="-2" pref="139" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel21" min="-2" pref="193" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel22" min="-2" pref="193" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="291" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jSeparator2" pref="950" max="32767" attributes="0"/>
+                              <Component id="jSeparator4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel20" alignment="0" min="-2" pref="193" max="-2" attributes="0"/>
+                              <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jLabel7" min="-2" pref="94" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                  <Component id="cmbProvincia" min="-2" pref="220" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtNombreParroquia" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCura" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <Component id="dtchFechaBautismo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="2" attributes="0">
+                              <Component id="jLabel19" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCiudadParroquia" alignment="2" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="44" pref="44" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="2" attributes="0">
+                              <Component id="jLabel14" alignment="2" min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="txtlibro" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel16" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtPartida" alignment="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel15" alignment="2" min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="txtFolio" alignment="2" min="-2" pref="23" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                  <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jLabel3" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombNiño" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAgregarNiñoCertficado" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jLabel6" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtFechNacimNiño" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDNINiño" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel8" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jLabel17" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtLugarNacNiño" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jLabel21" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel22" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jLabel2" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombPadre" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAgregarPadreCertficado" alignment="2" min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="jLabel12" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombPadrino" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAgregarPadrinoCertficado" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jLabel4" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtMadre" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAgregarMadreCertficado" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel13" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtNombMadrina" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAgregarMadrinaCertficado" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jLabel11" alignment="2" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtDomPadres" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="2" attributes="0">
+                      <Component id="jLabel18" alignment="2" min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="cmbCiudad" alignment="2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cmbProvincia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Datos - Certificado de Bautismo">
-                  <Font PropertyName="font" name="Trebuchet MS" size="14" style="1"/>
-                </TitledBorder>
-              </Border>
-            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Trebuchet MS" size="14" style="1"/>
             </Property>
-            <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[600, 550]"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="false"/>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[580, 600]"/>
+            <Property name="text" type="java.lang.String" value="Nombre del Bautizado:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNombNi&#xf1;o">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
             </Property>
           </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
-              <ComponentRef name="Form"/>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombNi&#xf1;oActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
             </Property>
-          </AccessibilityProperties>
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="54" pref="54" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel6" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
-                                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="90" pref="90" max="-2" attributes="0"/>
-                                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="txtFechNacimNiño" min="-2" pref="160" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                      <Component id="txtDNINiño" min="-2" pref="103" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtLugarNacNiño" min="-2" pref="330" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="txtNombPadre" min="-2" pref="223" max="-2" attributes="0"/>
-                                      <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                                      <Component id="btnAgregarPadreCertficado" min="-2" pref="120" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="txtMadre" min="-2" pref="223" max="-2" attributes="0"/>
-                                      <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                                      <Component id="btnAgregarMadreCertficado" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txtDomPadres" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Component id="cmbCiudad" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="46" pref="46" max="-2" attributes="0"/>
-                              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="124" pref="124" max="-2" attributes="0"/>
-                              <Component id="jLabel7" min="-2" pref="70" max="-2" attributes="0"/>
-                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="cmbProvincia" min="-2" pref="220" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                                      <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txtCiudadParroquia" min="-2" pref="328" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="txtNombreParroquia" min="-2" pref="326" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="dtchFechaBautismo" min="-2" pref="141" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel14" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="txtNombMadrina" min="-2" pref="189" max="-2" attributes="0"/>
-                                              <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
-                                              <Component id="btnAgregarMadrinaCertficado" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Component id="txtlibro" min="-2" pref="70" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                                      <Component id="jLabel12" min="-2" pref="110" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txtNombPadrino" min="-2" pref="179" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                      <Component id="btnAgregarPadrinoCertficado" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
-                                      <Component id="txtCura" min="-2" pref="220" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="220" max="-2" attributes="0"/>
-                                      <Component id="jLabel16" min="-2" pref="60" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txtPartida" min="-2" pref="70" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txtNombNiño" min="-2" pref="215" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="btnAgregarNiñoCertficado" min="-2" pref="139" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                                      <Component id="jLabel15" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                      <Component id="txtFolio" min="-2" pref="70" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtNombPadrino" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnAgregarPadrinoCertficado" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtNombreParroquia" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
-                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="txtNombMadrina" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnAgregarMadrinaCertficado" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtCiudadParroquia" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="txtlibro" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                                  <Component id="jLabel14" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="dtchFechaBautismo" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtCura" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel16" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtPartida" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtNombNiño" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btnAgregarNiñoCertficado" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jLabel15" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="txtFolio" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
-                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
-                              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
-                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
-                              <Component id="jLabel18" min="-2" pref="9" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtFechNacimNiño" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtDNINiño" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                              <Component id="txtLugarNacNiño" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtNombPadre" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnAgregarPadreCertficado" min="-2" pref="20" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtMadre" min="-2" max="-2" attributes="0"/>
-                                  <Component id="btnAgregarMadreCertficado" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
-                              <Component id="txtDomPadres" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="16" pref="16" max="-2" attributes="0"/>
-                              <Component id="cmbCiudad" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
-                              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          <Component id="cmbProvincia" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-            </DimensionLayout>
-          </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Nombre del Bautizado:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNombNi&#xf1;o">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombNi&#xf1;oActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Nombre Padre:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNombPadre">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel4">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Nombre Madre:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtMadre">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel6">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Fecha de Nacimiento:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel7">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Provincia:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="cmbProvincia">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="14">
-                    <StringItem index="0" value="Jujuy"/>
-                    <StringItem index="1" value="Salta"/>
-                    <StringItem index="2" value="Tucuman"/>
-                    <StringItem index="3" value="Mendoza"/>
-                    <StringItem index="4" value="La Rioja "/>
-                    <StringItem index="5" value="Bs As"/>
-                    <StringItem index="6" value="Santa Fe"/>
-                    <StringItem index="7" value="Cordoba"/>
-                    <StringItem index="8" value="Corrientes"/>
-                    <StringItem index="9" value="Misiones"/>
-                    <StringItem index="10" value="Entre Rios"/>
-                    <StringItem index="11" value="Tierra del Fuego"/>
-                    <StringItem index="12" value=" "/>
-                    <StringItem index="13" value=" "/>
-                  </StringArray>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel8">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="D.N.I.:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtDNINi&#xf1;o">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Domicilio Padres:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtDomPadres">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDomPadresActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel12">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Nombre Padrino:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel13">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Nombre Madrina:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNombPadrino">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNombMadrina">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombMadrinaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel14">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Libro:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel15">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Folio:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel16">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Partida:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtlibro">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtlibroKeyTyped"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtFolio">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFolioKeyTyped"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtPartida">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPartidaKeyTyped"/>
-              </Events>
-            </Component>
-            <Container class="javax.swing.JPanel" name="jPanel2">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                    <TitledBorder title="Notas Marginales">
-                      <Font PropertyName="font" name="Trebuchet MS" size="14" style="1"/>
-                    </TitledBorder>
-                  </Border>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="11" style="1"/>
-                </Property>
-                <Property name="opaque" type="boolean" value="false"/>
-              </Properties>
-
-              <Layout>
-                <DimensionLayout dim="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" pref="398" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-                <DimensionLayout dim="1">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="77" max="-2" attributes="0"/>
-                          <EmptySpace pref="76" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-                </DimensionLayout>
-              </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="txtareaMarginal">
-                      <Properties>
-                        <Property name="columns" type="int" value="20"/>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Trebuchet MS" size="14" style="1"/>
-                        </Property>
-                        <Property name="rows" type="int" value="5"/>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
-            <Component class="javax.swing.JButton" name="btnAgregarNi&#xf1;oCertficado">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Agregar Bautizado"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarNi&#xf1;oCertficadoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnAgregarPadreCertficado">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Agregar Padre"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarPadreCertficadoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnAgregarMadreCertficado">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="12" style="0"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Agregar Madre"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarMadreCertficadoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtFechNacimNi&#xf1;o">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechNacimNi&#xf1;oActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel9">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Parroquia:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel10">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Pbro./Diacono:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnAgregarPadrinoCertficado">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Agregar Padrino"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarPadrinoCertficadoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnAgregarMadrinaCertficado">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Agregar Madrina"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarMadrinaCertficadoActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel17">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Lugar de Nacimiento:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtLugarNacNi&#xf1;o">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel18">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Ciudad:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="cmbCiudad">
-              <Properties>
-                <Property name="editable" type="boolean" value="true"/>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="128">
-                    <StringItem index="0" value=""/>
-                    <StringItem index="1" value="San Salvador de Jujuy"/>
-                    <StringItem index="2" value="Abra Pampa"/>
-                    <StringItem index="3" value="Abralaite"/>
-                    <StringItem index="4" value="Aguas Calientes"/>
-                    <StringItem index="5" value="Alfarcito"/>
-                    <StringItem index="6" value="Arrayanal"/>
-                    <StringItem index="7" value="Arroyo Colorado"/>
-                    <StringItem index="8" value="B&#xe1;rcena"/>
-                    <StringItem index="9" value="Barrancas"/>
-                    <StringItem index="10" value="Barrios"/>
-                    <StringItem index="11" value="Bermejito"/>
-                    <StringItem index="12" value="Caimancito"/>
-                    <StringItem index="13" value="Calilegua"/>
-                    <StringItem index="14" value="Cangrejillos"/>
-                    <StringItem index="15" value="Carahunco"/>
-                    <StringItem index="16" value="Casabindo"/>
-                    <StringItem index="17" value="Casira"/>
-                    <StringItem index="18" value="Caspal&#xe1;"/>
-                    <StringItem index="19" value="Cat&#xfa;a"/>
-                    <StringItem index="20" value="Centro Forestal"/>
-                    <StringItem index="21" value="Chalic&#xe1;n"/>
-                    <StringItem index="22" value="Cieneguillas"/>
-                    <StringItem index="23" value="Cochinoca"/>
-                    <StringItem index="24" value="Coctaca"/>
-                    <StringItem index="25" value="Colonia San Jos&#xe9;"/>
-                    <StringItem index="26" value="El C&#xf3;ndor"/>
-                    <StringItem index="27" value="Coranzul&#xed;"/>
-                    <StringItem index="28" value="Cusi Cusi"/>
-                    <StringItem index="29" value="Don Emilio"/>
-                    <StringItem index="30" value="El Acheral"/>
-                    <StringItem index="31" value="El Aguilar"/>
-                    <StringItem index="32" value="El Angosto"/>
-                    <StringItem index="33" value="El Bananal"/>
-                    <StringItem index="34" value="El Carmen"/>
-                    <StringItem index="35" value="El Ceibal"/>
-                    <StringItem index="36" value="El Fuerte"/>
-                    <StringItem index="37" value="El Moreno"/>
-                    <StringItem index="38" value="El Piquete"/>
-                    <StringItem index="39" value="El Puesto"/>
-                    <StringItem index="40" value="El Quemado"/>
-                    <StringItem index="41" value="El Talar"/>
-                    <StringItem index="42" value="El Toro"/>
-                    <StringItem index="43" value="Fraile Pintado"/>
-                    <StringItem index="44" value="Guerrero"/>
-                    <StringItem index="45" value="Hip&#xf3;lito Yrigoyen"/>
-                    <StringItem index="46" value="Iturbe"/>
-                    <StringItem index="47" value="Hornaditas"/>
-                    <StringItem index="48" value="Huacalera"/>
-                    <StringItem index="49" value="Huancar"/>
-                    <StringItem index="50" value="Humahuaca"/>
-                    <StringItem index="51" value="Juella"/>
-                    <StringItem index="52" value="La Almona"/>
-                    <StringItem index="53" value="La Ci&#xe9;naga"/>
-                    <StringItem index="54" value="La Esperanza"/>
-                    <StringItem index="55" value="La Intermedia"/>
-                    <StringItem index="56" value="La Manga"/>
-                    <StringItem index="57" value="La Mendieta"/>
-                    <StringItem index="58" value="La Quiaca"/>
-                    <StringItem index="59" value="Lagunillas"/>
-                    <StringItem index="60" value="Le&#xf3;n"/>
-                    <StringItem index="61" value="Libertador General San Mart&#xed;n"/>
-                    <StringItem index="62" value="Libertad"/>
-                    <StringItem index="63" value="Liviara"/>
-                    <StringItem index="64" value="Llulluchayoc"/>
-                    <StringItem index="65" value="Los Lapachos"/>
-                    <StringItem index="66" value="Los Manatiales"/>
-                    <StringItem index="67" value="Loteo Navea"/>
-                    <StringItem index="68" value="Lozano"/>
-                    <StringItem index="69" value="Maimar&#xe1;"/>
-                    <StringItem index="70" value="Mina 9 de Octubre"/>
-                    <StringItem index="71" value="Mina Pirquitas"/>
-                    <StringItem index="72" value="Miraflores"/>
-                    <StringItem index="73" value="Misa Rumi"/>
-                    <StringItem index="74" value="Monterrico"/>
-                    <StringItem index="75" value="Ocloyas"/>
-                    <StringItem index="76" value="Olaroz Chico"/>
-                    <StringItem index="77" value="Oratorio"/>
-                    <StringItem index="78" value="Paicone"/>
-                    <StringItem index="79" value="Palma Sola"/>
-                    <StringItem index="80" value="Palo Blanco"/>
-                    <StringItem index="81" value="Palpal&#xe1;"/>
-                    <StringItem index="82" value="Pampa Planca"/>
-                    <StringItem index="83" value="Pampichuela"/>
-                    <StringItem index="84" value="Parapeti"/>
-                    <StringItem index="85" value="Paulina"/>
-                    <StringItem index="86" value="Perico"/>
-                    <StringItem index="87" value="Piedritas"/>
-                    <StringItem index="88" value="Puente Lavay&#xe9;n"/>
-                    <StringItem index="89" value="Puesto del Marqu&#xe9;s"/>
-                    <StringItem index="90" value="Puesto Sey"/>
-                    <StringItem index="91" value="Puesto Viejo"/>
-                    <StringItem index="92" value="Pumahuasi"/>
-                    <StringItem index="93" value="Purmamarca"/>
-                    <StringItem index="94" value="Rinconada"/>
-                    <StringItem index="95" value="Rinconadilla"/>
-                    <StringItem index="96" value="Rode&#xed;to"/>
-                    <StringItem index="97" value="Rosario del R&#xed;o Grande"/>
-                    <StringItem index="98" value="San Antonio"/>
-                    <StringItem index="99" value="San Pedro"/>
-                    <StringItem index="100" value="San Francisco"/>
-                    <StringItem index="101" value="San Juan de Oros"/>
-                    <StringItem index="102" value="San Lucas"/>
-                    <StringItem index="103" value="San Pedro de Jujuy"/>
-                    <StringItem index="104" value="Santa Ana"/>
-                    <StringItem index="105" value="Santa Catalina"/>
-                    <StringItem index="106" value="Santa Clara"/>
-                    <StringItem index="107" value="Sauzal"/>
-                    <StringItem index="108" value="Susques"/>
-                    <StringItem index="109" value="Tabladitas"/>
-                    <StringItem index="110" value="Tafna"/>
-                    <StringItem index="111" value="Termas de Reyes"/>
-                    <StringItem index="112" value="Tilcara"/>
-                    <StringItem index="113" value="Tiraxi"/>
-                    <StringItem index="114" value="Tres Cruces"/>
-                    <StringItem index="115" value="Tres Pozos"/>
-                    <StringItem index="116" value="Tumbaya"/>
-                    <StringItem index="117" value="Tusaquillas"/>
-                    <StringItem index="118" value="Uqu&#xed;a"/>
-                    <StringItem index="119" value="Valle Colorado"/>
-                    <StringItem index="120" value="Valle Grande"/>
-                    <StringItem index="121" value="Vinalito"/>
-                    <StringItem index="122" value="Volc&#xe1;n"/>
-                    <StringItem index="123" value="Yala"/>
-                    <StringItem index="124" value="Yavi"/>
-                    <StringItem index="125" value="Yavi Chico"/>
-                    <StringItem index="126" value="Yoscaba"/>
-                    <StringItem index="127" value="Yuto"/>
-                  </StringArray>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel19">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Ciudad"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtCura">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="constante"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCuraActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Trebuchet MS" size="14" style="1"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Fecha del dia de bautismo:"/>
-              </Properties>
-            </Component>
-            <Component class="com.toedter.calendar.JDateChooser" name="dtchFechaBautismo">
-              <Properties>
-                <Property name="date" type="java.util.Date" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new Date()" type="code"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtCiudadParroquia">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="constante"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCiudadParroquiaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtNombreParroquia">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-                <Property name="text" type="java.lang.String" value="constante"/>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
+            <Property name="text" type="java.lang.String" value="Nombre Padre:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNombPadre">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nombre Madre:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtMadre">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fecha de Nacimiento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Provincia:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbProvincia">
+          <Properties>
+            <Property name="editable" type="boolean" value="true"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="14">
+                <StringItem index="0" value="Jujuy"/>
+                <StringItem index="1" value="Salta"/>
+                <StringItem index="2" value="Tucuman"/>
+                <StringItem index="3" value="Mendoza"/>
+                <StringItem index="4" value="La Rioja "/>
+                <StringItem index="5" value="Bs As"/>
+                <StringItem index="6" value="Santa Fe"/>
+                <StringItem index="7" value="Cordoba"/>
+                <StringItem index="8" value="Corrientes"/>
+                <StringItem index="9" value="Misiones"/>
+                <StringItem index="10" value="Entre Rios"/>
+                <StringItem index="11" value="Tierra del Fuego"/>
+                <StringItem index="12" value=" "/>
+                <StringItem index="13" value=" "/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="D.N.I.:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDNINi&#xf1;o">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Domicilio Padres:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDomPadres">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDomPadresActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nombre Padrino:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nombre Madrina:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNombPadrino">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombPadrinoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNombMadrina">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombMadrinaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Libro:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Folio:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel16">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Partida:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtlibro">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtlibroKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFolio">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtFolioKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtPartida">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPartidaKeyTyped"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAgregarNi&#xf1;oCertficado">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Agregar Bautizado"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarNi&#xf1;oCertficadoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAgregarPadreCertficado">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Agregar Padre"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarPadreCertficadoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAgregarMadreCertficado">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Agregar Madre"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarMadreCertficadoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFechNacimNi&#xf1;o">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechNacimNi&#xf1;oActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Parroquia:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Pbro./Diacono:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAgregarPadrinoCertficado">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Agregar Padrino"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarPadrinoCertficadoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnAgregarMadrinaCertficado">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Agregar Madrina"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAgregarMadrinaCertficadoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel17">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Lugar de Nacimiento:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtLugarNacNi&#xf1;o">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtLugarNacNi&#xf1;oActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel18">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ciudad:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cmbCiudad">
+          <Properties>
+            <Property name="editable" type="boolean" value="true"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="128">
+                <StringItem index="0" value=""/>
+                <StringItem index="1" value="San Salvador de Jujuy"/>
+                <StringItem index="2" value="Abra Pampa"/>
+                <StringItem index="3" value="Abralaite"/>
+                <StringItem index="4" value="Aguas Calientes"/>
+                <StringItem index="5" value="Alfarcito"/>
+                <StringItem index="6" value="Arrayanal"/>
+                <StringItem index="7" value="Arroyo Colorado"/>
+                <StringItem index="8" value="B&#xe1;rcena"/>
+                <StringItem index="9" value="Barrancas"/>
+                <StringItem index="10" value="Barrios"/>
+                <StringItem index="11" value="Bermejito"/>
+                <StringItem index="12" value="Caimancito"/>
+                <StringItem index="13" value="Calilegua"/>
+                <StringItem index="14" value="Cangrejillos"/>
+                <StringItem index="15" value="Carahunco"/>
+                <StringItem index="16" value="Casabindo"/>
+                <StringItem index="17" value="Casira"/>
+                <StringItem index="18" value="Caspal&#xe1;"/>
+                <StringItem index="19" value="Cat&#xfa;a"/>
+                <StringItem index="20" value="Centro Forestal"/>
+                <StringItem index="21" value="Chalic&#xe1;n"/>
+                <StringItem index="22" value="Cieneguillas"/>
+                <StringItem index="23" value="Cochinoca"/>
+                <StringItem index="24" value="Coctaca"/>
+                <StringItem index="25" value="Colonia San Jos&#xe9;"/>
+                <StringItem index="26" value="El C&#xf3;ndor"/>
+                <StringItem index="27" value="Coranzul&#xed;"/>
+                <StringItem index="28" value="Cusi Cusi"/>
+                <StringItem index="29" value="Don Emilio"/>
+                <StringItem index="30" value="El Acheral"/>
+                <StringItem index="31" value="El Aguilar"/>
+                <StringItem index="32" value="El Angosto"/>
+                <StringItem index="33" value="El Bananal"/>
+                <StringItem index="34" value="El Carmen"/>
+                <StringItem index="35" value="El Ceibal"/>
+                <StringItem index="36" value="El Fuerte"/>
+                <StringItem index="37" value="El Moreno"/>
+                <StringItem index="38" value="El Piquete"/>
+                <StringItem index="39" value="El Puesto"/>
+                <StringItem index="40" value="El Quemado"/>
+                <StringItem index="41" value="El Talar"/>
+                <StringItem index="42" value="El Toro"/>
+                <StringItem index="43" value="Fraile Pintado"/>
+                <StringItem index="44" value="Guerrero"/>
+                <StringItem index="45" value="Hip&#xf3;lito Yrigoyen"/>
+                <StringItem index="46" value="Iturbe"/>
+                <StringItem index="47" value="Hornaditas"/>
+                <StringItem index="48" value="Huacalera"/>
+                <StringItem index="49" value="Huancar"/>
+                <StringItem index="50" value="Humahuaca"/>
+                <StringItem index="51" value="Juella"/>
+                <StringItem index="52" value="La Almona"/>
+                <StringItem index="53" value="La Ci&#xe9;naga"/>
+                <StringItem index="54" value="La Esperanza"/>
+                <StringItem index="55" value="La Intermedia"/>
+                <StringItem index="56" value="La Manga"/>
+                <StringItem index="57" value="La Mendieta"/>
+                <StringItem index="58" value="La Quiaca"/>
+                <StringItem index="59" value="Lagunillas"/>
+                <StringItem index="60" value="Le&#xf3;n"/>
+                <StringItem index="61" value="Libertador General San Mart&#xed;n"/>
+                <StringItem index="62" value="Libertad"/>
+                <StringItem index="63" value="Liviara"/>
+                <StringItem index="64" value="Llulluchayoc"/>
+                <StringItem index="65" value="Los Lapachos"/>
+                <StringItem index="66" value="Los Manatiales"/>
+                <StringItem index="67" value="Loteo Navea"/>
+                <StringItem index="68" value="Lozano"/>
+                <StringItem index="69" value="Maimar&#xe1;"/>
+                <StringItem index="70" value="Mina 9 de Octubre"/>
+                <StringItem index="71" value="Mina Pirquitas"/>
+                <StringItem index="72" value="Miraflores"/>
+                <StringItem index="73" value="Misa Rumi"/>
+                <StringItem index="74" value="Monterrico"/>
+                <StringItem index="75" value="Ocloyas"/>
+                <StringItem index="76" value="Olaroz Chico"/>
+                <StringItem index="77" value="Oratorio"/>
+                <StringItem index="78" value="Paicone"/>
+                <StringItem index="79" value="Palma Sola"/>
+                <StringItem index="80" value="Palo Blanco"/>
+                <StringItem index="81" value="Palpal&#xe1;"/>
+                <StringItem index="82" value="Pampa Planca"/>
+                <StringItem index="83" value="Pampichuela"/>
+                <StringItem index="84" value="Parapeti"/>
+                <StringItem index="85" value="Paulina"/>
+                <StringItem index="86" value="Perico"/>
+                <StringItem index="87" value="Piedritas"/>
+                <StringItem index="88" value="Puente Lavay&#xe9;n"/>
+                <StringItem index="89" value="Puesto del Marqu&#xe9;s"/>
+                <StringItem index="90" value="Puesto Sey"/>
+                <StringItem index="91" value="Puesto Viejo"/>
+                <StringItem index="92" value="Pumahuasi"/>
+                <StringItem index="93" value="Purmamarca"/>
+                <StringItem index="94" value="Rinconada"/>
+                <StringItem index="95" value="Rinconadilla"/>
+                <StringItem index="96" value="Rode&#xed;to"/>
+                <StringItem index="97" value="Rosario del R&#xed;o Grande"/>
+                <StringItem index="98" value="San Antonio"/>
+                <StringItem index="99" value="San Pedro"/>
+                <StringItem index="100" value="San Francisco"/>
+                <StringItem index="101" value="San Juan de Oros"/>
+                <StringItem index="102" value="San Lucas"/>
+                <StringItem index="103" value="San Pedro de Jujuy"/>
+                <StringItem index="104" value="Santa Ana"/>
+                <StringItem index="105" value="Santa Catalina"/>
+                <StringItem index="106" value="Santa Clara"/>
+                <StringItem index="107" value="Sauzal"/>
+                <StringItem index="108" value="Susques"/>
+                <StringItem index="109" value="Tabladitas"/>
+                <StringItem index="110" value="Tafna"/>
+                <StringItem index="111" value="Termas de Reyes"/>
+                <StringItem index="112" value="Tilcara"/>
+                <StringItem index="113" value="Tiraxi"/>
+                <StringItem index="114" value="Tres Cruces"/>
+                <StringItem index="115" value="Tres Pozos"/>
+                <StringItem index="116" value="Tumbaya"/>
+                <StringItem index="117" value="Tusaquillas"/>
+                <StringItem index="118" value="Uqu&#xed;a"/>
+                <StringItem index="119" value="Valle Colorado"/>
+                <StringItem index="120" value="Valle Grande"/>
+                <StringItem index="121" value="Vinalito"/>
+                <StringItem index="122" value="Volc&#xe1;n"/>
+                <StringItem index="123" value="Yala"/>
+                <StringItem index="124" value="Yavi"/>
+                <StringItem index="125" value="Yavi Chico"/>
+                <StringItem index="126" value="Yoscaba"/>
+                <StringItem index="127" value="Yuto"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel19">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ciudad"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCura">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="constante"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCuraActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Trebuchet MS" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fecha del dia de bautismo:"/>
+          </Properties>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="dtchFechaBautismo">
+          <Properties>
+            <Property name="date" type="java.util.Date" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new Date()" type="code"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCiudadParroquia">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="constante"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCiudadParroquiaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNombreParroquia">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="text" type="java.lang.String" value="constante"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel20">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Datos del Ahijado/a"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator2">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel21">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Datos de los Padres"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel22">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Datos de los Padrinos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator3">
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator4">
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/images/spsp2_1.png"/>
+          <Image iconType="3" name="/images/fondo2.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="-6" width="-1" height="880"/>
+          <AbsoluteConstraints x="0" y="0" width="1110" height="670"/>
         </Constraint>
       </Constraints>
     </Component>
