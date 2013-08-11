@@ -197,10 +197,11 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
-        openMenuItem = new javax.swing.JMenuItem();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
-        exitMenuItem = new javax.swing.JMenuItem();
+        mnuItmNuevo = new javax.swing.JMenuItem();
+        mnuItmGuardar = new javax.swing.JMenuItem();
+        mnuItmImprimir = new javax.swing.JMenuItem();
+        mnuItmLimpiar = new javax.swing.JMenuItem();
+        mnuItmSalir = new javax.swing.JMenuItem();
         mnuConfiguracion = new javax.swing.JMenu();
         mnuItemDatoParroquia = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
@@ -292,7 +293,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jToolBar2.setBounds(290, 10, 460, 110);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos - Certificado de Bautismo", 0, 0, new java.awt.Font("Calibri", 1, 24))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos - Certificado de Bautismo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 24))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setAutoscrolls(true);
         jPanel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -458,6 +459,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel17.setText("Lugar de Nacimiento:");
 
+        txtLugarNacNiño.setEditable(false);
         txtLugarNacNiño.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         txtLugarNacNiño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -725,53 +727,73 @@ public class AltaCertificado extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 1110, 670);
 
+        menuBar.setBackground(new java.awt.Color(153, 204, 255));
+
+        fileMenu.setBackground(new java.awt.Color(153, 204, 255));
         fileMenu.setMnemonic('f');
         fileMenu.setText("Archivo");
 
-        openMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_MASK));
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Nuevo");
-        openMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        mnuItmNuevo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_MASK));
+        mnuItmNuevo.setBackground(new java.awt.Color(153, 204, 255));
+        mnuItmNuevo.setMnemonic('o');
+        mnuItmNuevo.setText("Nuevo Certificado");
+        mnuItmNuevo.setEnabled(false);
+        mnuItmNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                openMenuItemActionPerformed(evt);
+                mnuItmNuevoActionPerformed(evt);
             }
         });
-        fileMenu.add(openMenuItem);
+        fileMenu.add(mnuItmNuevo);
 
-        saveMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK));
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Guardar");
-        saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        mnuItmGuardar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK));
+        mnuItmGuardar.setBackground(new java.awt.Color(153, 204, 255));
+        mnuItmGuardar.setMnemonic('s');
+        mnuItmGuardar.setText("Guardar");
+        mnuItmGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveMenuItemActionPerformed(evt);
+                mnuItmGuardarActionPerformed(evt);
             }
         });
-        fileMenu.add(saveMenuItem);
+        fileMenu.add(mnuItmGuardar);
 
-        saveAsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Imprimir");
-        saveAsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        mnuItmImprimir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        mnuItmImprimir.setBackground(new java.awt.Color(153, 204, 255));
+        mnuItmImprimir.setMnemonic('a');
+        mnuItmImprimir.setText("Imprimir");
+        mnuItmImprimir.setEnabled(false);
+        mnuItmImprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveAsMenuItemActionPerformed(evt);
+                mnuItmImprimirActionPerformed(evt);
             }
         });
-        fileMenu.add(saveAsMenuItem);
+        fileMenu.add(mnuItmImprimir);
 
-        exitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
-        exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Salir");
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
+        mnuItmLimpiar.setBackground(new java.awt.Color(153, 204, 255));
+        mnuItmLimpiar.setText("Limpiar ");
+        mnuItmLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
+                mnuItmLimpiarActionPerformed(evt);
             }
         });
-        fileMenu.add(exitMenuItem);
+        fileMenu.add(mnuItmLimpiar);
+
+        mnuItmSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        mnuItmSalir.setBackground(new java.awt.Color(153, 204, 255));
+        mnuItmSalir.setMnemonic('x');
+        mnuItmSalir.setText("Salir");
+        mnuItmSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItmSalirActionPerformed(evt);
+            }
+        });
+        fileMenu.add(mnuItmSalir);
 
         menuBar.add(fileMenu);
 
+        mnuConfiguracion.setBackground(new java.awt.Color(153, 204, 255));
         mnuConfiguracion.setText("Configuracion");
 
+        mnuItemDatoParroquia.setBackground(new java.awt.Color(153, 204, 255));
         mnuItemDatoParroquia.setText("Datos Parroquia");
         mnuItemDatoParroquia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -782,9 +804,11 @@ public class AltaCertificado extends javax.swing.JFrame {
 
         menuBar.add(mnuConfiguracion);
 
+        helpMenu.setBackground(new java.awt.Color(153, 204, 255));
         helpMenu.setMnemonic('h');
         helpMenu.setText("Ayuda");
 
+        contentMenuItem.setBackground(new java.awt.Color(153, 204, 255));
         contentMenuItem.setMnemonic('c');
         contentMenuItem.setText("Acerca");
         contentMenuItem.addActionListener(new java.awt.event.ActionListener() {
@@ -794,6 +818,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         });
         helpMenu.add(contentMenuItem);
 
+        aboutMenuItem.setBackground(new java.awt.Color(153, 204, 255));
         aboutMenuItem.setMnemonic('a');
         aboutMenuItem.setText("Ayuda");
         helpMenu.add(aboutMenuItem);
@@ -805,9 +830,9 @@ public class AltaCertificado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
+    private void mnuItmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmSalirActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_exitMenuItemActionPerformed
+    }//GEN-LAST:event_mnuItmSalirActionPerformed
 
     private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
          new AcercaApp(this, true);
@@ -1008,6 +1033,12 @@ public class AltaCertificado extends javax.swing.JFrame {
         btnImprimir.setEnabled(false);
         btnBuscarCertificado.setEnabled(true);
         
+        //mnuitm
+        mnuItmNuevo.setEnabled(true);
+        mnuItmGuardar.setEnabled(false);
+        mnuItmImprimir.setEnabled(false);
+        
+        
               
     }//GEN-LAST:event_btnCancelarActionPerformed
 
@@ -1026,6 +1057,11 @@ public class AltaCertificado extends javax.swing.JFrame {
              btnImprimir.setEnabled(true);
              btnGuardar.setText("Actualizar");
              btnGuardar.setEnabled(true);
+             
+             //mnuItem
+             mnuItmImprimir.setEnabled(true);
+             mnuItmGuardar.setEnabled(true);
+             mnuItmGuardar.setText("Actualizar");
             
             //llenar todos los campos de con los datosd del certificacdo}
             certificado= bc.getCertificado();
@@ -1069,6 +1105,14 @@ public class AltaCertificado extends javax.swing.JFrame {
        
        btnImprimir.setEnabled(false);
        btnBuscarCertificado.setEnabled(true);
+       
+       //mnuItm
+       mnuItmNuevo.setEnabled(false);
+       mnuItmGuardar.setText("Guardar");
+       mnuItmGuardar.setEnabled(true);
+       mnuItmImprimir.setEnabled(false);
+       
+       
        modificar= false;
     }//GEN-LAST:event_btnNuevoActionPerformed
 
@@ -1101,108 +1145,37 @@ public class AltaCertificado extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLugarNacNiñoActionPerformed
 
-    private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
-        // TODO add your handling code here:
-        // ANAHI ARAMAYO
-        if(modificar==false){
-         certificado = new Certificado();
-        }
-        CertificadoDAO certificadoDAO = new CertificadoDAOImp();
+    private void mnuItmGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmGuardarActionPerformed
+        btnGuardarActionPerformed(evt);
+        
+    }//GEN-LAST:event_mnuItmGuardarActionPerformed
 
-//        certificado.setNombreParroquia(txtNombParroquia.getText());
-//        certificado.setDomicilioParooquia(txtCiudadParroquia.getText());
-       
-        try {
-            
-//            certificado.setIdCura(cura.getIdPersona());
-            certificado.setIdAhijado(ahijado.getIdPersona());
-            certificado.setIdTutor(tutor.getIdPersona());
-            certificado.setIdTutora(tutora.getIdPersona());
-            certificado.setIdMadrina(madrina.getIdPersona());
-            certificado.setIdPadrino(padrino.getIdPersona());
-            certificado.setNombreCura(p.getApellidoCura()+" "+p.getNombreCura());
-            
-              certificado.setDomicilioPadres(txtDomPadres.getText());
-        certificado.setCiudad(cmbCiudad.getSelectedItem().toString());
-        certificado.setProvincia(cmbProvincia.getSelectedItem().toString());
-        certificado.setFechaBautizmo(dtchFechaBautismo.getDate());
-        certificado.setLibro(txtlibro.getText());
-        certificado.setPartida(txtPartida.getText());
-        certificado.setFolio(txtFolio.getText());
-//        certificado.setNotasMarginales(txtareaMarginal.getText());
+    private void mnuItmNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmNuevoActionPerformed
 
-//        if (validacion()) {
-//            JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");
-//        } else {
-            // se creo un certificado nuevo
-            if(modificar==false){
-            certificadoDAO.insert(certificado);
-            }else{
-                // se cargo un certificado para actualizarlo
-                certificadoDAO.update(certificado);
-            }
-            JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
-            activarBotonNuevo(false);
-//        }
+        btnNuevoActionPerformed(evt);
        
+//       //mnuItm 
+//       mnuItmNuevo.setEnabled(false);
+//       mnuItmGuardar.setEnabled(true);
+//       mnuItmImprimir.setEnabled(true);
+//       mnuItmGuardar.setText("Guardar");
+//       
+//       
+       
+       modificar= false;
         
         
-        } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Debes completar todos los campos");
-        }
-      
+    }//GEN-LAST:event_mnuItmNuevoActionPerformed
 
-                
-        
-        
-        
-        
-    }//GEN-LAST:event_saveMenuItemActionPerformed
+    private void mnuItmImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmImprimirActionPerformed
+    btnImprimirActionPerformed(evt);
+    }//GEN-LAST:event_mnuItmImprimirActionPerformed
 
-    private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
-        // TODO add your handling code here:
-        // ANAHI ARAMAYO: tecnomati.co Cooperativa Informática de Jujuy
-    }//GEN-LAST:event_openMenuItemActionPerformed
+    private void mnuItmLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmLimpiarActionPerformed
 
-    private void saveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemActionPerformed
+        btnCancelarActionPerformed(evt);
        
-        //        parametros.put("fechaInicio",FechaUtil.getDateDD_MM_AAAA(fechaInicio.getDate()));
-        //        parametros.put("fechaFin",FechaUtil.getDateDD_MM_AAAA(fechaFin.getDate()));
-       
-//       String logotipo="/images/iconTecnomatica.png";
-      
-       //parametros de entrada
-       Map parametros = new HashMap();
-       String logotipo="/images/1.jpg";
-//       parametros.clear();
-//       parametros.put("logoParroquia", this.getClass().getResourceAsStream(logotipo));
-       
-       
-        ReporteCertificadoJRDataSource dataSource = new ReporteCertificadoJRDataSource();
-        List<Certificado> lista = new ArrayList<Certificado>();
-        lista.add(certificado);
-        dataSource.setListCertificado(lista);
-        JasperPrint jPrintt;
-        JDialog reporte = new JDialog();
-        reporte.setSize(900, 700);
-        reporte.setLocationRelativeTo(null);
-        reporte.setModal(true);
-        reporte.setTitle("INFORME");
-        //  JasperReport lreporte = (JasperReport) JRLoader.loadObject("reportes/reporteAsistencia.jasper");
-        try {
-            // jPrint = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reportes/reporteAsistencia.jasper"),null, new JRBeanCollectionDataSource(listaAs));
-            jPrintt = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reporte/CertificadoParroquia.jasper"),(Map)parametros, dataSource);
-
-            JRViewer jv = new JRViewer(jPrintt);
-            reporte.getContentPane().add(jv);
-            reporte.setVisible(true);
-
-        } catch (JRException ex) {
-///            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_saveAsMenuItemActionPerformed
+    }//GEN-LAST:event_mnuItmLimpiarActionPerformed
   public void consumirLetras(java.awt.event.KeyEvent evt){
           // conusmir los caracteres del legajo excepto los numeros
         char caracter = evt.getKeyChar();
@@ -1219,6 +1192,10 @@ public class AltaCertificado extends javax.swing.JFrame {
      btnImprimir.setEnabled(!b);
      btnNuevo.setEnabled(!b);
      
+     // mnuItm tambien hacer lo mismo
+     mnuItmGuardar.setEnabled(b);
+     mnuItmImprimir.setEnabled(b);
+     mnuItmNuevo.setEnabled(b);
      
  }
  public void limpiarVentana(){
@@ -1263,7 +1240,6 @@ public class AltaCertificado extends javax.swing.JFrame {
     private javax.swing.JComboBox cmbProvincia;
     private javax.swing.JMenuItem contentMenuItem;
     private com.toedter.calendar.JDateChooser dtchFechaBautismo;
-    private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
@@ -1298,9 +1274,11 @@ public class AltaCertificado extends javax.swing.JFrame {
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu mnuConfiguracion;
     private javax.swing.JMenuItem mnuItemDatoParroquia;
-    private javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
-    private javax.swing.JMenuItem saveMenuItem;
+    private javax.swing.JMenuItem mnuItmGuardar;
+    private javax.swing.JMenuItem mnuItmImprimir;
+    private javax.swing.JMenuItem mnuItmLimpiar;
+    private javax.swing.JMenuItem mnuItmNuevo;
+    private javax.swing.JMenuItem mnuItmSalir;
     private javax.swing.JTextField txtCiudadParroquia;
     private javax.swing.JTextField txtCura;
     private javax.swing.JTextField txtDNINiño;
