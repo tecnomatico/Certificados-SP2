@@ -293,7 +293,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jToolBar2.setBounds(290, 10, 460, 110);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos - Certificado de Bautismo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 24))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos - Certificado de Bautismo", 0, 0, new java.awt.Font("Calibri", 1, 24))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setAutoscrolls(true);
         jPanel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
