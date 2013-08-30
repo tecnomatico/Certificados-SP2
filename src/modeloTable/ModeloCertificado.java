@@ -2,11 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package modeloTable;
 
 import dao.imp.CertificadoDAOImp;
 import dao.imp.ParroquiaDaoImp;
 import dao.imp.PersonaDAOImp;
+import dominio.Certificado;
+import dominio.Parroquia;
+import dominio.Persona;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.table.AbstractTableModel;
@@ -21,7 +24,7 @@ public class ModeloCertificado extends AbstractTableModel{
 
     CertificadoDAOImp certificadoDAO = new CertificadoDAOImp();
     ArrayList<Certificado> listaCertificado = new ArrayList<Certificado>();
-    ArrayList<Persona> listaCertificadosPersonas = new ArrayList<Persona>();
+//    ArrayList<Persona> listaPersonas = new ArrayList<Persona>();
 //    Persona cura = new Persona();
     Persona ahijado = new Persona();
     Persona tutor = new Persona();
@@ -64,7 +67,7 @@ public class ModeloCertificado extends AbstractTableModel{
             case 1:objeto = FechaUtil.getDateDD_MM_AAAA(certificado.getFechaBautizmo());break;
             // problemas para cargar varios curas
             case 2:objeto = certificado.getNombreCura();break; 
-            case 3:objeto = ahijado.getApellido()+" "+ahijado.getNombre();
+            case 3:objeto = ahijado.getApellido()+" "+ahijado.getNombre();break;
             case 4:objeto = tutor.getApellido()+" "+tutor.getNombre();break;                                                         
         }      
         return objeto;

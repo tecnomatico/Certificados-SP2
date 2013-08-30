@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 04/08/2013 12:46:08 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 30/08/2013 10:17:23 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="modelo.Parroquia" table="parroquia" catalog="parroquia">
+    <class name="dominio.Parroquia" table="parroquia" catalog="parroquia">
         <id name="idParroquia" type="java.lang.Integer">
             <column name="idParroquia" />
             <generator class="identity" />

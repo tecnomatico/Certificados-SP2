@@ -5,7 +5,7 @@
 package dao;
 
 import java.util.ArrayList;
-import modelo.Certificado;
+import dominio.Certificado;
 
 /**
  *

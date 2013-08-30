@@ -7,7 +7,7 @@ package dao.imp;
 import dao.CertificadoDAO;
 import hibernate.HibernateUtil;
 import java.util.ArrayList;
-import modelo.Certificado;
+import dominio.Certificado;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;

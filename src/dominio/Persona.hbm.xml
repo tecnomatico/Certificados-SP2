@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 04/08/2013 12:46:08 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 30/08/2013 10:17:23 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="modelo.Persona" table="persona" catalog="parroquia">
+    <class name="dominio.Persona" table="persona" catalog="parroquia">
         <id name="idPersona" type="java.lang.Integer">
             <column name="idPersona" />
             <generator class="identity" />
@@ -12,25 +12,25 @@
             <column name="dni" length="10" not-null="true" />
         </property>
         <property name="apellido" type="string">
-            <column name="apellido" length="45" />
+            <column name="apellido" length="45" not-null="true" />
         </property>
         <property name="nombre" type="string">
-            <column name="nombre" length="45" />
+            <column name="nombre" length="45" not-null="true" />
         </property>
         <property name="sexo" type="string">
             <column name="sexo" length="12" not-null="true" />
         </property>
         <property name="fechaNaciemiento" type="date">
-            <column name="fechaNaciemiento" length="10" />
+            <column name="fechaNaciemiento" length="10" not-null="true" />
         </property>
         <property name="lugarNacimiento" type="string">
-            <column name="lugarNacimiento" length="45" />
+            <column name="lugarNacimiento" length="45" not-null="true" />
         </property>
         <property name="provNacimiento" type="string">
-            <column name="provNacimiento" length="45" />
+            <column name="provNacimiento" length="45" not-null="true" />
         </property>
         <property name="nacionalidad" type="string">
-            <column name="nacionalidad" length="20" />
+            <column name="nacionalidad" length="20" not-null="true" />
         </property>
         <property name="hijoDe" type="string">
             <column name="hijoDe" length="45" />

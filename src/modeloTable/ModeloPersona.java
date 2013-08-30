@@ -2,10 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package modelo;
+package modeloTable;
 
 import dao.PersonaDAO;
 import dao.imp.PersonaDAOImp;
+import dominio.Persona;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JComboBox;

@@ -1,5 +1,5 @@
-package modelo;
-// Generated 04/08/2013 12:46:07 by Hibernate Tools 3.2.1.GA
+package dominio;
+// Generated 30/08/2013 10:17:22 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -30,9 +30,15 @@ public class Persona  implements java.io.Serializable {
     }
 
 	
-    public Persona(String dni, String sexo) {
+    public Persona(String dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad) {
         this.dni = dni;
+        this.apellido = apellido;
+        this.nombre = nombre;
         this.sexo = sexo;
+        this.fechaNaciemiento = fechaNaciemiento;
+        this.lugarNacimiento = lugarNacimiento;
+        this.provNacimiento = provNacimiento;
+        this.nacionalidad = nacionalidad;
     }
     public Persona(String dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad, String hijoDe, String domicilio, String barrio, String telefonoFijo, String telefonoCelular, String tipoDeHijo) {
        this.dni = dni;

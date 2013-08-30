@@ -6,8 +6,8 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/parroquia?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
-    <mapping resource="modelo/Persona.hbm.xml"/>
-    <mapping resource="modelo/Certificado.hbm.xml"/>
-    <mapping resource="modelo/Parroquia.hbm.xml"/>
+    <mapping resource="dominio/Certificado.hbm.xml"/>
+    <mapping resource="dominio/Parroquia.hbm.xml"/>
+    <mapping resource="dominio/Persona.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import modelo.Persona;
+import dominio.Persona;
 
 /**
  *

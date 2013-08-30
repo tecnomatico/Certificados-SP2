@@ -7,7 +7,7 @@ package dao.imp;
 import dao.PersonaDAO;
 import hibernate.HibernateUtil;
 import java.util.ArrayList;
-import modelo.Persona;
+import dominio.Persona;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Order;

@@ -1,5 +1,5 @@
-package modelo;
-// Generated 04/08/2013 12:46:07 by Hibernate Tools 3.2.1.GA
+package dominio;
+// Generated 30/08/2013 10:17:22 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -11,11 +11,11 @@ public class Certificado  implements java.io.Serializable {
 
 
      private Integer numeroCertificado;
-     private Integer idAhijado;
-     private Integer idTutora;
-     private Integer idTutor;
-     private Integer idMadrina;
-     private Integer idPadrino;
+     private int idAhijado;
+     private int idTutora;
+     private int idTutor;
+     private int idMadrina;
+     private int idPadrino;
      private String nombreCura;
      private String libro;
      private String folio;
@@ -29,7 +29,7 @@ public class Certificado  implements java.io.Serializable {
     public Certificado() {
     }
 
-    public Certificado(Integer idAhijado, Integer idTutora, Integer idTutor, Integer idMadrina, Integer idPadrino, String nombreCura, String libro, String folio, String partida, Date fechaBautizmo, String domicilioPadres, String notasMarginales, String ciudad, String provincia) {
+    public Certificado(int idAhijado, int idTutora, int idTutor, int idMadrina, int idPadrino, String nombreCura, String libro, String folio, String partida, Date fechaBautizmo, String domicilioPadres, String notasMarginales, String ciudad, String provincia) {
        this.idAhijado = idAhijado;
        this.idTutora = idTutora;
        this.idTutor = idTutor;
@@ -53,39 +53,39 @@ public class Certificado  implements java.io.Serializable {
     public void setNumeroCertificado(Integer numeroCertificado) {
         this.numeroCertificado = numeroCertificado;
     }
-    public Integer getIdAhijado() {
+    public int getIdAhijado() {
         return this.idAhijado;
     }
     
-    public void setIdAhijado(Integer idAhijado) {
+    public void setIdAhijado(int idAhijado) {
         this.idAhijado = idAhijado;
     }
-    public Integer getIdTutora() {
+    public int getIdTutora() {
         return this.idTutora;
     }
     
-    public void setIdTutora(Integer idTutora) {
+    public void setIdTutora(int idTutora) {
         this.idTutora = idTutora;
     }
-    public Integer getIdTutor() {
+    public int getIdTutor() {
         return this.idTutor;
     }
     
-    public void setIdTutor(Integer idTutor) {
+    public void setIdTutor(int idTutor) {
         this.idTutor = idTutor;
     }
-    public Integer getIdMadrina() {
+    public int getIdMadrina() {
         return this.idMadrina;
     }
     
-    public void setIdMadrina(Integer idMadrina) {
+    public void setIdMadrina(int idMadrina) {
         this.idMadrina = idMadrina;
     }
-    public Integer getIdPadrino() {
+    public int getIdPadrino() {
         return this.idPadrino;
     }
     
-    public void setIdPadrino(Integer idPadrino) {
+    public void setIdPadrino(int idPadrino) {
         this.idPadrino = idPadrino;
     }
     public String getNombreCura() {

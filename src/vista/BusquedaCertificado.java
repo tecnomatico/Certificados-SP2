@@ -11,10 +11,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
-import modelo.Certificado;
-import modelo.ModeloCertificado;
-import modelo.ModeloPersona;
-import modelo.Persona;
+import dominio.Certificado;
+import modeloTable.ModeloCertificado;
+import modeloTable.ModeloPersona;
+import dominio.Persona;
 
 
 /**
@@ -53,6 +53,7 @@ public class BusquedaCertificado extends javax.swing.JDialog {
         //q traigo del anterior
         this.qPersonas = quePersona;
         setLocationRelativeTo(parent);
+        setVisible(true);
     }
 
     /**

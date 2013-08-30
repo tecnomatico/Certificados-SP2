@@ -1,5 +1,5 @@
-package modelo;
-// Generated 04/08/2013 12:46:07 by Hibernate Tools 3.2.1.GA
+package dominio;
+// Generated 30/08/2013 10:17:22 by Hibernate Tools 3.2.1.GA
 
 
 

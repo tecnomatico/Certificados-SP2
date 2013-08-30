@@ -11,9 +11,9 @@ import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRField;
 import java.util.List;
-import modelo.Certificado;
-import modelo.Parroquia;
-import modelo.Persona;
+import dominio.Certificado;
+import dominio.Parroquia;
+import dominio.Persona;
 import util.FechaUtil;
 import vista.Configuaracion;
 

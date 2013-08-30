@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
-import modelo.ModeloPersona;
-import modelo.Persona;
+import modeloTable.ModeloPersona;
+import dominio.Persona;
 
 /**
  *
@@ -18,33 +18,40 @@ import modelo.Persona;
  */
 public class BusquedaPersona extends javax.swing.JDialog {
 
-    Persona persona;
+    private Persona persona;// variable auxiliar donde se almacenara la persona buscada
     ModeloPersona modeloPersona = new ModeloPersona();
     private  TableRowSorter sorter;
     int numeroSeleccion;
     AltaCertificado parent;
     private final JTextField tipoPersona;
     private final String qPersonas;
+    private boolean agregado = false;
 
+    
+    
+    
     /**
      * Creates new form BusquedaPersona
      */
-    public BusquedaPersona(Persona p, AltaCertificado parent, boolean modal, JTextField tipoPersona, String quePersona) {
+    public BusquedaPersona( AltaCertificado parent, boolean modal, JTextField tipoPersona, String quePersona) {
         super(parent, modal);
         initComponents();
-        //PersonaDAO personaDAO = new PersonaDAOImp();
+        
+        // inicializo la tabla busqueda
         sorter = new TableRowSorter(modeloPersona);
         tblBusquedaPersona.setModel(modeloPersona);
-        persona = p;
+       
         //p.setNombre("DArio");
         this.parent = parent;//Estoy creando una variable global, le asigno el parent 
         this.tipoPersona = tipoPersona;//Estoy creando una variable global, le asigno el parent 
         //q traigo del anterior
         this.qPersonas = quePersona;
         setLocationRelativeTo(parent);
-//        this.setVisible(true);
+        this.setVisible(true);
     }
 
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -233,16 +240,17 @@ public class BusquedaPersona extends javax.swing.JDialog {
         at.setLocationRelativeTo(this);
         // reflejar los cambios en la tabla
         this.dispose();
-        BusquedaPersona bp = new BusquedaPersona(persona, parent, rootPaneCheckingEnabled, tipoPersona, qPersonas);
-        bp.setVisible(true);
+        BusquedaPersona bp = new BusquedaPersona( parent, rootPaneCheckingEnabled, tipoPersona, qPersonas);
+        
         
     }//GEN-LAST:event_btnAgregarPersonaActionPerformed
 
     private void btnAgrePersCeritifcadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgrePersCeritifcadoActionPerformed
+        setAgregado(true);
         if (tblBusquedaPersona.getSelectedRow() != -1) {
             numeroSeleccion = sorter.convertRowIndexToModel(tblBusquedaPersona.getSelectedRow());
             persona = modeloPersona.getPersona(numeroSeleccion);
-            this.parent.agregar(persona, tipoPersona, qPersonas);
+//            this.parent.agregar(persona, tipoPersona, qPersonas);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Seleccione una fila");
@@ -250,6 +258,7 @@ public class BusquedaPersona extends javax.swing.JDialog {
     }//GEN-LAST:event_btnAgrePersCeritifcadoActionPerformed
 
     private void btnCancelarBusqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarBusqActionPerformed
+        setAgregado(false);
         this.dispose();
     }//GEN-LAST:event_btnCancelarBusqActionPerformed
 
@@ -261,8 +270,8 @@ public class BusquedaPersona extends javax.swing.JDialog {
             AltaPersona modificarPersona = new AltaPersona(parent, true, persona);
             // actulizar la tabla con los datos modificados
             this.dispose();
-           BusquedaPersona bp =  new BusquedaPersona(persona, parent, rootPaneCheckingEnabled, tipoPersona, qPersonas);
-           bp.setVisible(true);
+           BusquedaPersona bp =  new BusquedaPersona( parent, rootPaneCheckingEnabled, tipoPersona, qPersonas);
+          
         } else {
             JOptionPane.showMessageDialog(this, "Seleccione una fila");
         }
@@ -283,4 +292,16 @@ public class BusquedaPersona extends javax.swing.JDialog {
     private javax.swing.JTable tblBusquedaPersona;
     private javax.swing.JTextField txtBusquedaDNI;
     // End of variables declaration//GEN-END:variables
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public boolean isAgregado() {
+        return agregado;
+    }
+
+    public void setAgregado(boolean agregado) {
+        this.agregado = agregado;
+    }
 }

@@ -4,7 +4,7 @@
  */
 package dao;
 
-import modelo.Parroquia;
+import dominio.Parroquia;
 
 /**
  *

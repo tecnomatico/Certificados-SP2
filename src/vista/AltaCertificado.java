@@ -21,9 +21,9 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
-import modelo.Certificado;
-import modelo.Parroquia;
-import modelo.Persona;
+import dominio.Certificado;
+import dominio.Parroquia;
+import dominio.Persona;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -34,14 +34,12 @@ import reporte.ReporteCertificadoJRDataSource;
 import util.FechaUtil;
 import util.mensajero;
 
-
-
 /**
  *
  * @author AnahiAramayo
  */
 public class AltaCertificado extends javax.swing.JFrame {
-    private Persona pCura;
+
     private Persona pAhijado;
     private Persona pTutor;
     private Persona pTutora;
@@ -49,86 +47,42 @@ public class AltaCertificado extends javax.swing.JFrame {
     private Persona pMadrina;
     private String qPersona;
     private Integer idPersona;
-    Persona cura;
-    Persona tutor;
-    Persona tutora;
-    Persona padrino;
-    Persona madrina;
-    Persona ahijado;
-    PersonaDAO personaDAO =new PersonaDAOImp();
-    ArrayList<Persona> listDeCuras = new ArrayList<Persona>();
-    private Certificado certificado= null;
-    
+    PersonaDAO personaDAO = new PersonaDAOImp();
+    private Certificado certificado = null;
     private boolean modificar;
     Parroquia p = null;
-    /**PE
-     * Creates new form Inicio
+
+    /**
+     * PE Creates new form Inicio
      */
     public AltaCertificado() {
         initComponents();
-       
+
         // La primera vez que use el sistema debe cargar los datos de confiugarcion obligatoriamente
         try {
-         List<Parroquia>  lista = new ParroquiaDaoImp().listarParroquia();
-           if (lista.isEmpty()) {
-            Configuaracion configur =  new Configuaracion(this, true);
-            // si cargo todo bien entonces debe mostrarse el formulario del certificado
-                 if (!configur.isOperacionOk()) {
+            List<Parroquia> lista = new ParroquiaDaoImp().listarParroquia();
+            if (lista.isEmpty()) {
+                Configuaracion configur = new Configuaracion(this, true);
+                // si cargo todo bien entonces debe mostrarse el formulario del certificado
+                if (!configur.isOperacionOk()) {
                     System.exit(0);
-                 }
-           }else{
-            // ya se configuro los datos , entonces inicio con el formulario de certifacdo
-            p = lista.get(0);
-//            new ParroquiaDaoImp().deleteParroquia(p);
+                }
+            } else {
+                // ya se configuro los datos , entonces inicio con el formulario de certifacdo
+                p = lista.get(0);
             }
-        
-             limpiarVentana();
+
+            limpiarVentana();
 
         } catch (org.hibernate.exception.JDBCConnectionException e) {
             // no se pudo abrir la bd
             mensajero.mensajeError(this, "No se puede Conectar a la BD, por favor active servidor y vuelva a ejecutar la aplicacion");
             System.exit(0);
         }
-        
-       
+
+
     }
-    
-    
-    
-    public void agregar(Persona p,JTextField tipoPersona,String qPersona){
-        this.qPersona = qPersona;
-        //this.idPersona = idPerso;
-        tipoPersona.setText(p.getApellido()+", "+p.getNombre());
-        
-        if ("cura".equals(qPersona)) {
-            cura = p;
-            this.pCura = p;
-        } else {
-            if ("tutor".equals(qPersona)) {
-                tutor = p;
-                this.pTutor = p;
-            } else {
-                if ("tutora".equals(qPersona)) {
-                    tutora= p;
-                    this.pTutora = p;
-                } else {
-                    if ("padrino".equals(qPersona)) {
-                        padrino=p;
-                        this.pPadrino = p;
-                    } else {
-                        if ("madrina".equals(qPersona)) {
-                            madrina=p;
-                            this.pMadrina = p;
-                        } else {
-                            ahijado=p;
-                            this.pAhijado = p;
-                        }
-                    }
-                }
-            }
-        }
-        p = null;
-    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -151,7 +105,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtNombPadre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtMadre = new javax.swing.JTextField();
+        txtNombMadre = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         cmbProvincia = new javax.swing.JComboBox();
@@ -213,9 +167,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Certificado");
         setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        setMaximumSize(new java.awt.Dimension(1100, 720));
         setMinimumSize(new java.awt.Dimension(1100, 720));
-        setPreferredSize(new java.awt.Dimension(1100, 720));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -321,8 +273,8 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel4.setText("Nombre Madre:");
 
-        txtMadre.setEditable(false);
-        txtMadre.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        txtNombMadre.setEditable(false);
+        txtNombMadre.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel6.setText("Fecha de Nacimiento:");
@@ -533,7 +485,7 @@ public class AltaCertificado extends javax.swing.JFrame {
                                     .addComponent(jLabel11))
                                 .addGap(41, 41, 41)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMadre, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtNombMadre, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtDomPadres, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -699,7 +651,7 @@ public class AltaCertificado extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jLabel4)
-                    .addComponent(txtMadre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNombMadre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAgregarMadreCertficado)
                     .addComponent(jLabel13)
                     .addComponent(txtNombMadrina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -835,81 +787,77 @@ public class AltaCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuItmSalirActionPerformed
 
     private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
-         new AcercaApp(this, true);
-        
+        new AcercaApp(this, true);
+
     }//GEN-LAST:event_contentMenuItemActionPerformed
 
     private void btnAgregarNiñoCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarNiñoCertficadoActionPerformed
+        //le doy formato a la fecha 
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        //llamo a la ventana busqueda
 
-        BusquedaPersona bp = new BusquedaPersona(pAhijado,this,true,txtNombNiño,"ahijado");
-        bp.setVisible(true);
-        //txtFechNacimNiño.setText(sdf.format(p.getFechaNaciemiento()));
-        bp.setLocationRelativeTo(this);
+        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombNiño, "ahijado");
+
+        // agrego la persona buscada al certificado
         
-        try {
+        if (bp.isAgregado()) {
+            pAhijado = bp.getPersona();
+
             txtFechNacimNiño.setText(sdf.format(pAhijado.getFechaNaciemiento()));
             txtDNINiño.setText(pAhijado.getDni());
-            //String fecha = sdf.format(p.getFechaNaciemiento());
             txtLugarNacNiño.setText(pAhijado.getLugarNacimiento());
-            txtDNINiño.setText(pAhijado.getDni());            
-        } catch (NullPointerException e) {
+            txtNombNiño.setText(pAhijado.getApellido() + " " + pAhijado.getNombre());
         }
-        
-        
-//        txtNombNiño.setText(p.getApellido()+", " +p.getNombre());
-//        txtNombPadre.setText(String.valueOf(p.getIdPersona()));
     }//GEN-LAST:event_btnAgregarNiñoCertficadoActionPerformed
 
     private void btnAgregarPadreCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPadreCertficadoActionPerformed
-        Persona p = new Persona();
-        BusquedaPersona bp = new BusquedaPersona(pTutor,this,true,txtNombPadre,"tutor");
-        bp.setVisible(true);
-        bp.setLocationRelativeTo(this);
+
+        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombPadre, "tutor");
+
+
+
+        if (bp.isAgregado()) {
+            pTutor = bp.getPersona();
+            txtNombPadre.setText(pTutor.getApellido() + " " + pTutor.getNombre());
+        }
+
     }//GEN-LAST:event_btnAgregarPadreCertficadoActionPerformed
 
-    public boolean validacion(){
-        boolean vacio = true;
-        ArrayList<JTextField> listaTxt = new ArrayList();
-//        listaTxt.add(txtNombParroquia);
-        listaTxt.add(txtCura);listaTxt.add(txtNombNiño);
-        listaTxt.add(txtFechNacimNiño);listaTxt.add(txtDNINiño);
-        listaTxt.add(txtLugarNacNiño);listaTxt.add(txtNombPadre);listaTxt.add(txtMadre);
-        listaTxt.add(txtDomPadres);listaTxt.add(txtNombPadrino);listaTxt.add(txtNombMadrina);
-        listaTxt.add(txtlibro);listaTxt.add(txtPartida);listaTxt.add(txtFolio);
-        for (Iterator<JTextField> it = listaTxt.iterator(); it.hasNext();) {
-            JTextField jTextField = it.next();
-            if (jTextField.getText().equals("")) {
-                jTextField.setBackground(Color.red);
-                vacio = true;
-                break;
-            }else{
-                vacio = false;
-            }             
-        }
-        return vacio;
-    }
-    
     private void btnAgregarMadreCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMadreCertficadoActionPerformed
-        Persona p = new Persona();
-        BusquedaPersona bp = new BusquedaPersona(pTutora,this,true,txtMadre,"tutora");
-        bp.setVisible(true);
-        bp.setLocationRelativeTo(this);
+        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombMadre, "tutora");
+
+        if (bp.isAgregado()) {
+            pTutora = bp.getPersona();
+
+            txtNombMadre.setText(pTutora.getApellido() + " " + pTutora.getNombre());
+
+        }
     }//GEN-LAST:event_btnAgregarMadreCertficadoActionPerformed
 
     private void btnAgregarPadrinoCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPadrinoCertficadoActionPerformed
-        Persona p = new Persona();
-        BusquedaPersona bp = new BusquedaPersona(pPadrino,this,true,txtNombPadrino,"padrino");
-        bp.setVisible(true);
-        bp.setLocationRelativeTo(this);
+
+        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombPadrino, "padrino");
+
+        if (bp.isAgregado()) {
+
+            pPadrino = bp.getPersona();
+
+            txtNombPadrino.setText(pPadrino.getApellido() + " " + pPadrino.getNombre());
+        }
+
+
     }//GEN-LAST:event_btnAgregarPadrinoCertficadoActionPerformed
 
     private void btnAgregarMadrinaCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMadrinaCertficadoActionPerformed
-        Persona p = new Persona();
-        BusquedaPersona bp = new BusquedaPersona(pMadrina,this,true,txtNombMadrina,"madrina");
-        bp.setVisible(true);
-        bp.setLocationRelativeTo(this);
+        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombMadrina, "madrina");
+
+        if (bp.isAgregado()) {
+            pMadrina = bp.getPersona();
+
+            txtNombMadrina.setText(pMadrina.getApellido() + " " + pMadrina.getNombre());
+
+        }
     }//GEN-LAST:event_btnAgregarMadrinaCertficadoActionPerformed
 
     private void txtDomPadresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDomPadresActionPerformed
@@ -933,70 +881,60 @@ public class AltaCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCuraActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if(modificar==false){
-         certificado = new Certificado();
+        if (modificar == false) {
+            certificado = new Certificado();
         }
         CertificadoDAO certificadoDAO = new CertificadoDAOImp();
 
-//        certificado.setNombreParroquia(txtNombParroquia.getText());
-//        certificado.setDomicilioParooquia(txtCiudadParroquia.getText());
-       
-        try {
-            
-//            certificado.setIdCura(cura.getIdPersona());
-            certificado.setIdAhijado(ahijado.getIdPersona());
-            certificado.setIdTutor(tutor.getIdPersona());
-            certificado.setIdTutora(tutora.getIdPersona());
-            certificado.setIdMadrina(madrina.getIdPersona());
-            certificado.setIdPadrino(padrino.getIdPersona());
-            certificado.setNombreCura(p.getApellidoCura()+" "+p.getNombreCura());
-            
-              certificado.setDomicilioPadres(txtDomPadres.getText());
-        certificado.setCiudad(cmbCiudad.getSelectedItem().toString());
-        certificado.setProvincia(cmbProvincia.getSelectedItem().toString());
-        certificado.setFechaBautizmo(dtchFechaBautismo.getDate());
-        certificado.setLibro(txtlibro.getText());
-        certificado.setPartida(txtPartida.getText());
-        certificado.setFolio(txtFolio.getText());
-//        certificado.setNotasMarginales(txtareaMarginal.getText());
 
-//        if (validacion()) {
-//            JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");
-//        } else {
+        try {
+
+            certificado.setIdAhijado(pAhijado.getIdPersona());
+            certificado.setIdTutor(pTutor.getIdPersona());
+            certificado.setIdTutora(pTutora.getIdPersona());
+            certificado.setIdMadrina(pMadrina.getIdPersona());
+            certificado.setIdPadrino(pPadrino.getIdPersona());
+            certificado.setNombreCura(p.getApellidoCura() + " " + p.getNombreCura());
+
+            certificado.setDomicilioPadres(txtDomPadres.getText());
+            certificado.setCiudad(cmbCiudad.getSelectedItem().toString());
+            certificado.setProvincia(cmbProvincia.getSelectedItem().toString());
+            certificado.setFechaBautizmo(dtchFechaBautismo.getDate());
+            certificado.setLibro(txtlibro.getText());
+            certificado.setPartida(txtPartida.getText());
+            certificado.setFolio(txtFolio.getText());
+            certificado.setNotasMarginales("no es necesario este campo");
             // se creo un certificado nuevo
-            if(modificar==false){
-            certificadoDAO.insert(certificado);
-            }else{
+            if (modificar == false) {
+                certificadoDAO.insert(certificado);
+            } else {
                 // se cargo un certificado para actualizarlo
                 certificadoDAO.update(certificado);
             }
             JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
             activarBotonNuevo(false);
-//        }
-       
-        
-        
+
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Debes completar todos los campos");
         }
-      
+
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
-       
+
         //        parametros.put("fechaInicio",FechaUtil.getDateDD_MM_AAAA(fechaInicio.getDate()));
         //        parametros.put("fechaFin",FechaUtil.getDateDD_MM_AAAA(fechaFin.getDate()));
-       
+
 //       String logotipo="/images/iconTecnomatica.png";
-      
-       //parametros de entrada
-       Map parametros = new HashMap();
-       String logotipo="/images/1.jpg";
+
+        //parametros de entrada
+        Map parametros = new HashMap();
+        String logotipo = "/images/1.jpg";
 //       parametros.clear();
 //       parametros.put("logoParroquia", this.getClass().getResourceAsStream(logotipo));
-       
-       
+
+
         ReporteCertificadoJRDataSource dataSource = new ReporteCertificadoJRDataSource();
         List<Certificado> lista = new ArrayList<Certificado>();
         lista.add(certificado);
@@ -1010,7 +948,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         //  JasperReport lreporte = (JasperReport) JRLoader.loadObject("reportes/reporteAsistencia.jasper");
         try {
             // jPrint = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reportes/reporteAsistencia.jasper"),null, new JRBeanCollectionDataSource(listaAs));
-            jPrintt = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reporte/CertificadoParroquia.jasper"),(Map)parametros, dataSource);
+            jPrintt = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reporte/CertificadoParroquia.jasper"), (Map) parametros, dataSource);
 
             JRViewer jv = new JRViewer(jPrintt);
             reporte.getContentPane().add(jv);
@@ -1024,96 +962,115 @@ public class AltaCertificado extends javax.swing.JFrame {
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         limpiarVentana();
-        
+
         // el indicador de modificar se pne en false ya que se creara un certificado nuevo
-        modificar= false;
+        modificar = false;
         // inicializar los botones de opciones
         btnNuevo.setEnabled(true);
         btnGuardar.setEnabled(false);
         btnImprimir.setEnabled(false);
         btnBuscarCertificado.setEnabled(true);
-        
+
         //mnuitm
         mnuItmNuevo.setEnabled(true);
         mnuItmGuardar.setEnabled(false);
         mnuItmImprimir.setEnabled(false);
-        
-        
-              
+
+
+
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnBuscarCertificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCertificadoActionPerformed
-         
-      // abre la ventana de busqueda 
-        BusquedaCertificado bc = new BusquedaCertificado(certificado,this,true,txtNombPadrino,"padrino");
-        bc.setVisible(true);
-//        bc.setLocationRelativeTo(this);
-//       
-        // listar 
-        if (bc.getCertificado()!=null) {
-             // indicador de qeu se esta por cargar un certificado existente 
-             modificar = true;
-             // para que se pueda imprimir 
-             btnImprimir.setEnabled(true);
-             btnGuardar.setText("Actualizar");
-             btnGuardar.setEnabled(true);
-             
-             //mnuItem
-             mnuItmImprimir.setEnabled(true);
-             mnuItmGuardar.setEnabled(true);
-             mnuItmGuardar.setText("Actualizar");
-            
-            //llenar todos los campos de con los datosd del certificacdo}
-            certificado= bc.getCertificado();
-            tutor=new PersonaDAOImp().getPersona(certificado.getIdTutor());
-            tutora= new PersonaDAOImp().getPersona(certificado.getIdTutora());
-            padrino=new PersonaDAOImp().getPersona(certificado.getIdPadrino());
-            madrina= new PersonaDAOImp().getPersona(certificado.getIdMadrina());
-            ahijado= new PersonaDAOImp().getPersona(certificado.getIdAhijado());
 
-      //datos de la configuarcion de la parroquia
-     txtCura.setText(certificado.getNombreCura());
-     txtCiudadParroquia.setText(p.getCiudadParroquia());
-     txtNombreParroquia.setText(p.getNombreParroquia());
-     
-     //otros datos de certificado
-     txtDNINiño.setText(ahijado.getDni());
-     txtDomPadres.setText(certificado.getDomicilioPadres());
-     txtFechNacimNiño.setText(FechaUtil.getDateDD_MM_AAAA(ahijado.getFechaNaciemiento()));
-     txtFolio.setText(certificado.getFolio());
-     txtLugarNacNiño.setText(ahijado.getLugarNacimiento());
-     txtMadre.setText(tutora.getApellido()+" "+tutora.getNombre());
-     txtNombMadrina.setText(madrina.getApellido()+" "+madrina.getNombre());
-     txtNombNiño.setText(ahijado.getApellido()+" "+ahijado.getNombre());
-     txtNombPadre.setText(tutor.getApellido()+" "+tutor.getNombre() );
-     txtNombPadrino.setText(padrino.getApellido()+" "+padrino.getNombre());
-     txtPartida.setText(certificado.getPartida());
-//     txtareaMarginal.setText(certificado.getNotasMarginales());
-     txtlibro.setText(certificado.getLibro());
-     cmbCiudad.setSelectedItem("San Salvador de Jujuy");
-     cmbProvincia.setSelectedItem("Jujuy");
-     dtchFechaBautismo.setDate(certificado.getFechaBautizmo());
+        // abre la ventana de busqueda 
+        BusquedaCertificado bc = new BusquedaCertificado(certificado, this, true, txtNombPadrino, "padrino");
+
+        // listar 
+        if (bc.getCertificado() != null) {
+            // indicador de qeu se esta por cargar un certificado existente 
+            modificar = true;
+            // para que se pueda imprimir 
+            btnImprimir.setEnabled(true);
+            btnGuardar.setText("Actualizar");
+            btnGuardar.setEnabled(true);
+
+            //mnuItem
+            mnuItmImprimir.setEnabled(true);
+            mnuItmGuardar.setEnabled(true);
+            mnuItmGuardar.setText("Actualizar");
+
+            //llenar todos los campos de con los datosd del certificacdo}
+            //obtengo el certificado por parametro desde la ventana busqueda certificado
+            certificado = bc.getCertificado();
+
+            //obtengo los datos del tutor,tutora,madrina,padrino,ahijado a traves del certificado obtenido
+            pTutor = new PersonaDAOImp().getPersona(certificado.getIdTutor());
+            pTutora = new PersonaDAOImp().getPersona(certificado.getIdTutora());
+            pPadrino = new PersonaDAOImp().getPersona(certificado.getIdPadrino());
+            pMadrina = new PersonaDAOImp().getPersona(certificado.getIdMadrina());
+            pAhijado = new PersonaDAOImp().getPersona(certificado.getIdAhijado());
+            System.out.println("ahijado buscado  " + pAhijado.getIdPersona());
+            System.out.println("madrina buscado  " + pMadrina.getIdPersona());
+            System.out.println("padrino buscado  " + pPadrino.getIdPersona());
+            System.out.println("tutor buscado  " + pTutor.getIdPersona());
+            System.out.println("tutora buscado  " + pTutora.getIdPersona());
+            System.out.println("id certificado  " + certificado.getNumeroCertificado());
+
+            //datos de la configuarcion de la parroquia
+            txtCiudadParroquia.setText(p.getCiudadParroquia());
+            txtNombreParroquia.setText(p.getNombreParroquia());
+
+            //otros datos de certificado
+            txtFolio.setText(certificado.getFolio());
+            txtPartida.setText(certificado.getPartida());
+            txtlibro.setText(certificado.getLibro());
+            cmbCiudad.setSelectedItem(certificado.getCiudad());
+            cmbProvincia.setSelectedItem(certificado.getProvincia());
+            dtchFechaBautismo.setDate(certificado.getFechaBautizmo());
+
+            //cura que lo bautizo
+            txtCura.setText(certificado.getNombreCura());
+
+            //datos del bautizado
+            txtNombNiño.setText(pAhijado.getApellido() + " " + pAhijado.getNombre());
+            txtDNINiño.setText(pAhijado.getDni());
+            txtFechNacimNiño.setText(FechaUtil.getDateDD_MM_AAAA(pAhijado.getFechaNaciemiento()));
+            txtLugarNacNiño.setText(pAhijado.getLugarNacimiento());
+
+            //tutor o padre --tutora o madre -- madrina -- padrino
+            txtNombPadre.setText(pTutor.getApellido() + " " + pTutor.getNombre());
+            txtNombMadre.setText(pTutora.getApellido() + " " + pTutora.getNombre());
+            txtNombMadrina.setText(pMadrina.getApellido() + " " + pMadrina.getNombre());
+            txtNombPadrino.setText(pPadrino.getApellido() + " " + pPadrino.getNombre());
+            //domicilio de los padres
+            txtDomPadres.setText(certificado.getDomicilioPadres());
+
+
+
+
+
+
         }
     }//GEN-LAST:event_btnBuscarCertificadoActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-       
+
         limpiarVentana();
         btnNuevo.setEnabled(false);
-       btnGuardar.setText("Guardar");
-       btnGuardar.setEnabled(true);
-       
-       btnImprimir.setEnabled(false);
-       btnBuscarCertificado.setEnabled(true);
-       
-       //mnuItm
-       mnuItmNuevo.setEnabled(false);
-       mnuItmGuardar.setText("Guardar");
-       mnuItmGuardar.setEnabled(true);
-       mnuItmImprimir.setEnabled(false);
-       
-       
-       modificar= false;
+        btnGuardar.setText("Guardar");
+        btnGuardar.setEnabled(true);
+
+        btnImprimir.setEnabled(false);
+        btnBuscarCertificado.setEnabled(true);
+
+        //mnuItm
+        mnuItmNuevo.setEnabled(false);
+        mnuItmGuardar.setText("Guardar");
+        mnuItmGuardar.setEnabled(true);
+        mnuItmImprimir.setEnabled(false);
+
+
+        modificar = false;
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void mnuItemDatoParroquiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItemDatoParroquiaActionPerformed
@@ -1126,11 +1083,11 @@ public class AltaCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCiudadParroquiaActionPerformed
 
     private void txtlibroKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtlibroKeyTyped
-      consumirLetras(evt);
+        consumirLetras(evt);
     }//GEN-LAST:event_txtlibroKeyTyped
 
     private void txtPartidaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPartidaKeyTyped
-      consumirLetras(evt);
+        consumirLetras(evt);
     }//GEN-LAST:event_txtPartidaKeyTyped
 
     private void txtFolioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtFolioKeyTyped
@@ -1147,13 +1104,13 @@ public class AltaCertificado extends javax.swing.JFrame {
 
     private void mnuItmGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmGuardarActionPerformed
         btnGuardarActionPerformed(evt);
-        
+
     }//GEN-LAST:event_mnuItmGuardarActionPerformed
 
     private void mnuItmNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmNuevoActionPerformed
 
         btnNuevoActionPerformed(evt);
-       
+
 //       //mnuItm 
 //       mnuItmNuevo.setEnabled(false);
 //       mnuItmGuardar.setEnabled(true);
@@ -1161,69 +1118,68 @@ public class AltaCertificado extends javax.swing.JFrame {
 //       mnuItmGuardar.setText("Guardar");
 //       
 //       
-       
-       modificar= false;
-        
-        
+
+        modificar = false;
+
+
     }//GEN-LAST:event_mnuItmNuevoActionPerformed
 
     private void mnuItmImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmImprimirActionPerformed
-    btnImprimirActionPerformed(evt);
+        btnImprimirActionPerformed(evt);
     }//GEN-LAST:event_mnuItmImprimirActionPerformed
 
     private void mnuItmLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmLimpiarActionPerformed
 
         btnCancelarActionPerformed(evt);
-       
+
     }//GEN-LAST:event_mnuItmLimpiarActionPerformed
-  public void consumirLetras(java.awt.event.KeyEvent evt){
-          // conusmir los caracteres del legajo excepto los numeros
+    public void consumirLetras(java.awt.event.KeyEvent evt) {
+        // conusmir los caracteres del legajo excepto los numeros
         char caracter = evt.getKeyChar();
-        if(((caracter < '0') ||
-         (caracter > '9')) &&
-         (caracter != '\b' /*corresponde a BACK_SPACE*/))
-      {
-         evt.consume();  // ignorar el evento de teclado
-      }
-  }
- 
- public void activarBotonNuevo(boolean b){
-     btnGuardar.setEnabled(b);
-     btnImprimir.setEnabled(!b);
-     btnNuevo.setEnabled(!b);
-     
-     // mnuItm tambien hacer lo mismo
-     mnuItmGuardar.setEnabled(b);
-     mnuItmImprimir.setEnabled(b);
-     mnuItmNuevo.setEnabled(b);
-     
- }
- public void limpiarVentana(){
-     // Datos de Configuarcion . datos constantes
-     p= new ParroquiaDaoImp().listarParroquia().get(0);
-     txtCiudadParroquia.setText(p.getCiudadParroquia());
-     txtCura.setText(p.getApellidoCura()+" "+p.getNombreCura());
-     txtNombreParroquia.setText(p.getNombreParroquia());
-     
-     // datos del form
-     txtDNINiño.setText("");
-     txtDomPadres.setText("");
-     txtFechNacimNiño.setText("");
-     txtFolio.setText("");
-     txtLugarNacNiño.setText("");
-     txtMadre.setText("");
-     txtNombMadrina.setText("");
-     txtNombNiño.setText("");
-     txtNombPadre.setText("");
-     txtNombPadrino.setText("");
-     txtPartida.setText("");
+        if (((caracter < '0')
+                || (caracter > '9'))
+                && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+            evt.consume();  // ignorar el evento de teclado
+        }
+    }
+
+    public void activarBotonNuevo(boolean b) {
+        btnGuardar.setEnabled(b);
+        btnImprimir.setEnabled(!b);
+        btnNuevo.setEnabled(!b);
+
+        // mnuItm tambien hacer lo mismo
+        mnuItmGuardar.setEnabled(b);
+        mnuItmImprimir.setEnabled(b);
+        mnuItmNuevo.setEnabled(b);
+
+    }
+
+    public void limpiarVentana() {
+        // Datos de Configuarcion . datos constantes
+        p = new ParroquiaDaoImp().listarParroquia().get(0);
+        txtCiudadParroquia.setText(p.getCiudadParroquia());
+        txtCura.setText(p.getApellidoCura() + " " + p.getNombreCura());
+        txtNombreParroquia.setText(p.getNombreParroquia());
+
+        // datos del form
+        txtDNINiño.setText("");
+        txtDomPadres.setText("");
+        txtFechNacimNiño.setText("");
+        txtFolio.setText("");
+        txtLugarNacNiño.setText("");
+        txtNombMadre.setText("");
+        txtNombMadrina.setText("");
+        txtNombNiño.setText("");
+        txtNombPadre.setText("");
+        txtNombPadrino.setText("");
+        txtPartida.setText("");
 //     txtareaMarginal.setText("");
-     txtlibro.setText("");
-     cmbCiudad.setSelectedItem("San Salvador de Jujuy");
-     cmbProvincia.setSelectedItem("Jujuy");
-     dtchFechaBautismo.setDate(new Date());
- }
-     
+        txtlibro.setText("");
+        cmbCiudad.setSelectedItem("San Salvador de Jujuy");
+        cmbProvincia.setSelectedItem("Jujuy");
+        dtchFechaBautismo.setDate(new Date());
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JButton btnAgregarMadreCertficado;
@@ -1286,7 +1242,7 @@ public class AltaCertificado extends javax.swing.JFrame {
     private javax.swing.JTextField txtFechNacimNiño;
     private javax.swing.JTextField txtFolio;
     private javax.swing.JTextField txtLugarNacNiño;
-    private javax.swing.JTextField txtMadre;
+    private javax.swing.JTextField txtNombMadre;
     private javax.swing.JTextField txtNombMadrina;
     public javax.swing.JTextField txtNombNiño;
     private javax.swing.JTextField txtNombPadre;

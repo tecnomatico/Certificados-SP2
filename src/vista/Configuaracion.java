@@ -7,7 +7,7 @@ package vista;
 import cons.Constantes;
 import dao.imp.ParroquiaDaoImp;
 import java.util.List;
-import modelo.Parroquia;
+import dominio.Parroquia;
 import util.mensajero;
 
 /**
@@ -16,6 +16,7 @@ import util.mensajero;
  */
 public class Configuaracion extends javax.swing.JDialog {
     Parroquia p=null;
+    boolean modificar = false;
     boolean operacionOk = false; // este es una variable que se pone en verdadero si se guardo con exito los datos 
 
     /**
@@ -32,12 +33,17 @@ public class Configuaracion extends javax.swing.JDialog {
         initComponents();
          List<Parroquia> lista = new ParroquiaDaoImp().listarParroquia();
         if (!lista.isEmpty()) {
+            modificar = true;
             p = lista.get(0);
 
               txtCiudadParroquia.setText(p.getCiudadParroquia());
               txtApellidoDiacono.setText(p.getApellidoCura());
               txtNombreDiacono.setText(p.getNombreCura());
               txtNombreParroquia.setText(p.getNombreParroquia());
+        }
+        else{
+            p = new Parroquia();
+            modificar = false;
         }
         this.setTitle(Constantes.TITLE_APP);
         this.setLocationRelativeTo(this);
@@ -206,26 +212,24 @@ public class Configuaracion extends javax.swing.JDialog {
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-          if (p==null) {
-             System.out.println("entro nuevo");
-             p= new Parroquia();
+          
              p.setApellidoCura(txtApellidoDiacono.getText());
              p.setNombreCura(txtNombreDiacono.getText());
              p.setCiudadParroquia(txtCiudadParroquia.getText());
              p.setNombreParroquia(txtNombreParroquia.getText());
-           
-       
-            new ParroquiaDaoImp().addParroquia(p);
-    } else {
-         System.out.println("entro a modificar");
+        
+        if (!modificar) {
+             System.out.println("entro nuevo");
+             new ParroquiaDaoImp().addParroquia(p);
+          } else {
+             System.out.println("entro a modificar");
 
-         p.setApellidoCura(txtApellidoDiacono.getText());
-        p.setNombreCura(txtNombreDiacono.getText());
-        p.setCiudadParroquia(txtCiudadParroquia.getText());
-        p.setNombreParroquia(txtNombreParroquia.getText());
-        new ParroquiaDaoImp().upDateParroquia(p);
+//            p.setApellidoCura(txtApellidoDiacono.getText());
+//            p.setNombreCura(txtNombreDiacono.getText());
+//            p.setCiudadParroquia(txtCiudadParroquia.getText());
+//            p.setNombreParroquia(txtNombreParroquia.getText());
+            new ParroquiaDaoImp().upDateParroquia(p);
     }
-  
     
     mensajero.mensajeInformacionAtualizacionOK(this);
     operacionOk= true;
