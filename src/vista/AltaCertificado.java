@@ -9,17 +9,12 @@ import dao.PersonaDAO;
 import dao.imp.CertificadoDAOImp;
 import dao.imp.ParroquiaDaoImp;
 import dao.imp.PersonaDAOImp;
-import java.awt.Color;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 import dominio.Certificado;
 import dominio.Parroquia;
@@ -27,9 +22,9 @@ import dominio.Persona;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
-import net.sf.jasperreports.engine.JasperReport;
-import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.engine.JasperPrintManager;
 import net.sf.jasperreports.swing.JRViewer;
+import net.sf.jasperreports.view.JasperViewer;
 import reporte.ReporteCertificadoJRDataSource;
 import util.FechaUtil;
 import util.mensajero;
@@ -797,7 +792,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         //llamo a la ventana busqueda
 
-        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombNiño, "ahijado");
+        BusquedaPersona bp = new BusquedaPersona(this, true);
 
         // agrego la persona buscada al certificado
         
@@ -813,7 +808,7 @@ public class AltaCertificado extends javax.swing.JFrame {
 
     private void btnAgregarPadreCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPadreCertficadoActionPerformed
 
-        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombPadre, "tutor");
+        BusquedaPersona bp = new BusquedaPersona(this, true);
 
 
 
@@ -825,7 +820,7 @@ public class AltaCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarPadreCertficadoActionPerformed
 
     private void btnAgregarMadreCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMadreCertficadoActionPerformed
-        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombMadre, "tutora");
+        BusquedaPersona bp = new BusquedaPersona(this, true);
 
         if (bp.isAgregado()) {
             pTutora = bp.getPersona();
@@ -837,7 +832,7 @@ public class AltaCertificado extends javax.swing.JFrame {
 
     private void btnAgregarPadrinoCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPadrinoCertficadoActionPerformed
 
-        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombPadrino, "padrino");
+        BusquedaPersona bp = new BusquedaPersona(this, true);
 
         if (bp.isAgregado()) {
 
@@ -850,7 +845,7 @@ public class AltaCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarPadrinoCertficadoActionPerformed
 
     private void btnAgregarMadrinaCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMadrinaCertficadoActionPerformed
-        BusquedaPersona bp = new BusquedaPersona(this, true, txtNombMadrina, "madrina");
+        BusquedaPersona bp = new BusquedaPersona(this, true);
 
         if (bp.isAgregado()) {
             pMadrina = bp.getPersona();
@@ -913,7 +908,7 @@ public class AltaCertificado extends javax.swing.JFrame {
             }
             JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
             activarBotonNuevo(false);
-
+            
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Debes completar todos los campos");
         }
@@ -921,43 +916,41 @@ public class AltaCertificado extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
-
-        //        parametros.put("fechaInicio",FechaUtil.getDateDD_MM_AAAA(fechaInicio.getDate()));
-        //        parametros.put("fechaFin",FechaUtil.getDateDD_MM_AAAA(fechaFin.getDate()));
-
-//       String logotipo="/images/iconTecnomatica.png";
-
-        //parametros de entrada
+    public void Imprimir(){
         Map parametros = new HashMap();
         String logotipo = "/images/1.jpg";
-//       parametros.clear();
-//       parametros.put("logoParroquia", this.getClass().getResourceAsStream(logotipo));
-
 
         ReporteCertificadoJRDataSource dataSource = new ReporteCertificadoJRDataSource();
         List<Certificado> lista = new ArrayList<Certificado>();
         lista.add(certificado);
         dataSource.setListCertificado(lista);
         JasperPrint jPrintt;
-        JDialog reporte = new JDialog();
-        reporte.setSize(900, 700);
-        reporte.setLocationRelativeTo(null);
-        reporte.setModal(true);
-        reporte.setTitle("INFORME");
-        //  JasperReport lreporte = (JasperReport) JRLoader.loadObject("reportes/reporteAsistencia.jasper");
+        
         try {
-            // jPrint = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reportes/reporteAsistencia.jasper"),null, new JRBeanCollectionDataSource(listaAs));
             jPrintt = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reporte/CertificadoParroquia.jasper"), (Map) parametros, dataSource);
-
-            JRViewer jv = new JRViewer(jPrintt);
-            reporte.getContentPane().add(jv);
-            reporte.setVisible(true);
+          
+            // este metodo imprime el reporte , recibe el jprint(el informe, ) y el otro parametro es para decirle que muestre la pantalla de configuracion de la impresora
+            // si es false imprime de una con la configuarcion por defecto.
+            JasperPrintManager.printReport(jPrintt, true);
+            // esto es para la vista previa
+//            JDialog reporte = new JDialog();
+//            reporte.setSize(900, 700);
+//            reporte.setLocationRelativeTo(null);
+//            reporte.setModal(true);
+//            reporte.setTitle("INFORME");
+//            JRViewer jv = new JRViewer(jPrintt);
+//            reporte.getContentPane().add(jv);
+//            reporte.setVisible(true);
 
         } catch (JRException ex) {
-///            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            mensajero.mensajeError(this, "Error de Impresion");
         }
 
+    }
+    
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
+         Imprimir();
+        
     }//GEN-LAST:event_btnImprimirActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

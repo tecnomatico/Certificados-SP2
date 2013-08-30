@@ -11,6 +11,7 @@ import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
 import modeloTable.ModeloPersona;
 import dominio.Persona;
+import javax.swing.JTable;
 
 /**
  *
@@ -19,12 +20,10 @@ import dominio.Persona;
 public class BusquedaPersona extends javax.swing.JDialog {
 
     private Persona persona;// variable auxiliar donde se almacenara la persona buscada
-    ModeloPersona modeloPersona = new ModeloPersona();
-    private  TableRowSorter sorter;
+    ModeloPersona modeloPersona ; // SE ENCARGA DE OBTENER LA LISTA DE PERSONAS PARA LA TABLA
+    private  TableRowSorter sorter; 
     int numeroSeleccion;
     AltaCertificado parent;
-    private final JTextField tipoPersona;
-    private final String qPersonas;
     private boolean agregado = false;
 
     
@@ -33,24 +32,24 @@ public class BusquedaPersona extends javax.swing.JDialog {
     /**
      * Creates new form BusquedaPersona
      */
-    public BusquedaPersona( AltaCertificado parent, boolean modal, JTextField tipoPersona, String quePersona) {
+    public BusquedaPersona( AltaCertificado parent, boolean modal ) {
         super(parent, modal);
         initComponents();
         
-        // inicializo la tabla busqueda
-        sorter = new TableRowSorter(modeloPersona);
-        tblBusquedaPersona.setModel(modeloPersona);
        
-        //p.setNombre("DArio");
+        inicializarTabla();
         this.parent = parent;//Estoy creando una variable global, le asigno el parent 
-        this.tipoPersona = tipoPersona;//Estoy creando una variable global, le asigno el parent 
         //q traigo del anterior
-        this.qPersonas = quePersona;
         setLocationRelativeTo(parent);
         this.setVisible(true);
     }
 
-    
+    public void inicializarTabla(){
+        // inicializo la tabla busqueda
+        modeloPersona = new ModeloPersona();
+        sorter = new TableRowSorter(modeloPersona);
+        tblBusquedaPersona.setModel(modeloPersona); 
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -230,19 +229,16 @@ public class BusquedaPersona extends javax.swing.JDialog {
         if (modeloPersona.getRowCount() != 0) {
             sorter.setRowFilter(RowFilter.regexFilter("(?i).*" + txtBusquedaDNI.getText() + ".*"));
             tblBusquedaPersona.setRowSorter(sorter);
-        }                // TODO add your handling code here:
+        }                
     }//GEN-LAST:event_txtBusquedaDNIKeyPressed
 
     private void btnAgregarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPersonaActionPerformed
-        AltaPersona at = new AltaPersona(parent, true, qPersonas);
-        //        ActualizacionPersona at = new ActualizacionPersona(this, true);
-        at.setVisible(true);
-        at.setLocationRelativeTo(this);
+        AltaPersona at = new AltaPersona(parent, true);
         // reflejar los cambios en la tabla
-        this.dispose();
-        BusquedaPersona bp = new BusquedaPersona( parent, rootPaneCheckingEnabled, tipoPersona, qPersonas);
-        
-        
+        if (at.isAgregado()) {
+            // actualizar la tabla de persona
+            inicializarTabla();
+        }
     }//GEN-LAST:event_btnAgregarPersonaActionPerformed
 
     private void btnAgrePersCeritifcadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgrePersCeritifcadoActionPerformed
@@ -250,7 +246,6 @@ public class BusquedaPersona extends javax.swing.JDialog {
         if (tblBusquedaPersona.getSelectedRow() != -1) {
             numeroSeleccion = sorter.convertRowIndexToModel(tblBusquedaPersona.getSelectedRow());
             persona = modeloPersona.getPersona(numeroSeleccion);
-//            this.parent.agregar(persona, tipoPersona, qPersonas);
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(this, "Seleccione una fila");
@@ -269,9 +264,11 @@ public class BusquedaPersona extends javax.swing.JDialog {
             // abrir el formulario alta de persona para editar los datos de persona
             AltaPersona modificarPersona = new AltaPersona(parent, true, persona);
             // actulizar la tabla con los datos modificados
-            this.dispose();
-           BusquedaPersona bp =  new BusquedaPersona( parent, rootPaneCheckingEnabled, tipoPersona, qPersonas);
-          
+               if (modificarPersona.isAgregado()) {
+                  // si hubo modificacion en al Persona se actualiza la tabla
+                   inicializarTabla();       
+               }
+
         } else {
             JOptionPane.showMessageDialog(this, "Seleccione una fila");
         }

@@ -23,15 +23,27 @@ public class AltaPersona extends javax.swing.JDialog {
     private String seraCura;
     Persona persona;
     boolean modificar=false;
+    boolean agregado=false;
+
+    
     /**
      * Creates new form AltaPersonas
      */
+    public boolean isAgregado() {
+        return agregado;
+    }
+
+    public void setAgregado(boolean agregado) {
+        this.agregado = agregado;
+    }
+
     
-    public AltaPersona(java.awt.Frame parent, boolean modal,String seraCura) {
+    public AltaPersona(java.awt.Frame parent, boolean modal) {
         super(parent, modal);  
         this.seraCura = seraCura;
         initComponents();
         setLocationRelativeTo(parent);
+        this.setVisible(true);
     }
     public AltaPersona(java.awt.Frame parent, boolean modal,Persona persona) {
          super(parent, modal);   
@@ -387,7 +399,9 @@ public class AltaPersona extends javax.swing.JDialog {
     }//GEN-LAST:event_txtDniActionPerformed
 
     private void btnCancelarAltaPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarAltaPersonaActionPerformed
+        setAgregado(false);
         this.dispose();
+        
     }//GEN-LAST:event_btnCancelarAltaPersonaActionPerformed
 
     private void cmbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSexoActionPerformed
@@ -421,6 +435,7 @@ public class AltaPersona extends javax.swing.JDialog {
         if (validacion()) {
             JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");
         } else {
+            setAgregado(true);
             if (modificar) {
                 personaDAO.update(persona);
             } else {
