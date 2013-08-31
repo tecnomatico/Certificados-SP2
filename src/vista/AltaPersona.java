@@ -418,19 +418,19 @@ public class AltaPersona extends javax.swing.JDialog {
         
 
       
-        persona.setApellido(txtApellido.getText());
-        persona.setNombre(txtNombre.getText());
-        persona.setDni(txtDni.getText());
+        persona.setApellido(txtApellido.getText().toUpperCase());
+        persona.setNombre(txtNombre.getText().toUpperCase());
+        persona.setDni(txtDni.getText().toUpperCase());
         persona.setSexo(cmbSexo.getSelectedItem().toString());
         persona.setTipoDeHijo(cmbTipoHijo.getSelectedItem().toString());
         persona.setFechaNaciemiento(dateFechaNacim.getDate());
-        persona.setLugarNacimiento(txtLugarNac.getText());
+        persona.setLugarNacimiento(txtLugarNac.getText().toUpperCase());
         persona.setProvNacimiento(cmbProvincia.getSelectedItem().toString());
-        persona.setNacionalidad(txtNacionalidad.getText());
-        persona.setDomicilio(txtDomicilio.getText());
-        persona.setBarrio(txtBario.getText());
-        persona.setTelefonoFijo(txtTelFijo.getText());
-        persona.setTelefonoCelular(txtTelCel.getText());
+        persona.setNacionalidad(txtNacionalidad.getText().toUpperCase());
+        persona.setDomicilio(txtDomicilio.getText().toUpperCase());
+        persona.setBarrio(txtBario.getText().toUpperCase());
+        persona.setTelefonoFijo(txtTelFijo.getText().toUpperCase());
+        persona.setTelefonoCelular(txtTelCel.getText().toUpperCase());
 
         if (validacion()) {
             JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");

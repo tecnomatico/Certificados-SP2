@@ -15,7 +15,8 @@ import util.mensajero;
  * @author Joel
  */
 public class Configuaracion extends javax.swing.JDialog {
-    Parroquia p=null;
+
+    Parroquia p = null;
     boolean modificar = false;
     boolean operacionOk = false; // este es una variable que se pone en verdadero si se guardo con exito los datos 
 
@@ -26,22 +27,19 @@ public class Configuaracion extends javax.swing.JDialog {
         return operacionOk;
     }
 
-    
-    
     public Configuaracion(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-         List<Parroquia> lista = new ParroquiaDaoImp().listarParroquia();
+        List<Parroquia> lista = new ParroquiaDaoImp().listarParroquia();
         if (!lista.isEmpty()) {
             modificar = true;
             p = lista.get(0);
 
-              txtCiudadParroquia.setText(p.getCiudadParroquia());
-              txtApellidoDiacono.setText(p.getApellidoCura());
-              txtNombreDiacono.setText(p.getNombreCura());
-              txtNombreParroquia.setText(p.getNombreParroquia());
-        }
-        else{
+            txtCiudadParroquia.setText(p.getCiudadParroquia());
+            txtApellidoDiacono.setText(p.getApellidoCura());
+            txtNombreDiacono.setText(p.getNombreCura());
+            txtNombreParroquia.setText(p.getNombreParroquia());
+        } else {
             p = new Parroquia();
             modificar = false;
         }
@@ -207,33 +205,29 @@ public class Configuaracion extends javax.swing.JDialog {
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         operacionOk = false;
         this.dispose();
-        
-        
+
+
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-          
-             p.setApellidoCura(txtApellidoDiacono.getText());
-             p.setNombreCura(txtNombreDiacono.getText());
-             p.setCiudadParroquia(txtCiudadParroquia.getText());
-             p.setNombreParroquia(txtNombreParroquia.getText());
-        
-        if (!modificar) {
-             System.out.println("entro nuevo");
-             new ParroquiaDaoImp().addParroquia(p);
-          } else {
-             System.out.println("entro a modificar");
 
-//            p.setApellidoCura(txtApellidoDiacono.getText());
-//            p.setNombreCura(txtNombreDiacono.getText());
-//            p.setCiudadParroquia(txtCiudadParroquia.getText());
-//            p.setNombreParroquia(txtNombreParroquia.getText());
+        p.setApellidoCura(txtApellidoDiacono.getText().toUpperCase());
+        p.setNombreCura(txtNombreDiacono.getText().toUpperCase());
+        p.setCiudadParroquia(txtCiudadParroquia.getText().toUpperCase());
+        p.setNombreParroquia(txtNombreParroquia.getText().toUpperCase());
+
+        if (!modificar) {
+//             System.out.println("entro nuevo");
+            new ParroquiaDaoImp().addParroquia(p);
+        } else {
+//             System.out.println("entro a modificar");
+
             new ParroquiaDaoImp().upDateParroquia(p);
-    }
-    
-    mensajero.mensajeInformacionAtualizacionOK(this);
-    operacionOk= true;
-    this.dispose();
+        }
+
+        mensajero.mensajeInformacionAtualizacionOK(this);
+        operacionOk = true;
+        this.dispose();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void txtNombreDiaconoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreDiaconoActionPerformed

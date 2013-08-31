@@ -68,7 +68,7 @@ public class AltaCertificado extends javax.swing.JFrame {
             }
 
             limpiarVentana();
-
+            
         } catch (org.hibernate.exception.JDBCConnectionException e) {
             // no se pudo abrir la bd
             mensajero.mensajeError(this, "No se puede Conectar a la BD, por favor active servidor y vuelva a ejecutar la aplicacion");
@@ -90,9 +90,9 @@ public class AltaCertificado extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jToolBar2 = new javax.swing.JToolBar();
         btnNuevo = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnImprimir = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
         btnBuscarCertificado = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -133,7 +133,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         txtCura = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        dtchFechaBautismo = new com.toedter.calendar.JDateChooser();
+        dateFechaBautismo = new com.toedter.calendar.JDateChooser();
         txtCiudadParroquia = new javax.swing.JTextField();
         txtNombreParroquia = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
@@ -147,15 +147,15 @@ public class AltaCertificado extends javax.swing.JFrame {
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         mnuItmNuevo = new javax.swing.JMenuItem();
+        mnuItmEditar = new javax.swing.JMenuItem();
         mnuItmGuardar = new javax.swing.JMenuItem();
         mnuItmImprimir = new javax.swing.JMenuItem();
-        mnuItmLimpiar = new javax.swing.JMenuItem();
+        jSeparator5 = new javax.swing.JPopupMenu.Separator();
         mnuItmSalir = new javax.swing.JMenuItem();
         mnuConfiguracion = new javax.swing.JMenu();
         mnuItemDatoParroquia = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -171,7 +171,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jToolBar2.setOpaque(false);
 
         btnNuevo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoNuevo.png"))); // NOI18N
-        btnNuevo.setText("Nuevo");
+        btnNuevo.setText("NUEVO");
         btnNuevo.setEnabled(false);
         btnNuevo.setFocusable(false);
         btnNuevo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -184,8 +184,22 @@ public class AltaCertificado extends javax.swing.JFrame {
         });
         jToolBar2.add(btnNuevo);
 
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoLimpiar.png"))); // NOI18N
+        btnEditar.setText("EDITAR");
+        btnEditar.setEnabled(false);
+        btnEditar.setFocusable(false);
+        btnEditar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEditar.setOpaque(false);
+        btnEditar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(btnEditar);
+
         btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoGuardar.png"))); // NOI18N
-        btnGuardar.setText("Guardar");
+        btnGuardar.setText("GUARDAR");
         btnGuardar.setFocusable(false);
         btnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGuardar.setOpaque(false);
@@ -198,7 +212,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jToolBar2.add(btnGuardar);
 
         btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoImprimir.png"))); // NOI18N
-        btnImprimir.setText("Imprimir");
+        btnImprimir.setText("IMPRIMIR");
         btnImprimir.setEnabled(false);
         btnImprimir.setFocusable(false);
         btnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -211,21 +225,8 @@ public class AltaCertificado extends javax.swing.JFrame {
         });
         jToolBar2.add(btnImprimir);
 
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoLimpiar.png"))); // NOI18N
-        btnCancelar.setText("Limpiar");
-        btnCancelar.setFocusable(false);
-        btnCancelar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnCancelar.setOpaque(false);
-        btnCancelar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
-            }
-        });
-        jToolBar2.add(btnCancelar);
-
         btnBuscarCertificado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoBuscar.png"))); // NOI18N
-        btnBuscarCertificado.setText("Buscar ");
+        btnBuscarCertificado.setText("BUSCAR");
         btnBuscarCertificado.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscarCertificado.setOpaque(false);
         btnBuscarCertificado.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -435,7 +436,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel5.setText("Fecha del dia de bautismo:");
 
-        dtchFechaBautismo.setDate(new Date());
+        dateFechaBautismo.setDate(new Date());
 
         txtCiudadParroquia.setEditable(false);
         txtCiudadParroquia.setText("constante");
@@ -530,7 +531,7 @@ public class AltaCertificado extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(dtchFechaBautismo, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dateFechaBautismo, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -593,7 +594,7 @@ public class AltaCertificado extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
-                            .addComponent(dtchFechaBautismo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(dateFechaBautismo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                             .addComponent(jLabel19)
@@ -692,6 +693,17 @@ public class AltaCertificado extends javax.swing.JFrame {
         });
         fileMenu.add(mnuItmNuevo);
 
+        mnuItmEditar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
+        mnuItmEditar.setBackground(new java.awt.Color(153, 204, 255));
+        mnuItmEditar.setText("Editar");
+        mnuItmEditar.setEnabled(false);
+        mnuItmEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuItmEditarActionPerformed(evt);
+            }
+        });
+        fileMenu.add(mnuItmEditar);
+
         mnuItmGuardar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.ALT_MASK));
         mnuItmGuardar.setBackground(new java.awt.Color(153, 204, 255));
         mnuItmGuardar.setMnemonic('s');
@@ -703,7 +715,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         });
         fileMenu.add(mnuItmGuardar);
 
-        mnuItmImprimir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        mnuItmImprimir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_MASK));
         mnuItmImprimir.setBackground(new java.awt.Color(153, 204, 255));
         mnuItmImprimir.setMnemonic('a');
         mnuItmImprimir.setText("Imprimir");
@@ -714,17 +726,9 @@ public class AltaCertificado extends javax.swing.JFrame {
             }
         });
         fileMenu.add(mnuItmImprimir);
+        fileMenu.add(jSeparator5);
 
-        mnuItmLimpiar.setBackground(new java.awt.Color(153, 204, 255));
-        mnuItmLimpiar.setText("Limpiar ");
-        mnuItmLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnuItmLimpiarActionPerformed(evt);
-            }
-        });
-        fileMenu.add(mnuItmLimpiar);
-
-        mnuItmSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        mnuItmSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.ALT_MASK));
         mnuItmSalir.setBackground(new java.awt.Color(153, 204, 255));
         mnuItmSalir.setMnemonic('x');
         mnuItmSalir.setText("Salir");
@@ -740,6 +744,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         mnuConfiguracion.setBackground(new java.awt.Color(153, 204, 255));
         mnuConfiguracion.setText("Configuracion");
 
+        mnuItemDatoParroquia.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         mnuItemDatoParroquia.setBackground(new java.awt.Color(153, 204, 255));
         mnuItemDatoParroquia.setText("Datos Parroquia");
         mnuItemDatoParroquia.addActionListener(new java.awt.event.ActionListener() {
@@ -755,6 +760,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         helpMenu.setMnemonic('h');
         helpMenu.setText("Ayuda");
 
+        contentMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
         contentMenuItem.setBackground(new java.awt.Color(153, 204, 255));
         contentMenuItem.setMnemonic('c');
         contentMenuItem.setText("Acerca");
@@ -764,11 +770,6 @@ public class AltaCertificado extends javax.swing.JFrame {
             }
         });
         helpMenu.add(contentMenuItem);
-
-        aboutMenuItem.setBackground(new java.awt.Color(153, 204, 255));
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("Ayuda");
-        helpMenu.add(aboutMenuItem);
 
         menuBar.add(helpMenu);
 
@@ -891,13 +892,13 @@ public class AltaCertificado extends javax.swing.JFrame {
             certificado.setIdPadrino(pPadrino.getIdPersona());
             certificado.setNombreCura(p.getApellidoCura() + " " + p.getNombreCura());
 
-            certificado.setDomicilioPadres(txtDomPadres.getText());
+            certificado.setDomicilioPadres(txtDomPadres.getText().toUpperCase());
             certificado.setCiudad(cmbCiudad.getSelectedItem().toString());
             certificado.setProvincia(cmbProvincia.getSelectedItem().toString());
-            certificado.setFechaBautizmo(dtchFechaBautismo.getDate());
-            certificado.setLibro(txtlibro.getText());
-            certificado.setPartida(txtPartida.getText());
-            certificado.setFolio(txtFolio.getText());
+            certificado.setFechaBautizmo(dateFechaBautismo.getDate());
+            certificado.setLibro(txtlibro.getText().toUpperCase());
+            certificado.setPartida(txtPartida.getText().toUpperCase());
+            certificado.setFolio(txtFolio.getText().toUpperCase());
             certificado.setNotasMarginales("no es necesario este campo");
             // se creo un certificado nuevo
             if (modificar == false) {
@@ -907,7 +908,17 @@ public class AltaCertificado extends javax.swing.JFrame {
                 certificadoDAO.update(certificado);
             }
             JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
+//            if (!modificar){
+                  setEnabledComponentes(false);       
+//            }
+         
+            //cuando guarda o actualiza esto se debe 
+            btnEditar.setEnabled(true);
+            mnuItmEditar.setEnabled(true);
+            btnBuscarCertificado.setEnabled(false);
+            
             activarBotonNuevo(false);
+            
             
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Debes completar todos los campos");
@@ -953,25 +964,40 @@ public class AltaCertificado extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnImprimirActionPerformed
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        limpiarVentana();
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
 
-        // el indicador de modificar se pne en false ya que se creara un certificado nuevo
-        modificar = false;
-        // inicializar los botones de opciones
-        btnNuevo.setEnabled(true);
-        btnGuardar.setEnabled(false);
-        btnImprimir.setEnabled(false);
-        btnBuscarCertificado.setEnabled(true);
+             setEnabledComponentes(true);
+             btnEditar.setEnabled(false);
+             mnuItmEditar.setEnabled(false);
+             btnImprimir.setEnabled(false);
+             mnuItmImprimir.setEnabled(false);
+             btnGuardar.setEnabled(true);
+             mnuItmGuardar.setEnabled(true);
+             btnNuevo.setEnabled(true);
+             mnuItmNuevo.setEnabled(true);
+             
+        
+        
+        
+        
+        //        limpiarVentana();
+//
+//        // el indicador de modificar se pne en false ya que se creara un certificado nuevo
+//        modificar = false;
+//        // inicializar los botones de opciones
+//        btnNuevo.setEnabled(true);
+//        btnGuardar.setEnabled(false);
+//        btnImprimir.setEnabled(false);
+//        btnBuscarCertificado.setEnabled(true);
+//
+//        //mnuitm
+//        mnuItmNuevo.setEnabled(true);
+//        mnuItmGuardar.setEnabled(false);
+//        mnuItmImprimir.setEnabled(false);
 
-        //mnuitm
-        mnuItmNuevo.setEnabled(true);
-        mnuItmGuardar.setEnabled(false);
-        mnuItmImprimir.setEnabled(false);
 
 
-
-    }//GEN-LAST:event_btnCancelarActionPerformed
+    }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnBuscarCertificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCertificadoActionPerformed
 
@@ -982,16 +1008,23 @@ public class AltaCertificado extends javax.swing.JFrame {
         if (bc.getCertificado() != null) {
             // indicador de qeu se esta por cargar un certificado existente 
             modificar = true;
+           
+           
+            // para que no se pueda modifar  si lo quiere hacer teine que teclear el boton editar
+            setEnabledComponentes(false);
             // para que se pueda imprimir 
             btnImprimir.setEnabled(true);
             btnGuardar.setText("Actualizar");
-            btnGuardar.setEnabled(true);
-
+//            btnGuardar.setEnabled(true);
+            btnGuardar.setEnabled(false);
+            btnEditar.setEnabled(true);
+            mnuItmEditar.setEnabled(true);
             //mnuItem
             mnuItmImprimir.setEnabled(true);
-            mnuItmGuardar.setEnabled(true);
+//            mnuItmGuardar.setEnabled(true);
+            mnuItmGuardar.setEnabled(false);
             mnuItmGuardar.setText("Actualizar");
-
+            btnEditar.setEnabled(true);
             //llenar todos los campos de con los datosd del certificacdo}
             //obtengo el certificado por parametro desde la ventana busqueda certificado
             certificado = bc.getCertificado();
@@ -1002,12 +1035,12 @@ public class AltaCertificado extends javax.swing.JFrame {
             pPadrino = new PersonaDAOImp().getPersona(certificado.getIdPadrino());
             pMadrina = new PersonaDAOImp().getPersona(certificado.getIdMadrina());
             pAhijado = new PersonaDAOImp().getPersona(certificado.getIdAhijado());
-            System.out.println("ahijado buscado  " + pAhijado.getIdPersona());
-            System.out.println("madrina buscado  " + pMadrina.getIdPersona());
-            System.out.println("padrino buscado  " + pPadrino.getIdPersona());
-            System.out.println("tutor buscado  " + pTutor.getIdPersona());
-            System.out.println("tutora buscado  " + pTutora.getIdPersona());
-            System.out.println("id certificado  " + certificado.getNumeroCertificado());
+//            System.out.println("ahijado buscado  " + pAhijado.getIdPersona());
+//            System.out.println("madrina buscado  " + pMadrina.getIdPersona());
+//            System.out.println("padrino buscado  " + pPadrino.getIdPersona());
+//            System.out.println("tutor buscado  " + pTutor.getIdPersona());
+//            System.out.println("tutora buscado  " + pTutora.getIdPersona());
+//            System.out.println("id certificado  " + certificado.getNumeroCertificado());
 
             //datos de la configuarcion de la parroquia
             txtCiudadParroquia.setText(p.getCiudadParroquia());
@@ -1019,7 +1052,7 @@ public class AltaCertificado extends javax.swing.JFrame {
             txtlibro.setText(certificado.getLibro());
             cmbCiudad.setSelectedItem(certificado.getCiudad());
             cmbProvincia.setSelectedItem(certificado.getProvincia());
-            dtchFechaBautismo.setDate(certificado.getFechaBautizmo());
+            dateFechaBautismo.setDate(certificado.getFechaBautizmo());
 
             //cura que lo bautizo
             txtCura.setText(certificado.getNombreCura());
@@ -1047,7 +1080,19 @@ public class AltaCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarCertificadoActionPerformed
 
     private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
-
+        pAhijado = null;
+        pTutor=null;
+        pTutora=null;
+        pPadrino=null;
+        pMadrina = null;
+        
+        
+        
+        
+        setEnabledComponentes(true);
+        btnEditar.setEnabled(false);
+        mnuItmEditar.setEnabled(false);
+        
         limpiarVentana();
         btnNuevo.setEnabled(false);
         btnGuardar.setText("Guardar");
@@ -1062,7 +1107,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         mnuItmGuardar.setEnabled(true);
         mnuItmImprimir.setEnabled(false);
 
-
+        certificado = new Certificado();
         modificar = false;
     }//GEN-LAST:event_btnNuevoActionPerformed
 
@@ -1121,11 +1166,10 @@ public class AltaCertificado extends javax.swing.JFrame {
         btnImprimirActionPerformed(evt);
     }//GEN-LAST:event_mnuItmImprimirActionPerformed
 
-    private void mnuItmLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmLimpiarActionPerformed
+    private void mnuItmEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuItmEditarActionPerformed
+          btnEditarActionPerformed(evt);
 
-        btnCancelarActionPerformed(evt);
-
-    }//GEN-LAST:event_mnuItmLimpiarActionPerformed
+    }//GEN-LAST:event_mnuItmEditarActionPerformed
     public void consumirLetras(java.awt.event.KeyEvent evt) {
         // conusmir los caracteres del legajo excepto los numeros
         char caracter = evt.getKeyChar();
@@ -1143,8 +1187,8 @@ public class AltaCertificado extends javax.swing.JFrame {
 
         // mnuItm tambien hacer lo mismo
         mnuItmGuardar.setEnabled(b);
-        mnuItmImprimir.setEnabled(b);
-        mnuItmNuevo.setEnabled(b);
+        mnuItmImprimir.setEnabled(!b);
+        mnuItmNuevo.setEnabled(!b);
 
     }
 
@@ -1169,26 +1213,50 @@ public class AltaCertificado extends javax.swing.JFrame {
         txtPartida.setText("");
 //     txtareaMarginal.setText("");
         txtlibro.setText("");
-        cmbCiudad.setSelectedItem("San Salvador de Jujuy");
+        cmbCiudad.setSelectedItem(p.getCiudadParroquia());
         cmbProvincia.setSelectedItem("Jujuy");
-        dtchFechaBautismo.setDate(new Date());
+        dateFechaBautismo.setDate(new Date());
     }
+     /**
+      * Este metodo desactiva o activa  los componetnes (botones , cajas de texto , cmb, ..) para q el usuario no pueda modificar
+      * esto es dependiendo el parametro que se le pase true o false.
+      */
+     public void setEnabledComponentes(boolean b){
+         dateFechaBautismo.setEnabled(b);
+         txtlibro.setEnabled(b);
+         txtPartida.setEnabled(b);
+         txtFolio.setEnabled(b);
+         txtDomPadres.setEnabled(b);
+         cmbCiudad.setEnabled(b);
+         cmbProvincia.setEnabled(b);
+         btnAgregarMadreCertficado.setEnabled(b);
+         btnAgregarMadrinaCertficado.setEnabled(b);
+         btnAgregarNiñoCertficado.setEnabled(b);
+         btnAgregarPadreCertficado.setEnabled(b);
+         btnAgregarPadrinoCertficado.setEnabled(b);
+        
+         
+     }
+    
+    
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JButton btnAgregarMadreCertficado;
     private javax.swing.JButton btnAgregarMadrinaCertficado;
     private javax.swing.JButton btnAgregarNiñoCertficado;
     private javax.swing.JButton btnAgregarPadreCertficado;
     private javax.swing.JButton btnAgregarPadrinoCertficado;
     private javax.swing.JButton btnBuscarCertificado;
-    private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JComboBox cmbCiudad;
     private javax.swing.JComboBox cmbProvincia;
     private javax.swing.JMenuItem contentMenuItem;
-    private com.toedter.calendar.JDateChooser dtchFechaBautismo;
+    private com.toedter.calendar.JDateChooser dateFechaBautismo;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
@@ -1219,13 +1287,14 @@ public class AltaCertificado extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu mnuConfiguracion;
     private javax.swing.JMenuItem mnuItemDatoParroquia;
+    private javax.swing.JMenuItem mnuItmEditar;
     private javax.swing.JMenuItem mnuItmGuardar;
     private javax.swing.JMenuItem mnuItmImprimir;
-    private javax.swing.JMenuItem mnuItmLimpiar;
     private javax.swing.JMenuItem mnuItmNuevo;
     private javax.swing.JMenuItem mnuItmSalir;
     private javax.swing.JTextField txtCiudadParroquia;
