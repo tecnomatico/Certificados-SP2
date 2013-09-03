@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 30/08/2013 10:17:23 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 31/08/2013 16:23:45 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="dominio.Certificado" table="certificado" catalog="parroquia">
         <id name="numeroCertificado" type="java.lang.Integer">

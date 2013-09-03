@@ -68,13 +68,13 @@ public class ModeloCertificado extends AbstractTableModel{
             // problemas para cargar varios curas
             case 2:objeto = certificado.getNombreCura();break; 
             case 3:objeto = ahijado.getApellido()+" "+ahijado.getNombre();break;
-            case 4:objeto = tutor.getApellido()+" "+tutor.getNombre();break;                                                         
+            case 4:objeto = ahijado.getDni()+" "+ahijado.getDni();break;                                                       
         }      
         return objeto;
     }
     
     private String[] cabeceras = {
-        "Nº de Certificado", "Fecha Bautismo", "Cura", "Ahijado", "Tutor"       
+        "N° Certif", "Fecha Bautismo", "Parroco", "Bautizado", "Dni"       
     };
     
     public Certificado Consulta(int col) {

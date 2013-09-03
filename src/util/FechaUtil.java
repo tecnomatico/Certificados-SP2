@@ -16,6 +16,16 @@ import java.util.GregorianCalendar;
  */
 public class FechaUtil {
     
+    
+    
+    
+    public static String getFechaString10DDMMAAAA (Date fecha){
+        
+         Date date = new Date();
+         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");     
+         return sdf.format(fecha);
+    }
+    
  
     /**
      * 
@@ -32,7 +42,7 @@ public class FechaUtil {
         return f;
     }
     
-    
+          
       /**
      * 
      * @param fecha de tipo date

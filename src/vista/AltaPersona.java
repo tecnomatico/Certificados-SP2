@@ -12,20 +12,20 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import dominio.Persona;
+import util.mensajero;
 
 /**
  *
  * @author dario
  */
 public class AltaPersona extends javax.swing.JDialog {
-    
+
     String padre;
     private String seraCura;
     Persona persona;
-    boolean modificar=false;
-    boolean agregado=false;
+    boolean modificar = false;
+    boolean agregado = false;
 
-    
     /**
      * Creates new form AltaPersonas
      */
@@ -37,43 +37,43 @@ public class AltaPersona extends javax.swing.JDialog {
         this.agregado = agregado;
     }
 
-    
     public AltaPersona(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);  
+        super(parent, modal);
         this.seraCura = seraCura;
         initComponents();
         setLocationRelativeTo(parent);
         this.setVisible(true);
     }
-    public AltaPersona(java.awt.Frame parent, boolean modal,Persona persona) {
-         super(parent, modal);   
-         initComponents();
-         this.persona = persona;
-         // indico que se utiliza este formulario para modificar datos
-         modificar = true;
-         
-         // cambiar las etiquetas para que mensionen q se hara una actualizacion de datos
-         btnGuardarAltaPersona.setText("Modificar");
-         this.setTitle("Actualizar Datos de la Persona");
-         // cargar la persona en el formulario para qeu se edite
-         txtApellido.setText(persona.getApellido());
-         txtBario.setText(persona.getBarrio());
-         txtDni.setText(persona.getDni());
-         txtDomicilio.setText(persona.getDomicilio());
-         txtLugarNac.setText(persona.getLugarNacimiento());
-         txtNacionalidad.setText(persona.getNacionalidad());
-         txtNombre.setText(persona.getNombre());
-         txtTelCel.setText(persona.getTelefonoCelular());
-         txtTelFijo.setText(persona.getTelefonoFijo());
-         dateFechaNacim.setDate(persona.getFechaNaciemiento());
-         cmbTipoHijo.setSelectedItem(persona.getTipoDeHijo());
-         
-         setLocationRelativeTo(parent);
-         setVisible(true);
+
+    public AltaPersona(java.awt.Frame parent, boolean modal, Persona persona) {
+        super(parent, modal);
+        initComponents();
+        this.persona = persona;
+        // indico que se utiliza este formulario para modificar datos
+        modificar = true;
+
+        // cambiar las etiquetas para que mensionen q se hara una actualizacion de datos
+        btnGuardarAltaPersona.setText("Modificar");
+        this.setTitle("Actualizar Datos de la Persona");
+        // cargar la persona en el formulario para qeu se edite
+        txtApellido.setText(persona.getApellido());
+        txtBario.setText(persona.getBarrio());
+        txtDni.setText(String.valueOf(persona.getDni()));
+        txtDomicilio.setText(persona.getDomicilio());
+        txtLugarNac.setText(persona.getLugarNacimiento());
+        txtNacionalidad.setText(persona.getNacionalidad());
+        txtNombre.setText(persona.getNombre());
+        txtTelCel.setText(persona.getTelefonoCelular());
+        txtTelFijo.setText(persona.getTelefonoFijo());
+        dateFechaNacim.setDate(persona.getFechaNaciemiento());
+        cmbTipoHijo.setSelectedItem(persona.getTipoDeHijo());
+        cmbSexo.setSelectedItem(persona.getSexo());
+        // si toma una cadena q no esta en el combo
+        cmbProvincia.setSelectedItem(persona.getProvNacimiento());
+
+        setLocationRelativeTo(parent);
+        setVisible(true);
     }
-
-    
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -128,29 +128,54 @@ public class AltaPersona extends javax.swing.JDialog {
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Agregar a una Persona Nueva", 1, 0, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
         jPanel1.setOpaque(false);
+        jPanel1.setLayout(null);
 
-        jLabel1.setText("Apellido/s:");
+        jLabel1.setText("Apellido/s:*");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(20, 84, 110, 20);
 
-        jLabel2.setText("Nombre/s:");
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Nombre/s:*");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(323, 82, 80, 14);
 
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Sexo:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(341, 114, 70, 14);
 
-        jLabel4.setText(" Fecha de Nacimiento:");
+        jLabel4.setText(" Fecha de Nacimiento:*");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(8, 116, 130, 14);
 
-        jLabel5.setText("Lugar de Nacimiento:");
+        jLabel5.setText("Lugar de Nacimiento:*");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(20, 180, 130, 14);
 
         jLabel6.setText("Pcia de Nacimiento:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(16, 214, 130, 14);
 
-        jLabel7.setText("Nacionalidad:");
+        jLabel7.setText("Nacionalidad:*");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(16, 145, 120, 14);
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
             }
         });
+        jPanel1.add(txtNombre);
+        txtNombre.setBounds(413, 79, 149, 20);
+        jPanel1.add(txtLugarNac);
+        txtLugarNac.setBounds(160, 180, 150, 20);
 
         cmbProvincia.setEditable(true);
         cmbProvincia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jujuy", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tucumán", "Tierra del Fuego", "Buenos Aires" }));
+        jPanel1.add(cmbProvincia);
+        cmbProvincia.setBounds(160, 210, 150, 20);
+        jPanel1.add(txtNacionalidad);
+        txtNacionalidad.setBounds(160, 250, 150, 20);
 
         btnGuardarAltaPersona.setText("Guardar");
         btnGuardarAltaPersona.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -161,6 +186,8 @@ public class AltaPersona extends javax.swing.JDialog {
                 btnGuardarAltaPersonaActionPerformed(evt);
             }
         });
+        jPanel1.add(btnGuardarAltaPersona);
+        btnGuardarAltaPersona.setBounds(199, 329, 104, 23);
 
         cmbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Femenino", "Masculino" }));
         cmbSexo.addActionListener(new java.awt.event.ActionListener() {
@@ -168,6 +195,8 @@ public class AltaPersona extends javax.swing.JDialog {
                 cmbSexoActionPerformed(evt);
             }
         });
+        jPanel1.add(cmbSexo);
+        cmbSexo.setBounds(415, 111, 147, 20);
 
         btnCancelarAltaPersona.setText("Cancelar");
         btnCancelarAltaPersona.addActionListener(new java.awt.event.ActionListener() {
@@ -175,8 +204,12 @@ public class AltaPersona extends javax.swing.JDialog {
                 btnCancelarAltaPersonaActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCancelarAltaPersona);
+        btnCancelarAltaPersona.setBounds(303, 329, 100, 23);
 
-        jLabel8.setText("D.N.I.:");
+        jLabel8.setText("D.N.I.:*");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(20, 50, 100, 14);
 
         txtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,179 +221,68 @@ public class AltaPersona extends javax.swing.JDialog {
                 txtDniKeyTyped(evt);
             }
         });
+        jPanel1.add(txtDni);
+        txtDni.setBounds(160, 50, 150, 20);
 
         jLabel9.setText("Domicilio:");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(22, 252, 110, 14);
+        jPanel1.add(txtDomicilio);
+        txtDomicilio.setBounds(160, 140, 150, 20);
 
         jLabel10.setText("Barrio:");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(371, 252, 32, 14);
 
         txtBario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBarioActionPerformed(evt);
             }
         });
+        jPanel1.add(txtBario);
+        txtBario.setBounds(407, 249, 155, 20);
 
         jLabel11.setText("Teléfono Fijo:");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(16, 278, 120, 14);
 
         jLabel12.setText("Celular:");
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(366, 278, 37, 14);
 
         txtTelFijo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelFijoActionPerformed(evt);
             }
         });
+        jPanel1.add(txtTelFijo);
+        txtTelFijo.setBounds(160, 280, 150, 20);
+        jPanel1.add(txtTelCel);
+        txtTelCel.setBounds(407, 275, 155, 20);
 
-        cmbTipoHijo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "Legitimo", "Union Civil", "Natural", "Natural Reconocido" }));
-        cmbTipoHijo.setSelectedIndex(3);
+        cmbTipoHijo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Legitimo", "Union Civil", "Natural", "Natural Reconocido" }));
         cmbTipoHijo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbTipoHijoActionPerformed(evt);
             }
         });
+        jPanel1.add(cmbTipoHijo);
+        cmbTipoHijo.setBounds(415, 142, 147, 20);
 
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Tipo de Hijo:");
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(341, 142, 70, 20);
 
         txtApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtApellidoActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(20, 20, 20))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(19, 19, 19)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNombre)
-                            .addComponent(dateFechaNacim, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtDomicilio)
-                            .addComponent(txtLugarNac)
-                            .addComponent(cmbProvincia, 0, 200, Short.MAX_VALUE)
-                            .addComponent(txtNacionalidad)
-                            .addComponent(txtTelFijo)
-                            .addComponent(txtApellido))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtDni)
-                                    .addComponent(cmbSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cmbTipoHijo, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(20, 20, 20)
-                                    .addComponent(jLabel10)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtBario, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel12)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtTelCel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(104, 104, 104)
-                                .addComponent(btnCancelarAltaPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnGuardarAltaPersona, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(100, 100, 100)))
-                        .addGap(159, 159, 159)))
-                .addGap(32, 32, 32))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(txtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateFechaNacim, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(txtDomicilio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addComponent(txtLugarNac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(cmbProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(txtNacionalidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(txtTelFijo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(txtDni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbTipoHijo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(116, 116, 116)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(txtBario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(txtTelCel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGuardarAltaPersona)
-                    .addComponent(btnCancelarAltaPersona))
-                .addContainerGap())
-        );
+        jPanel1.add(txtApellido);
+        txtApellido.setBounds(160, 80, 150, 20);
+        jPanel1.add(dateFechaNacim);
+        dateFechaNacim.setBounds(160, 110, 150, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(20, 10, 600, 370);
@@ -401,7 +323,7 @@ public class AltaPersona extends javax.swing.JDialog {
     private void btnCancelarAltaPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarAltaPersonaActionPerformed
         setAgregado(false);
         this.dispose();
-        
+
     }//GEN-LAST:event_btnCancelarAltaPersonaActionPerformed
 
     private void cmbSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSexoActionPerformed
@@ -409,41 +331,115 @@ public class AltaPersona extends javax.swing.JDialog {
     }//GEN-LAST:event_cmbSexoActionPerformed
 
     private void btnGuardarAltaPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAltaPersonaActionPerformed
+        int dniOriginal;
         PersonaDAO personaDAO = new PersonaDAOImp();
 //        Persona persona;
         if (!modificar) {
-           //si se ingresa un nueva persona
-           persona = new Persona();    
-        }
-        
-
-      
-        persona.setApellido(txtApellido.getText().toUpperCase());
-        persona.setNombre(txtNombre.getText().toUpperCase());
-        persona.setDni(txtDni.getText().toUpperCase());
-        persona.setSexo(cmbSexo.getSelectedItem().toString());
-        persona.setTipoDeHijo(cmbTipoHijo.getSelectedItem().toString());
-        persona.setFechaNaciemiento(dateFechaNacim.getDate());
-        persona.setLugarNacimiento(txtLugarNac.getText().toUpperCase());
-        persona.setProvNacimiento(cmbProvincia.getSelectedItem().toString());
-        persona.setNacionalidad(txtNacionalidad.getText().toUpperCase());
-        persona.setDomicilio(txtDomicilio.getText().toUpperCase());
-        persona.setBarrio(txtBario.getText().toUpperCase());
-        persona.setTelefonoFijo(txtTelFijo.getText().toUpperCase());
-        persona.setTelefonoCelular(txtTelCel.getText().toUpperCase());
-
-        if (validacion()) {
-            JOptionPane.showMessageDialog(null, "Debe completar todos los campos...");
+            //si se ingresa un nueva persona
+            persona = new Persona();
+            dniOriginal = 0;
         } else {
-            setAgregado(true);
-            if (modificar) {
-                personaDAO.update(persona);
-            } else {
-                personaDAO.insert(persona);
-            }
-            JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
-            this.dispose();
+            dniOriginal = persona.getDni();
         }
+
+
+        try {
+            boolean cA, cN, cD, cLN = false;
+            cA = txtApellido.getText().trim().isEmpty();
+            cN = txtNombre.getText().trim().isEmpty();
+            cD = txtDni.getText().trim().isEmpty();
+            cLN = txtLugarNac.getText().trim().isEmpty();
+
+
+
+
+
+            //corroboro que no este vacio
+            if (cA || cLN || cN || cD) {
+                //falta llenar campos
+                JOptionPane.showMessageDialog(null, "Debes completar  los campos Obligatorios *");
+
+            } else {
+
+                persona.setApellido(txtApellido.getText().toUpperCase().trim());
+
+                persona.setNombre(txtNombre.getText().toUpperCase().trim());
+                persona.setDni(Integer.parseInt(txtDni.getText().trim()));
+                persona.setSexo(cmbSexo.getSelectedItem().toString());
+                persona.setTipoDeHijo(cmbTipoHijo.getSelectedItem().toString());
+                persona.setFechaNaciemiento(dateFechaNacim.getDate());
+                persona.setLugarNacimiento(txtLugarNac.getText().toUpperCase().trim());
+                persona.setProvNacimiento(cmbProvincia.getSelectedItem().toString());
+                persona.setNacionalidad(txtNacionalidad.getText().toUpperCase().trim());
+                persona.setDomicilio(txtDomicilio.getText().toUpperCase().trim());
+                persona.setBarrio(txtBario.getText().toUpperCase().trim());
+                persona.setTelefonoFijo(txtTelFijo.getText().toUpperCase().trim());
+                persona.setTelefonoCelular(txtTelCel.getText().toUpperCase().trim());
+
+                boolean b = false;
+                setAgregado(true);
+                if (modificar) {
+                    // entro a modificar el dni
+                    if (persona.getDni() == dniOriginal) {
+                        // no modifico el dni 
+                        personaDAO.update(persona);
+                        JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
+                        modificar = false;
+                        this.dispose();
+
+                    } else {
+                        //modifico el dni
+                        try {
+
+                            //tira error si no existe la persona una persona dni
+                            int pVerificar = new PersonaDAOImp().getPersona(persona.getDni()).getDni();
+
+
+                        } catch (Exception e) {
+                            // Si no existe la persona entonces se borra la persona y se cre nuevo con el dni  mofiiciado
+                            b = true;
+                            Persona personaOriginal = new PersonaDAOImp().getPersona(dniOriginal);
+                            new PersonaDAOImp().delete(personaOriginal);
+                            //creo una nueva persona con el nuevo dni modificado
+                            new PersonaDAOImp().insert(persona);
+                            System.out.println(" cambio el dni pero la persona no existe asi q todo ok");
+
+                            JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
+                            modificar = false;
+                            this.dispose();
+                        }
+
+                        if (!b) {
+                            JOptionPane.showMessageDialog(null, "Error la Persona Ya Existe , por favor corrija el DNI 2");
+                           
+                        }
+
+
+                    }
+
+                } else {
+                    // una persona nueva
+                    personaDAO.insert(persona);
+                    JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
+                    modificar = false;
+                    this.dispose();
+                }
+
+            }
+
+        } catch (org.hibernate.exception.ConstraintViolationException dniRepetido) {
+            JOptionPane.showMessageDialog(null, "La Persona Ya Existe, por favor corrija el DNI ");
+
+        } catch (org.hibernate.PropertyValueException e) {
+            JOptionPane.showMessageDialog(null, "Debes ingresar la Fecha de Nacimiento");
+
+        }
+
+
+
+
+
+
 
     }//GEN-LAST:event_btnGuardarAltaPersonaActionPerformed
 
@@ -452,42 +448,45 @@ public class AltaPersona extends javax.swing.JDialog {
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void txtDniKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDniKeyTyped
-     consumirLetras(evt);
+        consumirLetras(evt);
+        if (txtDni.getText().length() == 8) {
+            evt.consume();
+        }
     }//GEN-LAST:event_txtDniKeyTyped
 
-        public boolean validacion(){
+    public boolean validacion() {
         boolean vacio = true;
         ArrayList<JTextField> listaTxt = new ArrayList();
         listaTxt.add(txtApellido);
-        listaTxt.add(txtNombre); listaTxt.add(txtDni);
-        listaTxt.add(txtDomicilio);listaTxt.add(txtBario);
+        listaTxt.add(txtNombre);
+        listaTxt.add(txtDni);
+        listaTxt.add(txtDomicilio);
+        listaTxt.add(txtBario);
 //        listaTxt.add(txtTelFijo);listaTxt.add(txtTelCel);
-        listaTxt.add(txtLugarNac);listaTxt.add(txtNacionalidad);
+        listaTxt.add(txtLugarNac);
+        listaTxt.add(txtNacionalidad);
         for (Iterator<JTextField> it = listaTxt.iterator(); it.hasNext();) {
             JTextField jTextField = it.next();
             if (jTextField.getText().equals("")) {
                 jTextField.setBackground(Color.red);
                 vacio = true;
                 break;
-            }else{
+            } else {
                 vacio = false;
-            }             
+            }
         }
         return vacio;
     }
-    
-         public void consumirLetras(java.awt.event.KeyEvent evt){
-          // conusmir los caracteres del legajo excepto los numeros
-        char caracter = evt.getKeyChar();
-        if(((caracter < '0') ||
-         (caracter > '9')) &&
-         (caracter != '\b' /*corresponde a BACK_SPACE*/))
-      {
-         evt.consume();  // ignorar el evento de teclado
-      }
-  }
-    
 
+    public void consumirLetras(java.awt.event.KeyEvent evt) {
+        // conusmir los caracteres del legajo excepto los numeros
+        char caracter = evt.getKeyChar();
+        if (((caracter < '0')
+                || (caracter > '9'))
+                && (caracter != '\b' /*corresponde a BACK_SPACE*/)) {
+            evt.consume();  // ignorar el evento de teclado
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancelarAltaPersona;
     private javax.swing.JButton btnGuardarAltaPersona;

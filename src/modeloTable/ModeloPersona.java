@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JComboBox;
 import javax.swing.table.AbstractTableModel;
+import util.FechaUtil;
 
 /**
  *
@@ -52,14 +53,14 @@ public class ModeloPersona extends AbstractTableModel{
             case 0:objeto = persona.getDni();break;
             case 1:objeto = persona.getApellido();break;
             case 2:objeto = persona.getNombre();break;
-            case 3:objeto = persona.getDomicilio();break;           
-            case 4:objeto = persona.getFechaNaciemiento();break;           
+            case 3:objeto = FechaUtil.getFechaString10DDMMAAAA(persona.getFechaNaciemiento());break;          
+//            case 4:objeto =            
         }      
         return objeto;
     }
     
     private String[] cabeceras = {
-        "Documento", "Apellido/s", "Nombres", "Domicilio"       
+        "Documento", "Apellido/s", "Nombres", "Fecha Nacimiento"       
     };
     
     public Persona Consulta(int col) {

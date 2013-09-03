@@ -24,7 +24,7 @@ public class PersonaDAOImp implements PersonaDAO{
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         Criteria criteria = session.createCriteria(Persona.class);
-        criteria.addOrder(Order.asc("idPersona"));
+        criteria.addOrder(Order.asc("dni"));
         ArrayList<Persona> personas = (ArrayList<Persona>)criteria.list();
         session.close();
         return personas;
@@ -35,7 +35,7 @@ public class PersonaDAOImp implements PersonaDAO{
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         Criteria criteria = session.createCriteria(Persona.class);
-        criteria.add(Restrictions.eq("idPersona", idPersona));
+        criteria.add(Restrictions.eq("dni", idPersona));
         Persona persona = (Persona)criteria.list().get(0);
         session.close();
         return persona;

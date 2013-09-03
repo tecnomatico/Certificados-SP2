@@ -1,5 +1,5 @@
 package dominio;
-// Generated 30/08/2013 10:17:22 by Hibernate Tools 3.2.1.GA
+// Generated 31/08/2013 16:23:44 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -10,8 +10,7 @@ import java.util.Date;
 public class Persona  implements java.io.Serializable {
 
 
-     private Integer idPersona;
-     private String dni;
+     private int dni;
      private String apellido;
      private String nombre;
      private String sexo;
@@ -30,7 +29,7 @@ public class Persona  implements java.io.Serializable {
     }
 
 	
-    public Persona(String dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad) {
+    public Persona(int dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad) {
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
@@ -40,7 +39,7 @@ public class Persona  implements java.io.Serializable {
         this.provNacimiento = provNacimiento;
         this.nacionalidad = nacionalidad;
     }
-    public Persona(String dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad, String hijoDe, String domicilio, String barrio, String telefonoFijo, String telefonoCelular, String tipoDeHijo) {
+    public Persona(int dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad, String hijoDe, String domicilio, String barrio, String telefonoFijo, String telefonoCelular, String tipoDeHijo) {
        this.dni = dni;
        this.apellido = apellido;
        this.nombre = nombre;
@@ -57,18 +56,11 @@ public class Persona  implements java.io.Serializable {
        this.tipoDeHijo = tipoDeHijo;
     }
    
-    public Integer getIdPersona() {
-        return this.idPersona;
-    }
-    
-    public void setIdPersona(Integer idPersona) {
-        this.idPersona = idPersona;
-    }
-    public String getDni() {
+    public int getDni() {
         return this.dni;
     }
     
-    public void setDni(String dni) {
+    public void setDni(int dni) {
         this.dni = dni;
     }
     public String getApellido() {

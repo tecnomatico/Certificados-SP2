@@ -386,7 +386,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         jLabel9.setText("Parroquia:");
 
         jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabel10.setText("Pbro./Diacono:");
+        jLabel10.setText("Parroco");
 
         btnAgregarPadrinoCertficado.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         btnAgregarPadrinoCertficado.setText("Agregar Padrino");
@@ -420,7 +420,7 @@ public class AltaCertificado extends javax.swing.JFrame {
 
         cmbCiudad.setEditable(true);
         cmbCiudad.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        cmbCiudad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "", "San Salvador de Jujuy", "Abra Pampa", "Abralaite", "Aguas Calientes", "Alfarcito", "Arrayanal", "Arroyo Colorado", "Bárcena", "Barrancas", "Barrios", "Bermejito", "Caimancito", "Calilegua", "Cangrejillos", "Carahunco", "Casabindo", "Casira", "Caspalá", "Catúa", "Centro Forestal", "Chalicán", "Cieneguillas", "Cochinoca", "Coctaca", "Colonia San José", "El Cóndor", "Coranzulí", "Cusi Cusi", "Don Emilio", "El Acheral", "El Aguilar", "El Angosto", "El Bananal", "El Carmen", "El Ceibal", "El Fuerte", "El Moreno", "El Piquete", "El Puesto", "El Quemado", "El Talar", "El Toro", "Fraile Pintado", "Guerrero", "Hipólito Yrigoyen", "Iturbe", "Hornaditas", "Huacalera", "Huancar", "Humahuaca", "Juella", "La Almona", "La Ciénaga", "La Esperanza", "La Intermedia", "La Manga", "La Mendieta", "La Quiaca", "Lagunillas", "León", "Libertador General San Martín", "Libertad", "Liviara", "Llulluchayoc", "Los Lapachos", "Los Manatiales", "Loteo Navea", "Lozano", "Maimará", "Mina 9 de Octubre", "Mina Pirquitas", "Miraflores", "Misa Rumi", "Monterrico", "Ocloyas", "Olaroz Chico", "Oratorio", "Paicone", "Palma Sola", "Palo Blanco", "Palpalá", "Pampa Planca", "Pampichuela", "Parapeti", "Paulina", "Perico", "Piedritas", "Puente Lavayén", "Puesto del Marqués", "Puesto Sey", "Puesto Viejo", "Pumahuasi", "Purmamarca", "Rinconada", "Rinconadilla", "Rodeíto", "Rosario del Río Grande", "San Antonio", "San Pedro", "San Francisco", "San Juan de Oros", "San Lucas", "San Pedro de Jujuy", "Santa Ana", "Santa Catalina", "Santa Clara", "Sauzal", "Susques", "Tabladitas", "Tafna", "Termas de Reyes", "Tilcara", "Tiraxi", "Tres Cruces", "Tres Pozos", "Tumbaya", "Tusaquillas", "Uquía", "Valle Colorado", "Valle Grande", "Vinalito", "Volcán", "Yala", "Yavi", "Yavi Chico", "Yoscaba", "Yuto" }));
+        cmbCiudad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "San Salvador de Jujuy", "Abra Pampa", "Abralaite", "Aguas Calientes", "Alfarcito", "Arrayanal", "Arroyo Colorado", "Bárcena", "Barrancas", "Barrios", "Bermejito", "Caimancito", "Calilegua", "Cangrejillos", "Carahunco", "Casabindo", "Casira", "Caspalá", "Catúa", "Centro Forestal", "Chalicán", "Cieneguillas", "Cochinoca", "Coctaca", "Colonia San José", "El Cóndor", "Coranzulí", "Cusi Cusi", "Don Emilio", "El Acheral", "El Aguilar", "El Angosto", "El Bananal", "El Carmen", "El Ceibal", "El Fuerte", "El Moreno", "El Piquete", "El Puesto", "El Quemado", "El Talar", "El Toro", "Fraile Pintado", "Guerrero", "Hipólito Yrigoyen", "Iturbe", "Hornaditas", "Huacalera", "Huancar", "Humahuaca", "Juella", "La Almona", "La Ciénaga", "La Esperanza", "La Intermedia", "La Manga", "La Mendieta", "La Quiaca", "Lagunillas", "León", "Libertador General San Martín", "Libertad", "Liviara", "Llulluchayoc", "Los Lapachos", "Los Manatiales", "Loteo Navea", "Lozano", "Maimará", "Mina 9 de Octubre", "Mina Pirquitas", "Miraflores", "Misa Rumi", "Monterrico", "Ocloyas", "Olaroz Chico", "Oratorio", "Paicone", "Palma Sola", "Palo Blanco", "Palpalá", "Pampa Planca", "Pampichuela", "Parapeti", "Paulina", "Perico", "Piedritas", "Puente Lavayén", "Puesto del Marqués", "Puesto Sey", "Puesto Viejo", "Pumahuasi", "Purmamarca", "Rinconada", "Rinconadilla", "Rodeíto", "Rosario del Río Grande", "San Antonio", "San Pedro", "San Francisco", "San Juan de Oros", "San Lucas", "San Pedro de Jujuy", "Santa Ana", "Santa Catalina", "Santa Clara", "Sauzal", "Susques", "Tabladitas", "Tafna", "Termas de Reyes", "Tilcara", "Tiraxi", "Tres Cruces", "Tres Pozos", "Tumbaya", "Tusaquillas", "Uquía", "Valle Colorado", "Valle Grande", "Vinalito", "Volcán", "Yala", "Yavi", "Yavi Chico", "Yoscaba", "Yuto" }));
 
         jLabel19.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel19.setText("Ciudad");
@@ -788,9 +788,7 @@ public class AltaCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_contentMenuItemActionPerformed
 
     private void btnAgregarNiñoCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarNiñoCertficadoActionPerformed
-        //le doy formato a la fecha 
-        Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+       
         //llamo a la ventana busqueda
 
         BusquedaPersona bp = new BusquedaPersona(this, true);
@@ -800,8 +798,8 @@ public class AltaCertificado extends javax.swing.JFrame {
         if (bp.isAgregado()) {
             pAhijado = bp.getPersona();
 
-            txtFechNacimNiño.setText(sdf.format(pAhijado.getFechaNaciemiento()));
-            txtDNINiño.setText(pAhijado.getDni());
+            txtFechNacimNiño.setText(FechaUtil.getFechaString10DDMMAAAA(pAhijado.getFechaNaciemiento()));
+            txtDNINiño.setText(String.valueOf(pAhijado.getDni()));
             txtLugarNacNiño.setText(pAhijado.getLugarNacimiento());
             txtNombNiño.setText(pAhijado.getApellido() + " " + pAhijado.getNombre());
         }
@@ -885,11 +883,11 @@ public class AltaCertificado extends javax.swing.JFrame {
 
         try {
 
-            certificado.setIdAhijado(pAhijado.getIdPersona());
-            certificado.setIdTutor(pTutor.getIdPersona());
-            certificado.setIdTutora(pTutora.getIdPersona());
-            certificado.setIdMadrina(pMadrina.getIdPersona());
-            certificado.setIdPadrino(pPadrino.getIdPersona());
+            certificado.setIdAhijado(pAhijado.getDni());
+            certificado.setIdTutor(pTutor.getDni());
+            certificado.setIdTutora(pTutora.getDni());
+            certificado.setIdMadrina(pMadrina.getDni());
+            certificado.setIdPadrino(pPadrino.getDni());
             certificado.setNombreCura(p.getApellidoCura() + " " + p.getNombreCura());
 
             certificado.setDomicilioPadres(txtDomPadres.getText().toUpperCase());
@@ -1059,7 +1057,7 @@ public class AltaCertificado extends javax.swing.JFrame {
 
             //datos del bautizado
             txtNombNiño.setText(pAhijado.getApellido() + " " + pAhijado.getNombre());
-            txtDNINiño.setText(pAhijado.getDni());
+            txtDNINiño.setText(String.valueOf(pAhijado.getDni()));
             txtFechNacimNiño.setText(FechaUtil.getDateDD_MM_AAAA(pAhijado.getFechaNaciemiento()));
             txtLugarNacNiño.setText(pAhijado.getLugarNacimiento());
 
