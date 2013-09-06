@@ -68,7 +68,7 @@ public class ModeloCertificado extends AbstractTableModel{
             // problemas para cargar varios curas
             case 2:objeto = certificado.getNombreCura();break; 
             case 3:objeto = ahijado.getApellido()+" "+ahijado.getNombre();break;
-            case 4:objeto = ahijado.getDni()+" "+ahijado.getDni();break;                                                       
+            case 4:objeto = ahijado.getDni();break;                                                       
         }      
         return objeto;
     }

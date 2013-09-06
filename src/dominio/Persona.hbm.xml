@@ -1,13 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 31/08/2013 16:23:45 by Hibernate Tools 3.2.1.GA -->
+<!-- Generated 06/09/2013 12:51:15 by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="dominio.Persona" table="persona" catalog="parroquia">
-        <id name="dni" type="int">
-            <column name="dni" />
+        <id name="id" type="int">
+            <column name="id" />
             <generator class="assigned" />
         </id>
+        <property name="dni" type="int">
+            <column name="dni" not-null="true" unique="true" />
+        </property>
         <property name="apellido" type="string">
             <column name="apellido" length="45" not-null="true" />
         </property>

@@ -799,11 +799,11 @@ public class AltaCertificado extends javax.swing.JFrame {
 
         try {
 
-            certificado.setIdAhijado(pAhijado.getDni());
-            certificado.setIdTutor(pTutor.getDni());
-            certificado.setIdTutora(pTutora.getDni());
-            certificado.setIdMadrina(pMadrina.getDni());
-            certificado.setIdPadrino(pPadrino.getDni());
+            certificado.setIdAhijado(pAhijado.getId());
+            certificado.setIdTutor(pTutor.getId());
+            certificado.setIdTutora(pTutora.getId());
+            certificado.setIdMadrina(pMadrina.getId());
+            certificado.setIdPadrino(pPadrino.getId());
             certificado.setNombreCura(p.getApellidoCura() + " " + p.getNombreCura());
 
             certificado.setDomicilioPadres(txtDomPadres.getText().toUpperCase());

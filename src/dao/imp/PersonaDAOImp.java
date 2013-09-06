@@ -35,7 +35,7 @@ public class PersonaDAOImp implements PersonaDAO{
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         Criteria criteria = session.createCriteria(Persona.class);
-        criteria.add(Restrictions.eq("dni", idPersona));
+        criteria.add(Restrictions.eq("id", idPersona));
         Persona persona = (Persona)criteria.list().get(0);
         session.close();
         return persona;
