@@ -800,11 +800,11 @@ public class AltaCertificado extends javax.swing.JFrame {
 
         try {
 
-            certificado.setIdAhijado(pAhijado.getDni());
-            certificado.setIdTutor(pTutor.getDni());
-            certificado.setIdTutora(pTutora.getDni());
-            certificado.setIdMadrina(pMadrina.getDni());
-            certificado.setIdPadrino(pPadrino.getDni());
+            certificado.setIdAhijado(pAhijado.getId());
+            certificado.setIdTutor(pTutor.getId());
+            certificado.setIdTutora(pTutora.getId());
+            certificado.setIdMadrina(pMadrina.getId());
+            certificado.setIdPadrino(pPadrino.getId());
             certificado.setNombreCura(p.getApellidoCura() + " " + p.getNombreCura());
 
             certificado.setDomicilioPadres(txtDomPadres.getText().toUpperCase());
@@ -1305,7 +1305,7 @@ public class AltaCertificado extends javax.swing.JFrame {
     private javax.swing.JTextField txtLugarNacNiño;
     private javax.swing.JTextField txtNombMadre;
     private javax.swing.JTextField txtNombMadrina;
-    private javax.swing.JTextField txtNombNiño;
+    public javax.swing.JTextField txtNombNiño;
     private javax.swing.JTextField txtNombPadre;
     private javax.swing.JTextField txtNombPadrino;
     private javax.swing.JTextField txtNombreParroquia;

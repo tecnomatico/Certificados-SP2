@@ -69,7 +69,8 @@ CREATE TABLE IF NOT EXISTS `parroquia` (
 --
 
 CREATE TABLE IF NOT EXISTS `persona` (
-  `dni` int(8) NOT NULL,
+   `id` int(11) NOT NULL AUTO_INCREMENT, 
+ `dni` int(8) UNIQUE NOT NULL,
   `apellido` varchar(45) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `sexo` varchar(12) NOT NULL,
@@ -83,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `telefonoFijo` varchar(45) DEFAULT NULL,
   `telefonoCelular` varchar(45) DEFAULT NULL,
   `tipoDeHijo` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`dni`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
