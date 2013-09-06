@@ -120,9 +120,9 @@ public class AltaPersona extends javax.swing.JDialog {
         setTitle("Alta de Persona");
         setBackground(new java.awt.Color(255, 255, 204));
         setForeground(new java.awt.Color(255, 255, 204));
-        setMaximumSize(new java.awt.Dimension(665, 440));
-        setMinimumSize(new java.awt.Dimension(665, 440));
-        setPreferredSize(new java.awt.Dimension(665, 440));
+        setMaximumSize(new java.awt.Dimension(590, 440));
+        setMinimumSize(new java.awt.Dimension(590, 440));
+        setPreferredSize(new java.awt.Dimension(590, 440));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
@@ -132,17 +132,17 @@ public class AltaPersona extends javax.swing.JDialog {
 
         jLabel1.setText("Apellido/s:*");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(20, 84, 110, 20);
+        jLabel1.setBounds(10, 80, 110, 20);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Nombre/s:*");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(323, 82, 80, 14);
+        jLabel2.setBounds(290, 80, 56, 14);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Sexo:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(341, 114, 70, 14);
+        jLabel3.setBounds(290, 50, 30, 14);
 
         jLabel4.setText(" Fecha de Nacimiento:*");
         jPanel1.add(jLabel4);
@@ -150,15 +150,15 @@ public class AltaPersona extends javax.swing.JDialog {
 
         jLabel5.setText("Lugar de Nacimiento:*");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(20, 180, 130, 14);
+        jLabel5.setBounds(10, 180, 130, 14);
 
         jLabel6.setText("Pcia de Nacimiento:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(16, 214, 130, 14);
+        jLabel6.setBounds(10, 210, 130, 14);
 
         jLabel7.setText("Nacionalidad:*");
         jPanel1.add(jLabel7);
-        jLabel7.setBounds(16, 145, 120, 14);
+        jLabel7.setBounds(10, 140, 120, 14);
 
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -166,16 +166,16 @@ public class AltaPersona extends javax.swing.JDialog {
             }
         });
         jPanel1.add(txtNombre);
-        txtNombre.setBounds(413, 79, 149, 20);
+        txtNombre.setBounds(360, 80, 149, 20);
         jPanel1.add(txtLugarNac);
-        txtLugarNac.setBounds(160, 180, 150, 20);
+        txtLugarNac.setBounds(130, 180, 150, 20);
 
         cmbProvincia.setEditable(true);
         cmbProvincia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jujuy", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tucumán", "Tierra del Fuego", "Buenos Aires" }));
         jPanel1.add(cmbProvincia);
-        cmbProvincia.setBounds(160, 210, 150, 20);
+        cmbProvincia.setBounds(130, 210, 150, 20);
         jPanel1.add(txtNacionalidad);
-        txtNacionalidad.setBounds(160, 250, 150, 20);
+        txtNacionalidad.setBounds(130, 250, 150, 20);
 
         btnGuardarAltaPersona.setText("Guardar");
         btnGuardarAltaPersona.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -196,7 +196,7 @@ public class AltaPersona extends javax.swing.JDialog {
             }
         });
         jPanel1.add(cmbSexo);
-        cmbSexo.setBounds(415, 111, 147, 20);
+        cmbSexo.setBounds(360, 50, 80, 20);
 
         btnCancelarAltaPersona.setText("Cancelar");
         btnCancelarAltaPersona.addActionListener(new java.awt.event.ActionListener() {
@@ -209,7 +209,7 @@ public class AltaPersona extends javax.swing.JDialog {
 
         jLabel8.setText("D.N.I.:*");
         jPanel1.add(jLabel8);
-        jLabel8.setBounds(20, 50, 100, 14);
+        jLabel8.setBounds(10, 50, 100, 14);
 
         txtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -222,17 +222,17 @@ public class AltaPersona extends javax.swing.JDialog {
             }
         });
         jPanel1.add(txtDni);
-        txtDni.setBounds(160, 50, 150, 20);
+        txtDni.setBounds(130, 50, 90, 20);
 
         jLabel9.setText("Domicilio:");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(22, 252, 110, 14);
+        jLabel9.setBounds(10, 250, 110, 14);
         jPanel1.add(txtDomicilio);
-        txtDomicilio.setBounds(160, 140, 150, 20);
+        txtDomicilio.setBounds(130, 140, 150, 20);
 
         jLabel10.setText("Barrio:");
         jPanel1.add(jLabel10);
-        jLabel10.setBounds(371, 252, 32, 14);
+        jLabel10.setBounds(290, 250, 60, 14);
 
         txtBario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,15 +240,15 @@ public class AltaPersona extends javax.swing.JDialog {
             }
         });
         jPanel1.add(txtBario);
-        txtBario.setBounds(407, 249, 155, 20);
+        txtBario.setBounds(350, 250, 155, 20);
 
         jLabel11.setText("Teléfono Fijo:");
         jPanel1.add(jLabel11);
-        jLabel11.setBounds(16, 278, 120, 14);
+        jLabel11.setBounds(10, 280, 120, 14);
 
         jLabel12.setText("Celular:");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(366, 278, 37, 14);
+        jLabel12.setBounds(290, 280, 60, 14);
 
         txtTelFijo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,9 +256,9 @@ public class AltaPersona extends javax.swing.JDialog {
             }
         });
         jPanel1.add(txtTelFijo);
-        txtTelFijo.setBounds(160, 280, 150, 20);
+        txtTelFijo.setBounds(130, 280, 150, 20);
         jPanel1.add(txtTelCel);
-        txtTelCel.setBounds(407, 275, 155, 20);
+        txtTelCel.setBounds(350, 280, 155, 20);
 
         cmbTipoHijo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Legitimo", "Union Civil", "Natural", "Natural Reconocido" }));
         cmbTipoHijo.addActionListener(new java.awt.event.ActionListener() {
@@ -267,12 +267,12 @@ public class AltaPersona extends javax.swing.JDialog {
             }
         });
         jPanel1.add(cmbTipoHijo);
-        cmbTipoHijo.setBounds(415, 142, 147, 20);
+        cmbTipoHijo.setBounds(360, 180, 80, 20);
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel13.setText("Tipo de Hijo:");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(341, 142, 70, 20);
+        jLabel13.setBounds(280, 180, 70, 20);
 
         txtApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,20 +280,20 @@ public class AltaPersona extends javax.swing.JDialog {
             }
         });
         jPanel1.add(txtApellido);
-        txtApellido.setBounds(160, 80, 150, 20);
+        txtApellido.setBounds(130, 80, 150, 20);
         jPanel1.add(dateFechaNacim);
-        dateFechaNacim.setBounds(160, 110, 150, 20);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(20, 10, 600, 370);
+        dateFechaNacim.setBounds(130, 110, 150, 20);
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logosite.png"))); // NOI18N
-        getContentPane().add(jLabel14);
-        jLabel14.setBounds(550, 350, 80, 60);
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(450, 310, 80, 60);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(20, 10, 530, 370);
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.png"))); // NOI18N
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(0, 0, 650, 400);
+        jLabel15.setBounds(0, 0, 570, 400);
 
         getAccessibleContext().setAccessibleName("Agregar una¨Persona");
 
