@@ -28,7 +28,6 @@ public class ReporteCertificadoJRDataSource implements JRDataSource{
     List<Certificado> listaCertificado = new ArrayList<Certificado>();
     Parroquia p = new ParroquiaDaoImp().listarParroquia().get(0);
    public boolean next() throws JRException {
-        
         return ++index < listaCertificado.size();
     }
 
@@ -129,8 +128,13 @@ public class ReporteCertificadoJRDataSource implements JRDataSource{
         }
         else if("fechaBautismo".equals(jrf.getName())){
             valor = FechaUtil.getDateDD_MM_AAAA(listaCertificado.get(index).getFechaBautizmo());
+        }else if ("libro".equals(jrf.getName())) {
+           valor =  listaCertificado.get(index).getLibro();
+        }else if ("folio".equals(jrf.getName())) {
+           valor =  listaCertificado.get(index).getFolio();
+        }else if ("partida".equals(jrf.getName())) {
+           valor =  listaCertificado.get(index).getPartida();
         }
-               
        return valor;
     
     }
@@ -144,9 +148,3 @@ public class ReporteCertificadoJRDataSource implements JRDataSource{
      }
     
 }
-
-
-
-
-
-

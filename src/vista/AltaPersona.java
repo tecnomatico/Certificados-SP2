@@ -42,16 +42,17 @@ public class AltaPersona extends javax.swing.JDialog {
         this.seraCura = seraCura;
         initComponents();
         setLocationRelativeTo(parent);
+        //txtDni.setEnabled(true);
         this.setVisible(true);
     }
 
     public AltaPersona(java.awt.Frame parent, boolean modal, Persona persona) {
         super(parent, modal);
         initComponents();
+        //txtDni.setEnabled(true);
         this.persona = persona;
         // indico que se utiliza este formulario para modificar datos
         modificar = true;
-
         // cambiar las etiquetas para que mensionen q se hara una actualizacion de datos
         btnGuardarAltaPersona.setText("Modificar");
         this.setTitle("Actualizar Datos de la Persona");
@@ -70,7 +71,6 @@ public class AltaPersona extends javax.swing.JDialog {
         cmbSexo.setSelectedItem(persona.getSexo());
         // si toma una cadena q no esta en el combo
         cmbProvincia.setSelectedItem(persona.getProvNacimiento());
-
         setLocationRelativeTo(parent);
         setVisible(true);
     }
@@ -181,6 +181,7 @@ public class AltaPersona extends javax.swing.JDialog {
 
         jLabel8.setText("D.N.I.:*");
 
+        txtDni.setEnabled(false);
         txtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDniActionPerformed(evt);
@@ -410,8 +411,6 @@ public class AltaPersona extends javax.swing.JDialog {
         } else {
             dniOriginal = persona.getDni();
         }
-
-
         try {
             boolean cA, cN, cD, cLN = false;
             cA = txtApellido.getText().trim().isEmpty();
@@ -419,19 +418,13 @@ public class AltaPersona extends javax.swing.JDialog {
             cD = txtDni.getText().trim().isEmpty();
             cLN = txtLugarNac.getText().trim().isEmpty();
 
-
-
-
-
             //corroboro que no este vacio
             if (cA || cLN || cN || cD) {
                 //falta llenar campos
                 JOptionPane.showMessageDialog(null, "Debes completar  los campos Obligatorios *");
 
             } else {
-
                 persona.setApellido(txtApellido.getText().toUpperCase().trim());
-
                 persona.setNombre(txtNombre.getText().toUpperCase().trim());
                 persona.setDni(Integer.parseInt(txtDni.getText().trim()));
                 persona.setSexo(cmbSexo.getSelectedItem().toString());
@@ -462,8 +455,6 @@ public class AltaPersona extends javax.swing.JDialog {
 
                             //tira error si no existe la persona una persona dni
                             int pVerificar = new PersonaDAOImp().getPersona(persona.getDni()).getDni();
-
-
                         } catch (Exception e) {
                             // Si no existe la persona entonces se borra la persona y se cre nuevo con el dni  mofiiciado
                             b = true;
@@ -482,8 +473,6 @@ public class AltaPersona extends javax.swing.JDialog {
                             JOptionPane.showMessageDialog(null, "Error la Persona Ya Existe , por favor corrija el DNI 2");
                            
                         }
-
-
                     }
 
                 } else {
@@ -503,13 +492,6 @@ public class AltaPersona extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "Debes ingresar la Fecha de Nacimiento");
 
         }
-
-
-
-
-
-
-
     }//GEN-LAST:event_btnGuardarAltaPersonaActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed

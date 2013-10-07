@@ -3,7 +3,6 @@
  * and open the template in the editor.
  */
 package vista;
-
 import dao.CertificadoDAO;
 import dao.PersonaDAO;
 import dao.imp.CertificadoDAOImp;
@@ -28,7 +27,6 @@ import net.sf.jasperreports.view.JasperViewer;
 import reporte.ReporteCertificadoJRDataSource;
 import util.FechaUtil;
 import util.mensajero;
-
 /**
  *
  * @author AnahiAramayo
@@ -986,12 +984,6 @@ public class AltaCertificado extends javax.swing.JFrame {
             txtNombPadrino.setText(pPadrino.getApellido() + " " + pPadrino.getNombre());
             //domicilio de los padres
             txtDomPadres.setText(certificado.getDomicilioPadres());
-
-
-
-
-
-
         }
     }//GEN-LAST:event_btnBuscarCertificadoActionPerformed
 
@@ -1001,10 +993,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         pTutora=null;
         pPadrino=null;
         pMadrina = null;
-        
-        
-        
-        
+
         setEnabledComponentes(true);
         btnEditar.setEnabled(false);
         mnuItmEditar.setEnabled(false);
@@ -1129,12 +1118,10 @@ public class AltaCertificado extends javax.swing.JFrame {
         //llamo a la ventana busqueda
 
         BusquedaPersona bp = new BusquedaPersona(this, true);
-
         // agrego la persona buscada al certificado
 
         if (bp.isAgregado()) {
             pAhijado = bp.getPersona();
-
             txtFechNacimNiño.setText(FechaUtil.getFechaString10DDMMAAAA(pAhijado.getFechaNaciemiento()));
             txtDNINiño.setText(String.valueOf(pAhijado.getDni()));
             txtLugarNacNiño.setText(pAhijado.getLugarNacimiento());
