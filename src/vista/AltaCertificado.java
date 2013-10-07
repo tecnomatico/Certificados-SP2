@@ -852,20 +852,22 @@ public class AltaCertificado extends javax.swing.JFrame {
         JasperPrint jPrintt;
         
         try {
-            jPrintt = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reporte/CertificadoParroquia.jasper"), (Map) parametros, dataSource);
-          
+            //jPrintt = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reporte/CertificadoParroquia_1.jasper"), (Map) parametros, dataSource);
+          jPrintt = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reporte/CertificadoParroquia_2.jasper"), (Map) parametros, dataSource);
+            //CertificadoParroquia_2
             // este metodo imprime el reporte , recibe el jprint(el informe, ) y el otro parametro es para decirle que muestre la pantalla de configuracion de la impresora
             // si es false imprime de una con la configuarcion por defecto.
-            JasperPrintManager.printReport(jPrintt, true);
+            
             // esto es para la vista previa
-//            JDialog reporte = new JDialog();
-//            reporte.setSize(900, 700);
-//            reporte.setLocationRelativeTo(null);
-//            reporte.setModal(true);
-//            reporte.setTitle("INFORME");
-//            JRViewer jv = new JRViewer(jPrintt);
-//            reporte.getContentPane().add(jv);
-//            reporte.setVisible(true);
+            JDialog reporte = new JDialog();
+            reporte.setSize(900, 700);
+            reporte.setLocationRelativeTo(null);
+            reporte.setModal(true);
+            reporte.setTitle("INFORME");
+            JRViewer jv = new JRViewer(jPrintt);
+            reporte.getContentPane().add(jv);
+            reporte.setVisible(true);
+            //JasperPrintManager.printReport(jPrintt, true);
 
         } catch (JRException ex) {
             mensajero.mensajeError(this, "Error de Impresion");
