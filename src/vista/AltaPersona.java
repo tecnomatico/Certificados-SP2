@@ -20,7 +20,7 @@ import util.mensajero;
  */
 public class AltaPersona extends javax.swing.JDialog {
 
-    String padre;
+    //String espadre;
     private String seraCura;
     Persona persona;
     boolean modificar = false;
@@ -42,7 +42,18 @@ public class AltaPersona extends javax.swing.JDialog {
         this.seraCura = seraCura;
         initComponents();
         setLocationRelativeTo(parent);
-        //txtDni.setEnabled(true);
+        /*txtDni.setEnabled(true);
+        espadre = cmbTipoHijo.getSelectedItem().toString();
+        System.out.println(espadre);
+        System.out.println(espadre);
+        System.out.println(espadre);
+        System.out.println(espadre);
+        if (espadre != null) {
+            txtDni.setVisible(false);
+        }*/
+        
+        
+        
         this.setVisible(true);
     }
 
@@ -68,6 +79,7 @@ public class AltaPersona extends javax.swing.JDialog {
         txtTelFijo.setText(persona.getTelefonoFijo());
         dateFechaNacim.setDate(persona.getFechaNaciemiento());
         cmbTipoHijo.setSelectedItem(persona.getTipoDeHijo());
+        
         cmbSexo.setSelectedItem(persona.getSexo());
         // si toma una cadena q no esta en el combo
         cmbProvincia.setSelectedItem(persona.getProvNacimiento());
@@ -181,7 +193,6 @@ public class AltaPersona extends javax.swing.JDialog {
 
         jLabel8.setText("D.N.I.:*");
 
-        txtDni.setEnabled(false);
         txtDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDniActionPerformed(evt);
