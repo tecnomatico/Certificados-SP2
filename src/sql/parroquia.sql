@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2013 a las 06:17:55
+-- Tiempo de generación: 10-10-2013 a las 17:05:06
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.4.16
 
@@ -45,8 +45,14 @@ CREATE TABLE IF NOT EXISTS `certificado` (
   `ciudad` varchar(45) NOT NULL,
   `provincia` varchar(45) NOT NULL,
   PRIMARY KEY (`numeroCertificado`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
+--
+-- Volcado de datos para la tabla `certificado`
+--
+
+INSERT INTO `certificado` (`numeroCertificado`, `idAhijado`, `idTutora`, `idTutor`, `idMadrina`, `idPadrino`, `nombreCura`, `libro`, `folio`, `partida`, `fechaBautizmo`, `domicilioPadres`, `notasMarginales`, `ciudad`, `provincia`) VALUES
+(1, 1, 1, 1, 1, 1, 'APELLIDO  NOMBRE', '', '', '', '2013-10-10', '', 'no es necesario este campo', 'SAN SALVADOR DE JUJUY', 'Jujuy');
 
 -- --------------------------------------------------------
 
@@ -63,7 +69,12 @@ CREATE TABLE IF NOT EXISTS `parroquia` (
   PRIMARY KEY (`idParroquia`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
+--
+-- Volcado de datos para la tabla `parroquia`
+--
 
+INSERT INTO `parroquia` (`idParroquia`, `nombreParroquia`, `apellidoCura`, `nombreCura`, `ciudadParroquia`) VALUES
+(8, 'SAN PEDRO Y SAN PABLO', 'APELLIDO ', 'NOMBRE', 'SAN SALVADOR DE JUJUY');
 
 -- --------------------------------------------------------
 
@@ -81,16 +92,22 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `lugarNacimiento` varchar(45) NOT NULL,
   `provNacimiento` varchar(45) NOT NULL,
   `nacionalidad` varchar(20) NOT NULL,
-  `hijoDe` varchar(45) DEFAULT NULL,
-  `domicilio` varchar(45) DEFAULT NULL,
-  `barrio` varchar(45) DEFAULT NULL,
-  `telefonoFijo` varchar(45) DEFAULT NULL,
-  `telefonoCelular` varchar(45) DEFAULT NULL,
-  `tipoDeHijo` varchar(45) DEFAULT NULL,
+  `hijoDe` varchar(45) DEFAULT '-',
+  `domicilio` varchar(45) DEFAULT '-',
+  `barrio` varchar(45) DEFAULT '-',
+  `telefonoFijo` varchar(45) DEFAULT '-',
+  `telefonoCelular` varchar(45) DEFAULT '-',
+  `tipoDeHijo` varchar(45) DEFAULT '-',
   PRIMARY KEY (`id`),
   UNIQUE KEY `dni` (`dni`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
+--
+-- Volcado de datos para la tabla `persona`
+--
+
+INSERT INTO `persona` (`id`, `dni`, `apellido`, `nombre`, `sexo`, `fechaNaciemiento`, `lugarNacimiento`, `provNacimiento`, `nacionalidad`, `hijoDe`, `domicilio`, `barrio`, `telefonoFijo`, `telefonoCelular`, `tipoDeHijo`) VALUES
+(1, 31463646, 'ARAMAYO', 'VANESA ANAHI', 'Femenino', '1985-04-28', 'SAN SALVADOR DE JUJUY', 'Jujuy', 'ARGENTINA', NULL, 'PJE 155', 'CORONEL ARIAS', '4310218', '154091562', 'Legitimo');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

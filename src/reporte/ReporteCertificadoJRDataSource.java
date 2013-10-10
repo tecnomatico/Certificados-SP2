@@ -93,9 +93,10 @@ public class ReporteCertificadoJRDataSource implements JRDataSource{
         else if("hijo".equals(jrf.getName())){
             // ver si este es el filtro 
             valor = bautizado.getTipoDeHijo();
-        }else if("telefonoPadres".equals(jrf.getName())){
+        }else if("telefono".equals(jrf.getName())){
             // ver si este es el filtro 
-            valor = bautizado.getTelefonoFijo();
+           // valor = bautizado.getTelefonoFijo();
+            valor = tutor.getTelefonoFijo();
         }
         else if("padreBaut".equals(jrf.getName())){
             valor = tutor.getApellido()+" "+tutor.getNombre();
