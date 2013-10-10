@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-08-2013 a las 21:51:46
+-- Tiempo de generación: 10-10-2013 a las 06:17:55
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.4.16
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `parroquia`
 --
-CREATE DATABASE IF NOT EXISTS `parroquia` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+CREATE DATABASE IF NOT EXISTS `parroquia` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `parroquia`;
 
 -- --------------------------------------------------------
@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS `certificado` (
   `ciudad` varchar(45) NOT NULL,
   `provincia` varchar(45) NOT NULL,
   PRIMARY KEY (`numeroCertificado`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,9 @@ CREATE TABLE IF NOT EXISTS `parroquia` (
   `nombreCura` varchar(45) DEFAULT NULL,
   `ciudadParroquia` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`idParroquia`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+
+
 
 -- --------------------------------------------------------
 
@@ -69,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `parroquia` (
 --
 
 CREATE TABLE IF NOT EXISTS `persona` (
-   `id` int(11) NOT NULL AUTO_INCREMENT, 
- `dni` int(8) UNIQUE NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dni` int(8) NOT NULL DEFAULT '0',
   `apellido` varchar(45) NOT NULL,
   `nombre` varchar(45) NOT NULL,
   `sexo` varchar(12) NOT NULL,
@@ -84,8 +87,10 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `telefonoFijo` varchar(45) DEFAULT NULL,
   `telefonoCelular` varchar(45) DEFAULT NULL,
   `tipoDeHijo` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `dni` (`dni`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
