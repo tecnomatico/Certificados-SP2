@@ -8,6 +8,7 @@ import dao.PersonaDAO;
 import dao.imp.CertificadoDAOImp;
 import dao.imp.ParroquiaDaoImp;
 import dao.imp.PersonaDAOImp;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -20,6 +21,12 @@ import dominio.Parroquia;
 import dominio.Persona;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
+import java.net.URL;
+import net.sf.jasperreports.engine.JREmptyDataSource;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -46,7 +53,8 @@ public class AltaCertificado extends javax.swing.JFrame {
     private Certificado certificado = null;
     private boolean modificar;
     Parroquia p = null;
-
+private final String logoP="/reporte/logoP.jpg";
+private final String logooP="/reporte/logooP.jpg";
     /**
      * PE Creates new form Inicio
      */
@@ -190,7 +198,7 @@ public class AltaCertificado extends javax.swing.JFrame {
         });
         jToolBar2.add(btnNuevo);
 
-        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoLimpiar.png"))); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/IconoLimpiar.jpg"))); // NOI18N
         btnEditar.setText("EDITAR");
         btnEditar.setEnabled(false);
         btnEditar.setFocusable(false);
@@ -545,9 +553,7 @@ public class AltaCertificado extends javax.swing.JFrame {
                                         .addComponent(jLabel11)
                                         .addGap(18, 18, 18)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(cmbProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(128, 128, 128))
+                                            .addComponent(cmbProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(cmbCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -653,9 +659,9 @@ public class AltaCertificado extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel12)
                             .addComponent(txtNombPadrino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel11)
@@ -664,7 +670,6 @@ public class AltaCertificado extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel7))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnAgregarPadrinoCertficado)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -690,8 +695,7 @@ public class AltaCertificado extends javax.swing.JFrame {
                                 .addComponent(cmbProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(13, 13, 13)
-                                .addComponent(btnAgregarMadreCertficado)
-                                .addGap(93, 93, 93)))))
+                                .addComponent(btnAgregarMadreCertficado)))))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
@@ -847,15 +851,12 @@ public class AltaCertificado extends javax.swing.JFrame {
                 certificadoDAO.update(certificado);
             }
             JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
-//            if (!modificar){
                   setEnabledComponentes(false);       
-//            }
-         
+
             //cuando guarda o actualiza esto se debe 
             btnEditar.setEnabled(true);
             mnuItmEditar.setEnabled(true);
             btnBuscarCertificado.setEnabled(false);
-            
             activarBotonNuevo(false);
             
             
@@ -867,8 +868,8 @@ public class AltaCertificado extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     public void Imprimir(){
-        Map parametros = new HashMap();
-        String logotipo = "/images/1.jpg";
+       Map parametros = new HashMap();
+//        String logotipo = "/images/logoP.jpg";
 
         ReporteCertificadoJRDataSource dataSource = new ReporteCertificadoJRDataSource();
         List<Certificado> lista = new ArrayList<Certificado>();
@@ -877,6 +878,9 @@ public class AltaCertificado extends javax.swing.JFrame {
         JasperPrint jPrintt;
         
         try {
+             //parametros.clear();
+       parametros.put("logoP", this.getClass().getResourceAsStream(logoP));
+       parametros.put("logooP", this.getClass().getResourceAsStream(logooP));
             //jPrintt = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reporte/CertificadoParroquia_1.jasper"), (Map) parametros, dataSource);
           jPrintt = JasperFillManager.fillReport(this.getClass().getClassLoader().getResourceAsStream("reporte/CertificadoParroquia_2.jasper"), (Map) parametros, dataSource);
             //CertificadoParroquia_2
@@ -893,11 +897,9 @@ public class AltaCertificado extends javax.swing.JFrame {
             reporte.getContentPane().add(jv);
             reporte.setVisible(true);
             //JasperPrintManager.printReport(jPrintt, true);
-
         } catch (JRException ex) {
             mensajero.mensajeError(this, "Error de Impresion");
         }
-
     }
     
     private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
@@ -916,28 +918,7 @@ public class AltaCertificado extends javax.swing.JFrame {
              mnuItmGuardar.setEnabled(true);
              btnNuevo.setEnabled(true);
              mnuItmNuevo.setEnabled(true);
-             
-        
-        
-        
-        
-        //        limpiarVentana();
-//
-//        // el indicador de modificar se pne en false ya que se creara un certificado nuevo
-//        modificar = false;
-//        // inicializar los botones de opciones
-//        btnNuevo.setEnabled(true);
-//        btnGuardar.setEnabled(false);
-//        btnImprimir.setEnabled(false);
-//        btnBuscarCertificado.setEnabled(true);
-//
-//        //mnuitm
-//        mnuItmNuevo.setEnabled(true);
-//        mnuItmGuardar.setEnabled(false);
-//        mnuItmImprimir.setEnabled(false);
-
-
-
+ 
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnBuscarCertificadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarCertificadoActionPerformed

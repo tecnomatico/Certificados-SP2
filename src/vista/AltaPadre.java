@@ -71,13 +71,23 @@ public class AltaPadre extends javax.swing.JDialog {
     public AltaPadre(java.awt.Frame parent, boolean modal, Persona persona) {
         super(parent, modal);
         initComponents();
-        //txtDni.setEnabled(true);
+       //txtDni.setEnabled(true);
         this.persona = persona;
         // indico que se utiliza este formulario para modificar datos
         modificar = true;
         // cambiar las etiquetas para que mensionen q se hara una actualizacion de datos
         btnGuardarAltaPersona.setText("Modificar");
         this.setTitle("Actualizar Datos de la Persona");
+        
+        
+         SLetras(txtApellido);
+        SLetras(txtNombre);
+        SLetras(txtNacionalidad);
+        SLetras(txtLugarNac);
+//        SLetras(txtDomicilio);
+        SLetras(txtBarrio);
+        SNumeros(txtTelFijo);
+        SNumeros(txtTelCel);
         // cargar la persona en el formulario para qeu se edite
         txtApellido.setText(persona.getApellido());
         txtBarrio.setText(persona.getBarrio());
@@ -94,6 +104,8 @@ public class AltaPadre extends javax.swing.JDialog {
         cmbSexo.setSelectedItem(persona.getSexo());
         // si toma una cadena q no esta en el combo
         cmbProvincia.setSelectedItem(persona.getProvNacimiento());
+        
+        
         setLocationRelativeTo(parent);
         setVisible(true);
     }
@@ -524,6 +536,7 @@ public class AltaPadre extends javax.swing.JDialog {
     }
     public void SLetras(JTextField a){
     a.addKeyListener(new KeyAdapter() {
+        @Override
         public void keyTyped(KeyEvent v){
             char c=v.getKeyChar();
             if (Character.isDigit(c)){
@@ -535,6 +548,7 @@ public class AltaPadre extends javax.swing.JDialog {
             }
       public void SNumeros(JTextField a){
     a.addKeyListener(new KeyAdapter() {
+        @Override
         public void keyTyped(KeyEvent v){
             char c=v.getKeyChar();
             if (!Character.isDigit(c)){

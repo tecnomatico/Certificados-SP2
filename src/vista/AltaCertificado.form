@@ -229,7 +229,7 @@
         <Component class="javax.swing.JButton" name="btnEditar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/images/IconoLimpiar.png"/>
+              <Image iconType="3" name="/images/IconoLimpiar.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="EDITAR"/>
             <Property name="enabled" type="boolean" value="false"/>
@@ -426,10 +426,7 @@
                                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="cmbProvincia" min="-2" pref="220" max="-2" attributes="0"/>
-                                                  <EmptySpace min="128" pref="128" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="cmbProvincia" alignment="0" min="-2" pref="220" max="-2" attributes="0"/>
                                               <Component id="cmbCiudad" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -565,9 +562,9 @@
                               <Component id="jLabel12" alignment="2" min="-2" max="-2" attributes="0"/>
                               <Component id="txtNombPadrino" alignment="2" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
@@ -577,7 +574,6 @@
                                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="btnAgregarPadrinoCertficado" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -610,7 +606,6 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                                   <Component id="btnAgregarMadreCertficado" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="93" pref="93" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
