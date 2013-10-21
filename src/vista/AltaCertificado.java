@@ -255,7 +255,7 @@ private final String logooP="/reporte/logooP.jpg";
         jToolBar2.setBounds(170, 10, 460, 110);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos - Certificado de Bautismo", 0, 0, new java.awt.Font("Calibri", 1, 24))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos - Certificado de Bautismo", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 1, 24))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setAutoscrolls(true);
         jPanel1.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
@@ -836,8 +836,8 @@ private final String logooP="/reporte/logooP.jpg";
             certificado.setNombreCura(p.getApellidoCura() + " " + p.getNombreCura());
 
             certificado.setDomicilioPadres(txtDomPadres.getText().toUpperCase());
-            certificado.setCiudad(cmbCiudad.getSelectedItem().toString());
-            certificado.setProvincia(cmbProvincia.getSelectedItem().toString());
+            certificado.setCiudad(cmbCiudad.getSelectedItem().toString().toUpperCase());
+            certificado.setProvincia(cmbProvincia.getSelectedItem().toString().toUpperCase());
             certificado.setFechaBautizmo(dateFechaBautismo.getDate());
             certificado.setLibro(txtlibro.getText().toUpperCase());
             certificado.setPartida(txtPartida.getText().toUpperCase());
@@ -889,7 +889,7 @@ private final String logooP="/reporte/logooP.jpg";
             
             // esto es para la vista previa
             JDialog reporte = new JDialog();
-            reporte.setSize(900, 700);
+            reporte.setSize(1250, 700);
             reporte.setLocationRelativeTo(null);
             reporte.setModal(true);
             reporte.setTitle("INFORME");

@@ -1,5 +1,5 @@
 package dominio;
-// Generated 06/09/2013 12:51:15 by Hibernate Tools 3.2.1.GA
+// Generated 21/10/2013 13:18:17 by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class Persona  implements java.io.Serializable {
 
 
-     private int id;
+     private Integer id;
      private int dni;
      private String apellido;
      private String nombre;
@@ -30,8 +30,7 @@ public class Persona  implements java.io.Serializable {
     }
 
 	
-    public Persona(int id, int dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad) {
-        this.id = id;
+    public Persona(int dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad) {
         this.dni = dni;
         this.apellido = apellido;
         this.nombre = nombre;
@@ -41,8 +40,7 @@ public class Persona  implements java.io.Serializable {
         this.provNacimiento = provNacimiento;
         this.nacionalidad = nacionalidad;
     }
-    public Persona(int id, int dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad, String hijoDe, String domicilio, String barrio, String telefonoFijo, String telefonoCelular, String tipoDeHijo) {
-       this.id = id;
+    public Persona(int dni, String apellido, String nombre, String sexo, Date fechaNaciemiento, String lugarNacimiento, String provNacimiento, String nacionalidad, String hijoDe, String domicilio, String barrio, String telefonoFijo, String telefonoCelular, String tipoDeHijo) {
        this.dni = dni;
        this.apellido = apellido;
        this.nombre = nombre;
@@ -59,11 +57,11 @@ public class Persona  implements java.io.Serializable {
        this.tipoDeHijo = tipoDeHijo;
     }
    
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
     
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public int getDni() {

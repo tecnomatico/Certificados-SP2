@@ -1,5 +1,5 @@
 package dominio;
-// Generated 06/09/2013 12:51:15 by Hibernate Tools 3.2.1.GA
+// Generated 21/10/2013 13:18:17 by Hibernate Tools 3.2.1.GA
 
 
 

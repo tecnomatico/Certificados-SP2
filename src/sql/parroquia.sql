@@ -98,8 +98,8 @@ CREATE TABLE IF NOT EXISTS `persona` (
   `telefonoFijo` varchar(45) DEFAULT '-',
   `telefonoCelular` varchar(45) DEFAULT '-',
   `tipoDeHijo` varchar(45) DEFAULT '-',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `dni` (`dni`)
+  PRIMARY KEY (`id`)
+ -- UNIQUE KEY `dni` (`dni`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --

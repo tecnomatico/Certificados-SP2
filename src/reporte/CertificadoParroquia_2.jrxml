@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CertificadoParroquia" language="groovy" pageWidth="900" pageHeight="600" orientation="Landscape" columnWidth="784" leftMargin="68" rightMargin="48" topMargin="124" bottomMargin="14" uuid="bbea9ceb-44af-40a0-9c51-76d0e5bf56d8">
-	<property name="ireport.zoom" value="0.75"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="359"/>
+	<property name="ireport.y" value="53"/>
 	<parameter name="logoP" class="java.io.InputStream"/>
 	<parameter name="logooP" class="java.io.InputStream"/>
 	<field name="libro" class="java.lang.String"/>
@@ -294,7 +294,7 @@
 				<textFieldExpression><![CDATA[$F{padreBaut}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="8e2a7eee-4196-4684-8bf1-a826c6e0704c" x="344" y="193" width="91" height="20" forecolor="#0000FF" backcolor="#0000FF"/>
+				<reportElement uuid="8e2a7eee-4196-4684-8bf1-a826c6e0704c" x="344" y="193" width="91" height="20" forecolor="#000099" backcolor="#0000FF"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
 					<font fontName="Calibri" size="12"/>
 				</textElement>
@@ -386,13 +386,13 @@
 			</textField>
 			<textField>
 				<reportElement uuid="5b7131a9-516c-4f62-b764-62081dd7b14b" x="633" y="278" width="119" height="20" forecolor="#000099"/>
-				<textElement verticalAlignment="Middle">
+				<textElement verticalAlignment="Top">
 					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fechaBautismo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="5dde3c9c-e899-432e-b2fa-9b91ee9181ba" x="494" y="117" width="47" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="5dde3c9c-e899-432e-b2fa-9b91ee9181ba" x="494" y="117" width="57" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
 					<font fontName="Calibri" size="12"/>
 				</textElement>
@@ -435,28 +435,28 @@
 			</textField>
 			<staticText>
 				<reportElement uuid="f5aa66eb-4031-4d03-81e0-4cc601329c71" x="494" y="90" width="65" height="20" forecolor="#000000" backcolor="#000000"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Nacido/a el]]></text>
 			</staticText>
 			<textField>
 				<reportElement uuid="4d146c4b-8437-4c86-a143-9e7b6d9e8c82" x="559" y="90" width="70" height="20" forecolor="#000099" backcolor="#0000CC"/>
-				<textElement verticalAlignment="Top">
+				<textElement verticalAlignment="Middle">
 					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fechaNacimBaut}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement uuid="1e5b2404-0180-4062-a1b1-8f857fb773c1" x="632" y="90" width="19" height="20" forecolor="#000000" backcolor="#000000"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[en]]></text>
 			</staticText>
 			<textField>
 				<reportElement uuid="0a82d415-8d1e-4152-b970-dd63262d22f7" x="648" y="90" width="136" height="20" forecolor="#000099" backcolor="#0000CC"/>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="Calibri" size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lugarNacimBaut}]]></textFieldExpression>
@@ -483,7 +483,7 @@
 				<text><![CDATA[Hijo/a]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="8fdafa14-070b-4bcc-b885-1c049f2212e6" x="685" y="142" width="81" height="20" forecolor="#000099"/>
+				<reportElement uuid="8fdafa14-070b-4bcc-b885-1c049f2212e6" x="691" y="141" width="81" height="20" forecolor="#000099"/>
 				<textElement textAlignment="Center">
 					<font fontName="Calibri" size="12"/>
 				</textElement>
@@ -497,7 +497,7 @@
 				<text><![CDATA[de Don]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="6fa7d696-859a-4403-8e06-92204d251e91" x="571" y="169" width="188" height="20" forecolor="#000099"/>
+				<reportElement uuid="6fa7d696-859a-4403-8e06-92204d251e91" x="572" y="168" width="188" height="20" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="12"/>
 				</textElement>
@@ -526,7 +526,7 @@
 			</staticText>
 			<textField>
 				<reportElement uuid="ab0c755d-4543-46dd-afe8-e44cf508b1e2" x="585" y="305" width="158" height="20" forecolor="#000099"/>
-				<textElement verticalAlignment="Middle">
+				<textElement verticalAlignment="Top">
 					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombrePadrino}]]></textFieldExpression>

@@ -431,6 +431,28 @@ public class AltaPersona extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbSexoActionPerformed
 
+    /**
+     * 
+     * @param dni
+     * @return True si existe la persona
+     * false si no existe
+     */
+    private boolean isExistPersona(int dni){
+      boolean b=false;
+      int d= 0;
+      try{
+         d =new PersonaDAOImp().getPersona(dni).getDni();
+        b= true;
+      }catch(Exception e){
+        b=false;  
+      }
+     
+      
+      return b;
+    }
+    
+    
+    
     private void btnGuardarAltaPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarAltaPersonaActionPerformed
         int dniOriginal;
         PersonaDAO personaDAO = new PersonaDAOImp();
@@ -453,16 +475,18 @@ public class AltaPersona extends javax.swing.JDialog {
             if (cA || cLN || cN || cD) {
                 //falta llenar campos
                 JOptionPane.showMessageDialog(null, "Debes completar  los campos Obligatorios *");
-
+            }else if(isExistPersona(Integer.valueOf(txtDni.getText().trim()))&& Integer.valueOf(txtDni.getText().trim())!=0){
+                    JOptionPane.showMessageDialog(null, "La Persona Ya Existe, por favor corrija el DNI");
+                
             } else {
                 persona.setApellido(txtApellido.getText().toUpperCase().trim());
                 persona.setNombre(txtNombre.getText().toUpperCase().trim());
                 persona.setDni(Integer.parseInt(txtDni.getText().trim()));
-                persona.setSexo(cmbSexo.getSelectedItem().toString());
-                persona.setTipoDeHijo(cmbTipoHijo.getSelectedItem().toString());
+                persona.setSexo(cmbSexo.getSelectedItem().toString().toUpperCase());
+                persona.setTipoDeHijo(cmbTipoHijo.getSelectedItem().toString().toUpperCase());
                 persona.setFechaNaciemiento(dateFechaNacim.getDate());
                 persona.setLugarNacimiento(txtLugarNac.getText().toUpperCase().trim());
-                persona.setProvNacimiento(cmbProvincia.getSelectedItem().toString());
+                persona.setProvNacimiento(cmbProvincia.getSelectedItem().toString().toUpperCase());
                 persona.setNacionalidad(txtNacionalidad.getText().toUpperCase().trim());
                 persona.setDomicilio(txtDomicilio.getText().toUpperCase().trim());
                 persona.setBarrio(txtBarrio.getText().toUpperCase().trim());
@@ -516,8 +540,8 @@ public class AltaPersona extends javax.swing.JDialog {
 
             }
 
-        } catch (org.hibernate.exception.ConstraintViolationException dniRepetido) {
-            JOptionPane.showMessageDialog(null, "La Persona Ya Existe, por favor corrija el DNI ");
+//        } catch (org.hibernate.exception.ConstraintViolationException dniRepetido) {
+//            JOptionPane.showMessageDialog(null, "La Persona Ya Existe, por favor corrija el DNI ");
 
         } catch (org.hibernate.PropertyValueException e) {
             JOptionPane.showMessageDialog(null, "Debes ingresar la Fecha de Nacimiento");
