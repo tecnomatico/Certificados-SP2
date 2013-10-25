@@ -477,39 +477,17 @@ public class AltaPadre extends javax.swing.JDialog {
                 boolean b = false;
                 setAgregado(true);
                 if (modificar) {
-                    // entro a modificar el dni
-                    if (persona.getDni() == dniOriginal) {
-                        // no modifico el dni 
-                        personaDAO.update(persona);
-                        JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
-                        modificar = false;
-                        this.dispose();
-
-                    } else {
-                        //modifico el dni
-                        try {
-
-                            //tira error si no existe la persona una persona dni
-                            int pVerificar = new PersonaDAOImp().getPersona(persona.getDni()).getDni();
-                        } catch (Exception e) {
-                            // Si no existe la persona entonces se borra la persona y se cre nuevo con el dni  mofiiciado
-                            b = true;
-                            Persona personaOriginal = new PersonaDAOImp().getPersona(dniOriginal);
-                            new PersonaDAOImp().delete(personaOriginal);
-                            //creo una nueva persona con el nuevo dni modificado
-                            new PersonaDAOImp().insert(persona);
-                            System.out.println(" cambio el dni pero la persona no existe asi q todo ok");
+                        
+                            new PersonaDAOImp().update(persona);
+                            System.out.println("  todo ok update");
 
                             JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
                             modificar = false;
                             this.dispose();
-                        }
+                
+                        
 
-                        if (!b) {
-                            JOptionPane.showMessageDialog(null, "Error la Persona Ya Existe , por favor corrija el DNI 2");
-                           
-                        }
-                    }
+                       
 
                 } else {
                     // una persona nueva
@@ -520,9 +498,6 @@ public class AltaPadre extends javax.swing.JDialog {
                 }
 
             }
-
-        } catch (org.hibernate.exception.ConstraintViolationException dniRepetido) {
-            JOptionPane.showMessageDialog(null, "La Persona Ya Existe, por favor corrija el DNI ");
 
         } catch (org.hibernate.PropertyValueException e) {
             JOptionPane.showMessageDialog(null, "Debes ingresar la Fecha de Nacimiento");

@@ -513,10 +513,7 @@ public class AltaAhijado extends javax.swing.JDialog {
                         } catch (Exception e) {
                             // Si no existe la persona entonces se borra la persona y se cre nuevo con el dni  mofiiciado
                             b = true;
-                            Persona personaOriginal = new PersonaDAOImp().getPersona(persona.getId());
-                            new PersonaDAOImp().delete(personaOriginal);
-                            //creo una nueva persona con el nuevo dni modificado
-                            new PersonaDAOImp().insert(persona);
+                            new PersonaDAOImp().update(persona);
                             System.out.println(" cambio el dni pero la persona no existe asi q todo ok");
 
                             JOptionPane.showMessageDialog(null, "Se cargo correctamente...");
