@@ -5,7 +5,7 @@
 package vista;
 
 import vista.AltaCertificado;
-import vista.AltaPersona;
+import vista.AltaAhijado;
 import java.awt.TextField;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -13,7 +13,7 @@ import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
 import dominio.Certificado;
 import modeloTable.ModeloCertificado;
-import modeloTable.ModeloPersona;
+import modeloTable.ModeloAhijado;
 import dominio.Persona;
 
 
@@ -87,7 +87,7 @@ public class BusquedaCertificado extends javax.swing.JDialog {
         setPreferredSize(new java.awt.Dimension(650, 440));
         getContentPane().setLayout(null);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda de Certificados", 0, 0, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Busqueda de Certificados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
         jPanel1.setOpaque(false);
 
         jLabel1.setText("Busque el Certificado por Datos:");

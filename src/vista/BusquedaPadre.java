@@ -9,9 +9,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
-import modeloTable.ModeloPersona;
+import modeloTable.ModeloAhijado;
 import dominio.Persona;
 import javax.swing.JTable;
+import modeloTable.ModeloPadre;
 
 /**
  *
@@ -20,13 +21,13 @@ import javax.swing.JTable;
 public class BusquedaPadre extends javax.swing.JDialog {
 
     private Persona persona;// variable auxiliar donde se almacenara la persona buscada
-    ModeloPersona modeloPersona ; // SE ENCARGA DE OBTENER LA LISTA DE PERSONAS PARA LA TABLA
+    ModeloPadre modeloPersona ; // SE ENCARGA DE OBTENER LA LISTA DE PERSONAS PARA LA TABLA
     private  TableRowSorter sorter; 
     int numeroSeleccion;
     AltaCertificado parent;
     private boolean agregado = false;
 
-    
+    String sexo;
     
     
     /**
@@ -37,16 +38,27 @@ public class BusquedaPadre extends javax.swing.JDialog {
         initComponents();
         
        
-        inicializarTabla();
+        inicializarTabla(sexo);
+        this.parent = parent;//Estoy creando una variable global, le asigno el parent 
+        //q traigo del anterior
+        setLocationRelativeTo(parent);
+        this.setVisible(true);
+    }
+    public BusquedaPadre( AltaCertificado parent, boolean modal , String sexo) {
+        super(parent, modal);
+        initComponents();
+        
+        this.sexo= sexo;
+        inicializarTabla(sexo);
         this.parent = parent;//Estoy creando una variable global, le asigno el parent 
         //q traigo del anterior
         setLocationRelativeTo(parent);
         this.setVisible(true);
     }
 
-    public void inicializarTabla(){
+    public void inicializarTabla(String sexo){
         // inicializo la tabla busqueda
-        modeloPersona = new ModeloPersona();
+        modeloPersona = new ModeloPadre(sexo);
         sorter = new TableRowSorter(modeloPersona);
         tblBusquedaPersona.setModel(modeloPersona); 
     }
@@ -231,11 +243,12 @@ public class BusquedaPadre extends javax.swing.JDialog {
     }//GEN-LAST:event_txtBusquedaDNIKeyPressed
 
     private void btnAgregarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPersonaActionPerformed
-        AltaPadre at = new AltaPadre(parent, true);
+        AltaPadre at = new AltaPadre(parent, true,sexo);
+        
         // reflejar los cambios en la tabla
         if (at.isAgregado()) {
             // actualizar la tabla de persona
-            inicializarTabla();
+            inicializarTabla(sexo);
         }
     }//GEN-LAST:event_btnAgregarPersonaActionPerformed
 
@@ -260,11 +273,11 @@ public class BusquedaPadre extends javax.swing.JDialog {
             numeroSeleccion = sorter.convertRowIndexToModel(tblBusquedaPersona.getSelectedRow());
             persona = modeloPersona.getPersona(numeroSeleccion);
             // abrir el formulario alta de persona para editar los datos de persona
-            AltaPersona modificarPersona = new AltaPersona(parent, true, persona);
+            AltaPadre modificarPersona = new AltaPadre(parent, true, persona);
             // actulizar la tabla con los datos modificados
                if (modificarPersona.isAgregado()) {
                   // si hubo modificacion en al Persona se actualiza la tabla
-                   inicializarTabla();       
+                   inicializarTabla(sexo);       
                }
 
         } else {

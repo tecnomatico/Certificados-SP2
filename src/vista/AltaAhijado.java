@@ -20,7 +20,7 @@ import util.mensajero;
  *
  * @author dario
  */
-public class AltaPersona extends javax.swing.JDialog {
+public class AltaAhijado extends javax.swing.JDialog {
 
     //String espadre;
     private String seraCura;
@@ -39,7 +39,7 @@ public class AltaPersona extends javax.swing.JDialog {
         this.agregado = agregado;
     }
 
-    public AltaPersona(java.awt.Frame parent, boolean modal) {
+    public AltaAhijado(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         this.seraCura = seraCura;
         initComponents();
@@ -67,7 +67,7 @@ public class AltaPersona extends javax.swing.JDialog {
         this.setVisible(true);
     }
 
-    public AltaPersona(java.awt.Frame parent, boolean modal, Persona persona) {
+    public AltaAhijado(java.awt.Frame parent, boolean modal, Persona persona) {
         super(parent, modal);
         initComponents();
         //txtDni.setEnabled(true);
@@ -148,7 +148,7 @@ public class AltaPersona extends javax.swing.JDialog {
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos personales ", 1, 0, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos personales ", javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 18))); // NOI18N
         jPanel1.setMaximumSize(new java.awt.Dimension(530, 370));
         jPanel1.setOpaque(false);
 
@@ -509,11 +509,11 @@ public class AltaPersona extends javax.swing.JDialog {
                         try {
 
                             //tira error si no existe la persona una persona dni
-                            int pVerificar = new PersonaDAOImp().getPersona(persona.getDni()).getDni();
+                            int pVerificar = new PersonaDAOImp().getPersonaxDNI(persona.getDni()).getDni();
                         } catch (Exception e) {
                             // Si no existe la persona entonces se borra la persona y se cre nuevo con el dni  mofiiciado
                             b = true;
-                            Persona personaOriginal = new PersonaDAOImp().getPersona(dniOriginal);
+                            Persona personaOriginal = new PersonaDAOImp().getPersona(persona.getId());
                             new PersonaDAOImp().delete(personaOriginal);
                             //creo una nueva persona con el nuevo dni modificado
                             new PersonaDAOImp().insert(persona);

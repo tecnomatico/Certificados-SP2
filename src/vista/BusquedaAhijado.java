@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
-import modeloTable.ModeloPersona;
+import modeloTable.ModeloAhijado;
 import dominio.Persona;
 import javax.swing.JTable;
 
@@ -17,10 +17,10 @@ import javax.swing.JTable;
  *
  * @author dario
  */
-public class BusquedaPersona extends javax.swing.JDialog {
+public class BusquedaAhijado extends javax.swing.JDialog {
 
     private Persona persona;// variable auxiliar donde se almacenara la persona buscada
-    ModeloPersona modeloPersona ; // SE ENCARGA DE OBTENER LA LISTA DE PERSONAS PARA LA TABLA
+    ModeloAhijado modeloPersona ; // SE ENCARGA DE OBTENER LA LISTA DE PERSONAS PARA LA TABLA
     private  TableRowSorter sorter; 
     int numeroSeleccion;
     AltaCertificado parent;
@@ -30,9 +30,9 @@ public class BusquedaPersona extends javax.swing.JDialog {
     
     
     /**
-     * Creates new form BusquedaPersona
+     * Creates new form BusquedaAhijado
      */
-    public BusquedaPersona( AltaCertificado parent, boolean modal ) {
+    public BusquedaAhijado( AltaCertificado parent, boolean modal ) {
         super(parent, modal);
         initComponents();
         
@@ -46,7 +46,7 @@ public class BusquedaPersona extends javax.swing.JDialog {
 
     public void inicializarTabla(){
         // inicializo la tabla busqueda
-        modeloPersona = new ModeloPersona();
+        modeloPersona = new ModeloAhijado();
         sorter = new TableRowSorter(modeloPersona);
         tblBusquedaPersona.setModel(modeloPersona); 
     }
@@ -233,7 +233,7 @@ public class BusquedaPersona extends javax.swing.JDialog {
     }//GEN-LAST:event_txtBusquedaDNIKeyPressed
 
     private void btnAgregarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPersonaActionPerformed
-        AltaPersona at = new AltaPersona(parent, true);
+        AltaAhijado at = new AltaAhijado(parent, true);
         // reflejar los cambios en la tabla
         if (at.isAgregado()) {
             // actualizar la tabla de persona
@@ -262,7 +262,7 @@ public class BusquedaPersona extends javax.swing.JDialog {
             numeroSeleccion = sorter.convertRowIndexToModel(tblBusquedaPersona.getSelectedRow());
             persona = modeloPersona.getPersona(numeroSeleccion);
             // abrir el formulario alta de persona para editar los datos de persona
-            AltaPersona modificarPersona = new AltaPersona(parent, true, persona);
+            AltaAhijado modificarPersona = new AltaAhijado(parent, true, persona);
             // actulizar la tabla con los datos modificados
                if (modificarPersona.isAgregado()) {
                   // si hubo modificacion en al Persona se actualiza la tabla

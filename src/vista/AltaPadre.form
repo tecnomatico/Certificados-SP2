@@ -274,29 +274,29 @@
             <Property name="editable" type="boolean" value="true"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="23">
-                <StringItem index="0" value="Jujuy"/>
-                <StringItem index="1" value="Catamarca"/>
-                <StringItem index="2" value="Chaco"/>
-                <StringItem index="3" value="Chubut"/>
-                <StringItem index="4" value="C&#xf3;rdoba"/>
-                <StringItem index="5" value="Corrientes"/>
-                <StringItem index="6" value="Entre R&#xed;os"/>
-                <StringItem index="7" value="Formosa"/>
-                <StringItem index="8" value="La Pampa"/>
-                <StringItem index="9" value="La Rioja"/>
-                <StringItem index="10" value="Mendoza"/>
-                <StringItem index="11" value="Misiones"/>
-                <StringItem index="12" value="Neuqu&#xe9;n"/>
-                <StringItem index="13" value="R&#xed;o Negro"/>
-                <StringItem index="14" value="Salta"/>
-                <StringItem index="15" value="San Juan"/>
-                <StringItem index="16" value="San Luis"/>
-                <StringItem index="17" value="Santa Cruz"/>
-                <StringItem index="18" value="Santa Fe"/>
-                <StringItem index="19" value="Santiago del Estero"/>
-                <StringItem index="20" value="Tucum&#xe1;n"/>
-                <StringItem index="21" value="Tierra del Fuego"/>
-                <StringItem index="22" value="Buenos Aires"/>
+                <StringItem index="0" value="JUJUY"/>
+                <StringItem index="1" value="CATAMARCA"/>
+                <StringItem index="2" value="CHACO"/>
+                <StringItem index="3" value="CHUBUT"/>
+                <StringItem index="4" value="C&#xd3;RDOBA"/>
+                <StringItem index="5" value="CORRIENTES"/>
+                <StringItem index="6" value="ENTRE R&#xcd;OS"/>
+                <StringItem index="7" value="FORMOSA"/>
+                <StringItem index="8" value="LA PAMPA"/>
+                <StringItem index="9" value="LA RIOJA"/>
+                <StringItem index="10" value="MENDOZA"/>
+                <StringItem index="11" value="MISIONES"/>
+                <StringItem index="12" value="NEUQU&#xc9;N"/>
+                <StringItem index="13" value="R&#xcd;O NEGRO"/>
+                <StringItem index="14" value="SALTA"/>
+                <StringItem index="15" value="SAN JUAN"/>
+                <StringItem index="16" value="SAN LUIS"/>
+                <StringItem index="17" value="SANTA CRUZ"/>
+                <StringItem index="18" value="SANTA FE"/>
+                <StringItem index="19" value="SANTIAGO DEL ESTERO"/>
+                <StringItem index="20" value="TUCUM&#xc1;N"/>
+                <StringItem index="21" value="TIERRA DEL FUEGO"/>
+                <StringItem index="22" value="BUENOS AIRES"/>
               </StringArray>
             </Property>
           </Properties>
@@ -318,8 +318,8 @@
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="2">
-                <StringItem index="0" value="Femenino"/>
-                <StringItem index="1" value="Masculino"/>
+                <StringItem index="0" value="FEMENINO"/>
+                <StringItem index="1" value="MASCULINO"/>
               </StringArray>
             </Property>
           </Properties>

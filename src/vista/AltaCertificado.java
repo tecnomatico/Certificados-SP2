@@ -1073,8 +1073,7 @@ private final String logooP="/reporte/logooP.jpg";
     }//GEN-LAST:event_txtLugarNacNiñoActionPerformed
 
     private void btnAgregarMadrinaCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMadrinaCertficadoActionPerformed
-        BusquedaPadre bp = new BusquedaPadre(this, true);
-
+ BusquedaPadre bp = new BusquedaPadre(this, true,cons.Constantes.SEXO_FEMENINO);
         if (bp.isAgregado()) {
             pMadrina = bp.getPersona();
 
@@ -1085,7 +1084,8 @@ private final String logooP="/reporte/logooP.jpg";
 
     private void btnAgregarPadrinoCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPadrinoCertficadoActionPerformed
 
-        BusquedaPadre bp = new BusquedaPadre(this, true);
+//        BusquedaPadre bp = new BusquedaPadre(this, true);
+         BusquedaPadre bp = new BusquedaPadre(this, true,cons.Constantes.SEXO_MASCULINO);
 
         if (bp.isAgregado()) {
 
@@ -1101,8 +1101,8 @@ private final String logooP="/reporte/logooP.jpg";
     }//GEN-LAST:event_txtFechNacimNiñoActionPerformed
 
     private void btnAgregarMadreCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarMadreCertficadoActionPerformed
-        BusquedaPadre bp = new BusquedaPadre(this, true);
-
+//        BusquedaPadre bp = new BusquedaPadre(this, true);
+        BusquedaPadre bp = new BusquedaPadre(this, true,cons.Constantes.SEXO_FEMENINO);
         if (bp.isAgregado()) {
             pTutora = bp.getPersona();
 
@@ -1113,7 +1113,7 @@ private final String logooP="/reporte/logooP.jpg";
 
     private void btnAgregarPadreCertficadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarPadreCertficadoActionPerformed
 
-        BusquedaPadre bp = new BusquedaPadre(this, true);
+        BusquedaPadre bp = new BusquedaPadre(this, true,cons.Constantes.SEXO_MASCULINO);
 
         if (bp.isAgregado()) {
             pTutor = bp.getPersona();
@@ -1125,7 +1125,7 @@ private final String logooP="/reporte/logooP.jpg";
 
         //llamo a la ventana busqueda
 
-        BusquedaPersona bp = new BusquedaPersona(this, true);
+        BusquedaAhijado bp = new BusquedaAhijado(this, true);
         // agrego la persona buscada al certificado
 
         if (bp.isAgregado()) {

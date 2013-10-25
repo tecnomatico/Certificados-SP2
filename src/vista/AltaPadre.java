@@ -67,6 +67,43 @@ public class AltaPadre extends javax.swing.JDialog {
         
         
     }
+    
+    /**
+     * Este constructo es para que controle el alta de una padres o padrino con sexo masculino o femenino
+     * en el alta automaticamente setea si es masculino o femenino y lo inabilita
+     * @param parent
+     * @param modal
+     * @param sexo 
+     */
+    public AltaPadre(java.awt.Frame parent,boolean modal, String sexo) {
+        super(parent, modal);
+        this.seraCura = seraCura;
+        
+        initComponents();
+        SLetras(txtApellido);
+        SLetras(txtNombre);
+        SLetras(txtNacionalidad);
+        SLetras(txtLugarNac);
+//        SLetras(txtDomicilio);
+        SLetras(txtBarrio);
+        SNumeros(txtTelFijo);
+        SNumeros(txtTelCel);
+        
+        if (sexo.equals(cons.Constantes.SEXO_MASCULINO)) {
+            System.out.println(cons.Constantes.SEXO_MASCULINO +"es igual "+ sexo);
+            cmbSexo.setSelectedItem(cons.Constantes.SEXO_MASCULINO);
+            cmbSexo.setEnabled(false);
+        } else {
+            System.out.println(cons.Constantes.SEXO_FEMENINO +"es igual "+ sexo);
+            cmbSexo.setSelectedItem(cons.Constantes.SEXO_FEMENINO);
+            cmbSexo.setEnabled(false);
+        }
+        setLocationRelativeTo(parent);
+        
+        this.setVisible(true);
+        
+        
+    }
 
     public AltaPadre(java.awt.Frame parent, boolean modal, Persona persona) {
         super(parent, modal);
@@ -185,7 +222,7 @@ public class AltaPadre extends javax.swing.JDialog {
         });
 
         cmbProvincia.setEditable(true);
-        cmbProvincia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Jujuy", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tucumán", "Tierra del Fuego", "Buenos Aires" }));
+        cmbProvincia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "JUJUY", "CATAMARCA", "CHACO", "CHUBUT", "CÓRDOBA", "CORRIENTES", "ENTRE RÍOS", "FORMOSA", "LA PAMPA", "LA RIOJA", "MENDOZA", "MISIONES", "NEUQUÉN", "RÍO NEGRO", "SALTA", "SAN JUAN", "SAN LUIS", "SANTA CRUZ", "SANTA FE", "SANTIAGO DEL ESTERO", "TUCUMÁN", "TIERRA DEL FUEGO", "BUENOS AIRES" }));
 
         btnGuardarAltaPersona.setText("Guardar");
         btnGuardarAltaPersona.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -197,7 +234,7 @@ public class AltaPadre extends javax.swing.JDialog {
             }
         });
 
-        cmbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Femenino", "Masculino" }));
+        cmbSexo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "FEMENINO", "MASCULINO" }));
         cmbSexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbSexoActionPerformed(evt);

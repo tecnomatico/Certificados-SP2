@@ -4,12 +4,9 @@
  */
 package modeloTable;
 
-import dao.PersonaDAO;
 import dao.imp.PersonaDAOImp;
 import dominio.Persona;
 import java.util.ArrayList;
-import java.util.Iterator;
-import javax.swing.JComboBox;
 import javax.swing.table.AbstractTableModel;
 import util.FechaUtil;
 
@@ -17,14 +14,14 @@ import util.FechaUtil;
  *
  * @author dario
  */
-public class ModeloPersona extends AbstractTableModel{
+public class ModeloAhijado extends AbstractTableModel{
     Persona persona = new Persona();
     PersonaDAOImp personaDAO = new PersonaDAOImp();
     ArrayList<Persona> listaPersonas = new ArrayList<Persona>();
   
-    public ModeloPersona() {            
+    public ModeloAhijado() {            
         try {
-            listaPersonas = personaDAO.getAll();;
+            listaPersonas = personaDAO.getAllAhijados();;
         } catch (ClassCastException ex) {
             listaPersonas = new ArrayList<Persona>();            
         }finally{
