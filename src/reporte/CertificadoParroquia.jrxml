@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CertificadoParroquia" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="726" leftMargin="68" rightMargin="48" topMargin="124" bottomMargin="14" uuid="bbea9ceb-44af-40a0-9c51-76d0e5bf56d8">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CertificadoParroquia" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="782" leftMargin="30" rightMargin="30" topMargin="124" bottomMargin="14" uuid="bbea9ceb-44af-40a0-9c51-76d0e5bf56d8">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="141"/>
 	<parameter name="logoParroquia" class="java.lang.String"/>
 	<field name="libro" class="java.lang.String"/>
 	<field name="folio" class="java.lang.String"/>
