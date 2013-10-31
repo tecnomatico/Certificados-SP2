@@ -221,7 +221,7 @@ public class BusquedaPadre extends javax.swing.JDialog {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logosite.png"))); // NOI18N
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(550, 350, 80, 60);
+        jLabel3.setBounds(550, 340, 80, 60);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.png"))); // NOI18N
         jLabel2.setText("jLabel2");
