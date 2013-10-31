@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CertificadoParroquia" language="groovy" pageWidth="900" pageHeight="600" orientation="Landscape" columnWidth="860" leftMargin="20" rightMargin="20" topMargin="124" bottomMargin="14" uuid="bbea9ceb-44af-40a0-9c51-76d0e5bf56d8">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="75"/>
+	<property name="ireport.y" value="64"/>
 	<parameter name="logoP" class="java.io.InputStream"/>
 	<parameter name="logooP" class="java.io.InputStream"/>
 	<field name="libro" class="java.lang.String"/>
@@ -79,14 +79,14 @@
 			<textField>
 				<reportElement uuid="7ad9c02d-c806-4010-a70e-2a85af3a1745" x="32" y="39" width="160" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ciudad}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="87238170-67f3-43d3-938e-a524a590c07b" x="215" y="39" width="52" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dia}]]></textFieldExpression>
 			</textField>
@@ -100,7 +100,7 @@
 			<textField>
 				<reportElement uuid="d0f3cfba-13c9-4b6d-8fc4-91ab93977159" x="358" y="39" width="95" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mes}]]></textFieldExpression>
 			</textField>
@@ -114,7 +114,7 @@
 			<textField>
 				<reportElement uuid="7fe948a4-f055-4e35-b0da-05471cbc7c90" x="35" y="63" width="71" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{anio}]]></textFieldExpression>
 			</textField>
@@ -142,7 +142,7 @@
 			<textField>
 				<reportElement uuid="b2bafd18-018c-483a-8947-685d5c9bbee7" x="55" y="91" width="193" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{baut}]]></textFieldExpression>
 			</textField>
@@ -156,7 +156,7 @@
 			<textField>
 				<reportElement uuid="a2348106-8f62-4ac6-a91d-4d61e82a15c5" x="299" y="90" width="136" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dniBaut}]]></textFieldExpression>
 			</textField>
@@ -170,7 +170,7 @@
 			<textField>
 				<reportElement uuid="bf521d55-d231-4159-b77a-6a3a17a4df92" x="83" y="118" width="207" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lugarNacimBaut}]]></textFieldExpression>
 			</textField>
@@ -184,7 +184,7 @@
 			<textField>
 				<reportElement uuid="671de89a-c187-4016-9463-c6e6688fef03" x="341" y="118" width="123" height="20" forecolor="#000099"/>
 				<textElement textAlignment="Center">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{provinciaNacimBaut}]]></textFieldExpression>
 			</textField>
@@ -198,7 +198,7 @@
 			<textField>
 				<reportElement uuid="5322a088-0c76-4247-a905-22e40e516ccc" x="42" y="143" width="103" height="20" forecolor="#000099"/>
 				<textElement textAlignment="Center">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nacionBaut}]]></textFieldExpression>
 			</textField>
@@ -212,7 +212,7 @@
 			<textField>
 				<reportElement uuid="7d46be34-78d1-47fe-bea9-feab8931e873" x="183" y="143" width="39" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{diaNacimBaut}]]></textFieldExpression>
 			</textField>
@@ -226,7 +226,7 @@
 			<textField>
 				<reportElement uuid="59606a8e-5668-4e48-8bf1-a4507f6531ae" x="267" y="143" width="72" height="20" forecolor="#000099"/>
 				<textElement textAlignment="Center">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mesNacimBaut}]]></textFieldExpression>
 			</textField>
@@ -240,7 +240,7 @@
 			<textField>
 				<reportElement uuid="8870727c-785e-45d0-a453-d48ad376a4da" x="383" y="143" width="50" height="20" forecolor="#000099"/>
 				<textElement textAlignment="Center">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{anioNacimBaut}]]></textFieldExpression>
 			</textField>
@@ -261,7 +261,7 @@
 			<textField>
 				<reportElement uuid="df25ca69-d580-4221-936f-0339cc19f8b8" x="46" y="168" width="46" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{hijo}]]></textFieldExpression>
 			</textField>
@@ -275,7 +275,7 @@
 			<textField>
 				<reportElement uuid="8b1f1fa6-c146-4468-a06e-ec78ced7f9d3" x="373" y="169" width="91" height="20" forecolor="#000099"/>
 				<textElement textAlignment="Center">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nacionPadre}]]></textFieldExpression>
 			</textField>
@@ -289,14 +289,14 @@
 			<textField>
 				<reportElement uuid="772a94b5-a583-45b4-bca2-48822f7ca2bc" x="147" y="169" width="161" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{padreBaut}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="8e2a7eee-4196-4684-8bf1-a826c6e0704c" x="371" y="194" width="93" height="20" forecolor="#000099" backcolor="#0000FF"/>
 				<textElement textAlignment="Center" verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nacionMadre}]]></textFieldExpression>
 			</textField>
@@ -317,14 +317,14 @@
 			<textField>
 				<reportElement uuid="d1ae1c3e-9923-400f-a1d2-fac523dfba72" x="67" y="194" width="239" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{madreBaut}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="32e64bda-6179-43f1-abfb-29626e41a7f5" x="87" y="277" width="377" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombrePadrino}]]></textFieldExpression>
 			</textField>
@@ -345,14 +345,14 @@
 			<textField>
 				<reportElement uuid="e1adac55-afee-4f61-8521-891a89109d53" x="87" y="222" width="377" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{domicilioPadres}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="9216c038-55c6-4c92-a302-a65a5d1ae944" x="569" y="15" width="281" height="17" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{parroquia}]]></textFieldExpression>
 			</textField>
@@ -380,14 +380,14 @@
 			<textField>
 				<reportElement uuid="225d8c04-7585-41be-900a-6a37eaef0e43" x="578" y="251" width="272" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nacionMadre}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="5b7131a9-516c-4f62-b764-62081dd7b14b" x="633" y="278" width="119" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fechaBautismo}]]></textFieldExpression>
 			</textField>
@@ -401,7 +401,7 @@
 			<textField>
 				<reportElement uuid="d4d79d17-6aec-4702-8588-c81b4876b4a6" x="557" y="117" width="203" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{provinciaNacimBaut}]]></textFieldExpression>
 			</textField>
@@ -415,7 +415,7 @@
 			<textField>
 				<reportElement uuid="9a582d43-5fb9-4ead-be42-f8fdc6ed60f9" x="569" y="39" width="281" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{baut}]]></textFieldExpression>
 			</textField>
@@ -429,7 +429,7 @@
 			<textField>
 				<reportElement uuid="3835b092-c7cf-47ce-afdf-d9a50b347321" x="569" y="63" width="145" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dniBaut}]]></textFieldExpression>
 			</textField>
@@ -443,7 +443,7 @@
 			<textField>
 				<reportElement uuid="4d146c4b-8437-4c86-a143-9e7b6d9e8c82" x="559" y="90" width="70" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fechaNacimBaut}]]></textFieldExpression>
 			</textField>
@@ -457,7 +457,7 @@
 			<textField>
 				<reportElement uuid="0a82d415-8d1e-4152-b970-dd63262d22f7" x="648" y="90" width="202" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lugarNacimBaut}]]></textFieldExpression>
 			</textField>
@@ -471,7 +471,7 @@
 			<textField>
 				<reportElement uuid="9af5af30-fbce-483e-b1c9-00be48733e6b" x="546" y="141" width="87" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nacionBaut}]]></textFieldExpression>
 			</textField>
@@ -485,7 +485,7 @@
 			<textField>
 				<reportElement uuid="8fdafa14-070b-4bcc-b885-1c049f2212e6" x="675" y="142" width="175" height="20" forecolor="#000099"/>
 				<textElement textAlignment="Center">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{hijo}]]></textFieldExpression>
 			</textField>
@@ -499,7 +499,7 @@
 			<textField>
 				<reportElement uuid="6fa7d696-859a-4403-8e06-92204d251e91" x="545" y="168" width="305" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{padreBaut}]]></textFieldExpression>
 			</textField>
@@ -513,7 +513,7 @@
 			<textField>
 				<reportElement uuid="f0ced7bf-6a3c-461d-96e1-5afb631cb391" x="570" y="194" width="280" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nacionPadre}]]></textFieldExpression>
 			</textField>
@@ -527,7 +527,7 @@
 			<textField>
 				<reportElement uuid="ab0c755d-4543-46dd-afe8-e44cf508b1e2" x="585" y="305" width="265" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombrePadrino}]]></textFieldExpression>
 			</textField>
@@ -541,14 +541,14 @@
 			<textField>
 				<reportElement uuid="bb961716-4578-4e44-91cd-1c8e985407b9" x="551" y="331" width="299" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreMadrina}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="59fb9562-4487-4721-804a-f45acd43461b" x="83" y="16" width="381" height="18" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12" isUnderline="false"/>
+					<font fontName="Calibri" size="10" isUnderline="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{parroquia}]]></textFieldExpression>
 			</textField>
@@ -562,7 +562,7 @@
 			<textField>
 				<reportElement uuid="399aade9-5996-45c5-a524-4ec15b024f59" x="532" y="222" width="318" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{madreBaut}]]></textFieldExpression>
 			</textField>
@@ -576,7 +576,7 @@
 			<textField>
 				<reportElement uuid="078d0266-edb5-497d-9cdd-4a074ac7b82a" x="87" y="303" width="377" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreMadrina}]]></textFieldExpression>
 			</textField>
@@ -604,35 +604,35 @@
 			<textField>
 				<reportElement uuid="68e8ec3f-1e93-41c0-b02e-689f010f657c" x="47" y="434" width="100" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="3cd194ea-fcef-4784-b2ba-89a9a92bd99f" x="203" y="434" width="89" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="40c94469-c11d-40ee-ae58-185fab0d1eb7" x="530" y="434" width="32" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="05e0c8db-fc2c-4286-92cf-54b8b8cf0bc6" x="610" y="434" width="43" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="95d2d723-f90b-44c8-a100-3503f21cfd6c" x="713" y="434" width="39" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{partida}]]></textFieldExpression>
 			</textField>
@@ -653,7 +653,7 @@
 			<textField>
 				<reportElement uuid="d94a6f74-8776-4bf0-b018-8efc54fd6011" x="353" y="434" width="100" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{partida}]]></textFieldExpression>
 			</textField>
@@ -723,7 +723,7 @@
 			<textField>
 				<reportElement uuid="a013fec5-8fff-4c1a-9bac-3bbeebf71d2a" x="73" y="251" width="348" height="20" forecolor="#000099"/>
 				<textElement>
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{telefono}]]></textFieldExpression>
 			</textField>
