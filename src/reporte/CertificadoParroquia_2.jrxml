@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CertificadoParroquia" language="groovy" pageWidth="900" pageHeight="600" orientation="Landscape" columnWidth="860" leftMargin="20" rightMargin="20" topMargin="124" bottomMargin="14" uuid="bbea9ceb-44af-40a0-9c51-76d0e5bf56d8">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CertificadoParroquia" language="groovy" pageWidth="900" pageHeight="600" orientation="Landscape" columnWidth="780" leftMargin="100" rightMargin="20" topMargin="120" bottomMargin="20" uuid="bbea9ceb-44af-40a0-9c51-76d0e5bf56d8">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="64"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="logoP" class="java.io.InputStream"/>
 	<parameter name="logooP" class="java.io.InputStream"/>
 	<field name="libro" class="java.lang.String"/>
@@ -99,7 +99,7 @@
 			</staticText>
 			<textField>
 				<reportElement uuid="d0f3cfba-13c9-4b6d-8fc4-91ab93977159" x="358" y="39" width="95" height="20" forecolor="#000099" backcolor="#0000CC"/>
-				<textElement>
+				<textElement verticalAlignment="Top">
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{mes}]]></textFieldExpression>
@@ -128,7 +128,7 @@
 			<textField>
 				<reportElement uuid="4f332ca0-ecc7-4f0a-b5a6-59f76a2fbd3f" x="185" y="63" width="279" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="12"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cura}]]></textFieldExpression>
 			</textField>
@@ -154,7 +154,7 @@
 				<text><![CDATA[bautizó a]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="a2348106-8f62-4ac6-a91d-4d61e82a15c5" x="299" y="90" width="136" height="20" forecolor="#000099" backcolor="#0000CC"/>
+				<reportElement uuid="a2348106-8f62-4ac6-a91d-4d61e82a15c5" x="299" y="91" width="136" height="19" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
@@ -183,7 +183,7 @@
 			</staticText>
 			<textField>
 				<reportElement uuid="671de89a-c187-4016-9463-c6e6688fef03" x="341" y="118" width="123" height="20" forecolor="#000099"/>
-				<textElement textAlignment="Center">
+				<textElement textAlignment="Left">
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{provinciaNacimBaut}]]></textFieldExpression>
@@ -483,8 +483,8 @@
 				<text><![CDATA[Hijo/a]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="8fdafa14-070b-4bcc-b885-1c049f2212e6" x="675" y="142" width="175" height="20" forecolor="#000099"/>
-				<textElement textAlignment="Center">
+				<reportElement uuid="8fdafa14-070b-4bcc-b885-1c049f2212e6" x="686" y="142" width="164" height="20" forecolor="#000099"/>
+				<textElement textAlignment="Left">
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{hijo}]]></textFieldExpression>
