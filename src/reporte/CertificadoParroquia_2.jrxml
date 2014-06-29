@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CertificadoParroquia" language="groovy" pageWidth="900" pageHeight="600" orientation="Landscape" columnWidth="838" leftMargin="42" rightMargin="20" topMargin="120" bottomMargin="20" uuid="bbea9ceb-44af-40a0-9c51-76d0e5bf56d8">
-	<property name="ireport.zoom" value="1.5"/>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CertificadoParroquia" language="groovy" pageWidth="900" pageHeight="600" orientation="Landscape" columnWidth="780" leftMargin="100" rightMargin="20" topMargin="120" bottomMargin="20" uuid="bbea9ceb-44af-40a0-9c51-76d0e5bf56d8">
+	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="263"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="logoP" class="java.io.InputStream"/>
 	<parameter name="logooP" class="java.io.InputStream"/>
 	<field name="libro" class="java.lang.String"/>
@@ -72,28 +72,28 @@
 			<staticText>
 				<reportElement uuid="76145a27-e31a-445b-8a99-c8532cd49e63" x="3" y="39" width="25" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[En]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="7ad9c02d-c806-4010-a70e-2a85af3a1745" x="21" y="39" width="160" height="20" forecolor="#000099"/>
+				<reportElement uuid="7ad9c02d-c806-4010-a70e-2a85af3a1745" x="32" y="39" width="160" height="20" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ciudad}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="87238170-67f3-43d3-938e-a524a590c07b" x="203" y="39" width="52" height="20" forecolor="#000099"/>
+				<reportElement uuid="87238170-67f3-43d3-938e-a524a590c07b" x="215" y="39" width="52" height="20" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dia}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="235c82d7-b8a1-4194-ad80-d0e19d78031e" x="186" y="39" width="14" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="235c82d7-b8a1-4194-ad80-d0e19d78031e" x="201" y="39" width="14" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[a]]></text>
 			</staticText>
@@ -105,9 +105,9 @@
 				<textFieldExpression><![CDATA[$F{mes}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="d42fd241-8852-4b0b-a88d-90fd0488ba4a" x="261" y="39" width="80" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="d42fd241-8852-4b0b-a88d-90fd0488ba4a" x="278" y="39" width="80" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[días del mes de]]></text>
 			</staticText>
@@ -121,7 +121,7 @@
 			<staticText>
 				<reportElement uuid="fa5ca6bd-fda2-471a-838e-517b8f5b4af6" x="3" y="63" width="25" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[de]]></text>
 			</staticText>
@@ -135,7 +135,7 @@
 			<staticText>
 				<reportElement uuid="9b170478-dbea-411f-9c03-b24643ff92f2" x="103" y="63" width="80" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[el Pbro./Diac]]></text>
 			</staticText>
@@ -149,7 +149,7 @@
 			<staticText>
 				<reportElement uuid="69efde5f-e681-4f21-96f7-c1365285e904" x="3" y="91" width="45" height="20" forecolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[bautizó a]]></text>
 			</staticText>
@@ -163,7 +163,7 @@
 			<staticText>
 				<reportElement uuid="dfad515c-4ef1-4775-a88f-fffe5af74d16" x="260" y="91" width="39" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[D.N.I.]]></text>
 			</staticText>
@@ -177,7 +177,7 @@
 			<staticText>
 				<reportElement uuid="a189c504-1179-429c-9def-f2d0003eeab4" x="3" y="117" width="70" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[que nació en]]></text>
 			</staticText>
@@ -191,7 +191,7 @@
 			<staticText>
 				<reportElement uuid="6def0d03-a266-4abc-8a32-412d1b6b6267" x="290" y="118" width="50" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Provincia]]></text>
 			</staticText>
@@ -205,7 +205,7 @@
 			<staticText>
 				<reportElement uuid="a1ecfd57-b31e-4066-903a-214cc701ba79" x="3" y="142" width="43" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Nación]]></text>
 			</staticText>
@@ -219,7 +219,7 @@
 			<staticText>
 				<reportElement uuid="8d470f17-14a6-41c3-9992-f15cc715391e" x="147" y="143" width="32" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[el dia]]></text>
 			</staticText>
@@ -233,7 +233,7 @@
 			<staticText>
 				<reportElement uuid="01240695-542f-44c7-a9f4-4801816d5825" x="213" y="143" width="54" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[del mes de]]></text>
 			</staticText>
@@ -247,14 +247,14 @@
 			<staticText>
 				<reportElement uuid="74d1b1a9-a6bb-43dc-9593-518e54d0940a" x="338" y="143" width="46" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[del año]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="b8521089-b32f-4244-a4a5-a4759c423df4" x="3" y="169" width="32" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Hijo/a]]></text>
 			</staticText>
@@ -268,7 +268,7 @@
 			<staticText>
 				<reportElement uuid="7570b234-2f1d-4b0f-a4bc-ef98a2a4e9d2" x="106" y="169" width="39" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[de Don]]></text>
 			</staticText>
@@ -282,7 +282,7 @@
 			<staticText>
 				<reportElement uuid="3d1e21f4-db16-4b18-a5a1-ab49d0148292" x="308" y="169" width="65" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Nacionalidad]]></text>
 			</staticText>
@@ -303,14 +303,14 @@
 			<staticText>
 				<reportElement uuid="1805ec36-baf5-47b7-8888-9de3c0d37856" x="306" y="194" width="65" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Nacionalidad]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="dd8835b0-193a-4bda-adba-332f7214d682" x="3" y="195" width="64" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[(y de Doña)]]></text>
 			</staticText>
@@ -331,14 +331,14 @@
 			<staticText>
 				<reportElement uuid="4d89f8ff-2a92-4465-afda-0ea932f68faf" x="3" y="276" width="84" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Padrinos: Don ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="c8e0cb7c-1154-45a2-86d3-3e454eda4a58" x="3" y="222" width="83" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Domiciliados en]]></text>
 			</staticText>
@@ -350,226 +350,226 @@
 				<textFieldExpression><![CDATA[$F{domicilioPadres}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="9216c038-55c6-4c92-a302-a65a5d1ae944" x="556" y="16" width="281" height="17" forecolor="#000099" backcolor="#0000CC"/>
+				<reportElement uuid="9216c038-55c6-4c92-a302-a65a5d1ae944" x="569" y="15" width="281" height="17" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{parroquia}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="0be8f7c2-f25b-4d94-a962-f36c0f56674c" x="494" y="222" width="20" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="0be8f7c2-f25b-4d94-a962-f36c0f56674c" x="494" y="222" width="36" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[y de  Doña]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="3c85c2d1-d5c6-4a03-84f2-696880d8225e" x="494" y="278" width="111" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="3c85c2d1-d5c6-4a03-84f2-696880d8225e" x="494" y="278" width="130" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[ha sido bautizado/a el dia]]></text>
 			</staticText>
 			<staticText>
-				<reportElement uuid="96127f64-2b2e-49e8-b0fe-c435f8c7e450" x="494" y="252" width="57" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="96127f64-2b2e-49e8-b0fe-c435f8c7e450" x="494" y="252" width="76" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Nacionalidad]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="225d8c04-7585-41be-900a-6a37eaef0e43" x="556" y="251" width="272" height="20" forecolor="#000099"/>
+				<reportElement uuid="225d8c04-7585-41be-900a-6a37eaef0e43" x="578" y="251" width="272" height="20" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nacionMadre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="5b7131a9-516c-4f62-b764-62081dd7b14b" x="610" y="278" width="119" height="20" forecolor="#000099"/>
+				<reportElement uuid="5b7131a9-516c-4f62-b764-62081dd7b14b" x="633" y="278" width="119" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fechaBautismo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="5dde3c9c-e899-432e-b2fa-9b91ee9181ba" x="494" y="117" width="43" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="5dde3c9c-e899-432e-b2fa-9b91ee9181ba" x="494" y="117" width="57" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Provincia]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="d4d79d17-6aec-4702-8588-c81b4876b4a6" x="541" y="117" width="203" height="20" forecolor="#000099" backcolor="#0000CC"/>
+				<reportElement uuid="d4d79d17-6aec-4702-8588-c81b4876b4a6" x="557" y="117" width="203" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{provinciaNacimBaut}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="44b3cdf9-aa9d-40a5-910d-b783199cc731" x="494" y="39" width="57" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="44b3cdf9-aa9d-40a5-910d-b783199cc731" x="494" y="39" width="68" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[certifico que ]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="9a582d43-5fb9-4ead-be42-f8fdc6ed60f9" x="556" y="39" width="281" height="20" forecolor="#000099" backcolor="#0000CC"/>
+				<reportElement uuid="9a582d43-5fb9-4ead-be42-f8fdc6ed60f9" x="569" y="39" width="281" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{baut}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="5391525c-c00b-498b-a038-7b34c36e055f" x="514" y="63" width="23" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="5391525c-c00b-498b-a038-7b34c36e055f" x="526" y="63" width="36" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[D.N.I]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="3835b092-c7cf-47ce-afdf-d9a50b347321" x="541" y="63" width="145" height="20" forecolor="#000099" backcolor="#0000CC"/>
+				<reportElement uuid="3835b092-c7cf-47ce-afdf-d9a50b347321" x="569" y="63" width="145" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{dniBaut}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="f5aa66eb-4031-4d03-81e0-4cc601329c71" x="494" y="90" width="39" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="f5aa66eb-4031-4d03-81e0-4cc601329c71" x="494" y="90" width="65" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Nacido/a el]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="4d146c4b-8437-4c86-a143-9e7b6d9e8c82" x="537" y="90" width="63" height="20" forecolor="#000099" backcolor="#0000CC"/>
+				<reportElement uuid="4d146c4b-8437-4c86-a143-9e7b6d9e8c82" x="559" y="90" width="70" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fechaNacimBaut}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="1e5b2404-0180-4062-a1b1-8f857fb773c1" x="605" y="90" width="19" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="1e5b2404-0180-4062-a1b1-8f857fb773c1" x="632" y="90" width="19" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[en]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="0a82d415-8d1e-4152-b970-dd63262d22f7" x="629" y="90" width="208" height="20" forecolor="#000099" backcolor="#0000CC"/>
+				<reportElement uuid="0a82d415-8d1e-4152-b970-dd63262d22f7" x="648" y="90" width="202" height="20" forecolor="#000099" backcolor="#0000CC"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lugarNacimBaut}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="a13a02cb-6170-4447-844f-50a4fb314c78" x="494" y="141" width="36" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="a13a02cb-6170-4447-844f-50a4fb314c78" x="494" y="141" width="39" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Nación]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="9af5af30-fbce-483e-b1c9-00be48733e6b" x="535" y="141" width="87" height="20" forecolor="#000099"/>
+				<reportElement uuid="9af5af30-fbce-483e-b1c9-00be48733e6b" x="546" y="141" width="87" height="20" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nacionBaut}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="78b5c133-bd13-496c-b4e1-2cde03227ba5" x="628" y="141" width="28" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="78b5c133-bd13-496c-b4e1-2cde03227ba5" x="641" y="141" width="34" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Hijo/a]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="8fdafa14-070b-4bcc-b885-1c049f2212e6" x="661" y="141" width="164" height="20" forecolor="#000099"/>
+				<reportElement uuid="8fdafa14-070b-4bcc-b885-1c049f2212e6" x="686" y="142" width="164" height="20" forecolor="#000099"/>
 				<textElement textAlignment="Left">
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{hijo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="8a656385-6fc8-403c-998c-e14be638a4aa" x="494" y="168" width="32" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="8a656385-6fc8-403c-998c-e14be638a4aa" x="494" y="168" width="39" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[de Don]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="6fa7d696-859a-4403-8e06-92204d251e91" x="531" y="168" width="305" height="20" forecolor="#000099"/>
+				<reportElement uuid="6fa7d696-859a-4403-8e06-92204d251e91" x="545" y="168" width="305" height="20" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{padreBaut}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="95fc24fe-0f58-40c1-b655-048207c611b4" x="494" y="195" width="57" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="95fc24fe-0f58-40c1-b655-048207c611b4" x="494" y="195" width="75" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Nacionalidad]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="f0ced7bf-6a3c-461d-96e1-5afb631cb391" x="556" y="194" width="280" height="20" forecolor="#000099"/>
+				<reportElement uuid="f0ced7bf-6a3c-461d-96e1-5afb631cb391" x="570" y="194" width="280" height="20" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nacionPadre}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="02c4cdf9-c8d2-4cad-9c32-b8a41a3330a5" x="494" y="305" width="68" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="02c4cdf9-c8d2-4cad-9c32-b8a41a3330a5" x="494" y="305" width="91" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Siendo Padrino]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="ab0c755d-4543-46dd-afe8-e44cf508b1e2" x="566" y="305" width="270" height="20" forecolor="#000099"/>
+				<reportElement uuid="ab0c755d-4543-46dd-afe8-e44cf508b1e2" x="585" y="305" width="265" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombrePadrino}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="a29218ad-a4c8-49e2-bbf5-1b0d516b698a" x="494" y="331" width="42" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="a29218ad-a4c8-49e2-bbf5-1b0d516b698a" x="494" y="331" width="57" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[y Madrina]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="bb961716-4578-4e44-91cd-1c8e985407b9" x="541" y="331" width="299" height="20" forecolor="#000099"/>
+				<reportElement uuid="bb961716-4578-4e44-91cd-1c8e985407b9" x="551" y="331" width="299" height="20" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreMadrina}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement uuid="59fb9562-4487-4721-804a-f45acd43461b" x="73" y="16" width="381" height="18" forecolor="#000099"/>
+				<reportElement uuid="59fb9562-4487-4721-804a-f45acd43461b" x="83" y="16" width="381" height="18" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="10" isUnderline="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{parroquia}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="f060a910-8779-4088-a3ed-9b8ae9a031d1" x="13" y="16" width="54" height="18" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="f060a910-8779-4088-a3ed-9b8ae9a031d1" x="13" y="16" width="67" height="18" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Parroquia de]]></text>
 			</staticText>
 			<textField>
-				<reportElement uuid="399aade9-5996-45c5-a524-4ec15b024f59" x="519" y="222" width="318" height="20" forecolor="#000099"/>
+				<reportElement uuid="399aade9-5996-45c5-a524-4ec15b024f59" x="532" y="222" width="318" height="20" forecolor="#000099"/>
 				<textElement>
 					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{madreBaut}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement uuid="438acf8e-8e88-4495-a479-06b35b19af4a" x="494" y="15" width="57" height="19" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="438acf8e-8e88-4495-a479-06b35b19af4a" x="494" y="15" width="68" height="19" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Parroquia de]]></text>
 			</staticText>
@@ -583,140 +583,140 @@
 			<staticText>
 				<reportElement uuid="0b8a9508-af49-418e-97b6-4737f0deebd9" x="5" y="434" width="32" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement verticalAlignment="Top">
-					<font size="11"/>
+					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Libro]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="09c6e4cc-7dbc-4834-975b-e74223309894" x="157" y="434" width="36" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Folio]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="8523edf8-9adb-4e9c-b7d5-70d845ed733f" x="302" y="434" width="41" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Partida]]></text>
 			</staticText>
 			<textField>
 				<reportElement uuid="68e8ec3f-1e93-41c0-b02e-689f010f657c" x="47" y="434" width="100" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="3cd194ea-fcef-4784-b2ba-89a9a92bd99f" x="203" y="434" width="89" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="40c94469-c11d-40ee-ae58-185fab0d1eb7" x="530" y="434" width="32" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{libro}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="05e0c8db-fc2c-4286-92cf-54b8b8cf0bc6" x="610" y="434" width="43" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{folio}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="95d2d723-f90b-44c8-a100-3503f21cfd6c" x="713" y="434" width="39" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{partida}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement uuid="9689a126-a48a-4ac1-ab25-916afdaef7a6" x="572" y="434" width="28" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Folio]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="75ff0278-0068-4c02-b715-b79e02e527c6" x="663" y="434" width="36" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Partida]]></text>
 			</staticText>
 			<textField>
 				<reportElement uuid="d94a6f74-8776-4bf0-b018-8efc54fd6011" x="353" y="434" width="100" height="20" forecolor="#000099"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{partida}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement uuid="3758d716-84ad-4e50-ac34-00c2462366e4" x="493" y="434" width="27" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="11"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Libro]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="5c4a54a4-1235-4ab4-aac2-4dcd20e67e87" x="46" y="303" width="37" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[y Doña]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="60e7900b-cc93-4e95-b2d8-55532cc3c3d3" x="13" y="405" width="196" height="20"/>
 				<textElement textAlignment="Center">
-					<font size="11"/>
+					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Sacerdote / Diácono Bautizante]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="819b41a4-3717-43c9-91c9-a035a6093dc1" x="276" y="405" width="100" height="20"/>
 				<textElement textAlignment="Center">
-					<font size="11"/>
+					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Parroco]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="0f5c5357-6608-4114-83f4-bd69dd9dae6c" x="22" y="390" width="173" height="20"/>
 				<textElement>
-					<font size="11"/>
+					<font size="12"/>
 				</textElement>
 				<text><![CDATA[............................................................]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="ae5ce3b8-3ca0-4447-87f7-ee44ac90b741" x="276" y="390" width="100" height="20"/>
 				<textElement>
-					<font size="11"/>
+					<font size="12"/>
 				</textElement>
 				<text><![CDATA[............................................................]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="69dced38-6c7f-4f76-95b4-aa70b1f17693" x="641" y="405" width="100" height="20"/>
 				<textElement textAlignment="Center">
-					<font size="11"/>
+					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Parroco]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="1b4de0ec-335e-48f2-bfb1-9a17ee94db8e" x="641" y="390" width="100" height="20"/>
 				<textElement>
-					<font size="11"/>
+					<font size="12"/>
 				</textElement>
 				<text><![CDATA[............................................................]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="727d72d0-d894-4ed5-995c-5cfde483b590" x="3" y="251" width="64" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[Teléfono:]]></text>
 			</staticText>
@@ -734,9 +734,9 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement uuid="70bf9b24-42e4-44ec-bbca-0d0485daaaae" x="494" y="63" width="15" height="20" forecolor="#000000" backcolor="#000000"/>
+				<reportElement uuid="70bf9b24-42e4-44ec-bbca-0d0485daaaae" x="494" y="63" width="30" height="20" forecolor="#000000" backcolor="#000000"/>
 				<textElement>
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="12"/>
 				</textElement>
 				<text><![CDATA[con]]></text>
 			</staticText>
@@ -745,14 +745,9 @@
 				<imageExpression><![CDATA[$P{logoP}]]></imageExpression>
 			</image>
 			<image isUsingCache="false">
-				<reportElement uuid="5f5d6a8b-aee3-4dce-913b-6ba5f6cc9393" x="553" y="-110" width="100" height="78"/>
+				<reportElement uuid="5f5d6a8b-aee3-4dce-913b-6ba5f6cc9393" x="564" y="-110" width="100" height="78"/>
 				<imageExpression><![CDATA[$P{logooP}]]></imageExpression>
 			</image>
-			<staticText>
-				<reportElement uuid="ddbbe8a1-5886-471e-a200-b9a09c2b720f" x="88" y="283" width="374" height="14"/>
-				<textElement/>
-				<text><![CDATA[...............................................................................................................................................]]></text>
-			</staticText>
 		</band>
 	</detail>
 	<columnFooter>
